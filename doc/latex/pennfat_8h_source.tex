@@ -1,0 +1,35 @@
+\doxysection{pennfat.\+h}
+\hypertarget{pennfat_8h_source}{}\label{pennfat_8h_source}\index{src/pennfat.h@{src/pennfat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PENNFAT\_MAIN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PENNFAT\_MAIN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../parser/parser.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}./pennfat/k\_routines.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}./pennfat/s\_pennfat.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}./test\_routines.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MAX\_ARGS\ 32}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ EXIT\_SUCCESS\ 0}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ PROMPT\ "{}pennfat>\ "{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparsed__command}{parsed\_command}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pennfat_8c_af864670ac350e354022e9d4010bbd95c}{setup\_signal\_handlers\_pf}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pennfat_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{char}*\ read\_line\_from\_terminal(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pennfat_8c_a949ec82c8591c8f546499ec6ecc3fd78}{print\_parser\_errcode\_new}}(FILE*\ output,\ \textcolor{keywordtype}{int}\ err\_code);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PENNFAT\_MAIN\_H}}
+
+\end{DoxyCode}

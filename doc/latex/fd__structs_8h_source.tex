@@ -1,0 +1,30 @@
+\doxysection{fd\+\_\+structs.\+h}
+\hypertarget{fd__structs_8h_source}{}\label{fd__structs_8h_source}\index{src/pennfat/fd\_structs.h@{src/pennfat/fd\_structs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ fd\_structs.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ FD\_STRUCTS\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ FD\_STRUCTS\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}fs\_structs.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAX\_FD\ 1024}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00012\ \ \ F\_WRITE\ =\ 0,\ \ \textcolor{comment}{//\ Write\ mode.}}
+\DoxyCodeLine{00013\ \ \ F\_READ\ =\ 1,\ \ \ \textcolor{comment}{//\ Read\ mode.}}
+\DoxyCodeLine{00014\ \ \ F\_APPEND\ =\ 2\ \ \textcolor{comment}{//\ Append\ mode.}}
+\DoxyCodeLine{00015\ \}\ FileMode;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{char}\ name[32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Name\ of\ the\ file}}
+\DoxyCodeLine{00019\ \ \ uint16\_t\ first\_block\_index;\ \textcolor{comment}{//\ Index\ to\ the\ file\ in\ the\ directory\ entries}}
+\DoxyCodeLine{00020\ \ \ uint32\_t\ offset;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Offset\ within\ the\ file}}
+\DoxyCodeLine{00021\ \ \ FileMode\ mode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mode\ as\ defined\ above}}
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{struct_file_descriptor}{FileDescriptor}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FD\_STRUCTS\_H}}
+
+\end{DoxyCode}

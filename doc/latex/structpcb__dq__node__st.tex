@@ -1,0 +1,49 @@
+\doxysection{pcb\+\_\+dq\+\_\+node\+\_\+st Struct Reference}
+\hypertarget{structpcb__dq__node__st}{}\label{structpcb__dq__node__st}\index{pcb\_dq\_node\_st@{pcb\_dq\_node\_st}}
+
+
+A node in a double-\/ended queue that stores PCB (Process Control Block) structures.  
+
+
+
+
+{\ttfamily \#include $<$pcb\+\_\+deque.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \mbox{\hyperlink{structpcb__dq__node__st_a31541ff04d7de2cf1e580db2316f7a2b}{payload}}
+\item 
+struct \mbox{\hyperlink{structpcb__dq__node__st}{pcb\+\_\+dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structpcb__dq__node__st_a555b9ead84054f1a56e37c8276e4b030}{next}}
+\item 
+struct \mbox{\hyperlink{structpcb__dq__node__st}{pcb\+\_\+dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structpcb__dq__node__st_a3f574c1e5611c7627bf9daffb1150c28}{prev}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A node in a double-\/ended queue that stores PCB (Process Control Block) structures. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structpcb__dq__node__st_a555b9ead84054f1a56e37c8276e4b030}\label{structpcb__dq__node__st_a555b9ead84054f1a56e37c8276e4b030} 
+\index{pcb\_dq\_node\_st@{pcb\_dq\_node\_st}!next@{next}}
+\index{next@{next}!pcb\_dq\_node\_st@{pcb\_dq\_node\_st}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily pcb\+\_\+dq\+\_\+node\+\_\+st\+::next}
+
+Pointer to the next node in the deque. \Hypertarget{structpcb__dq__node__st_a31541ff04d7de2cf1e580db2316f7a2b}\label{structpcb__dq__node__st_a31541ff04d7de2cf1e580db2316f7a2b} 
+\index{pcb\_dq\_node\_st@{pcb\_dq\_node\_st}!payload@{payload}}
+\index{payload@{payload}!pcb\_dq\_node\_st@{pcb\_dq\_node\_st}}
+\doxysubsubsection{\texorpdfstring{payload}{payload}}
+{\footnotesize\ttfamily pcb\+\_\+dq\+\_\+node\+\_\+st\+::payload}
+
+The PCB stored within the node. \Hypertarget{structpcb__dq__node__st_a3f574c1e5611c7627bf9daffb1150c28}\label{structpcb__dq__node__st_a3f574c1e5611c7627bf9daffb1150c28} 
+\index{pcb\_dq\_node\_st@{pcb\_dq\_node\_st}!prev@{prev}}
+\index{prev@{prev}!pcb\_dq\_node\_st@{pcb\_dq\_node\_st}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily pcb\+\_\+dq\+\_\+node\+\_\+st\+::prev}
+
+Pointer to the previous node in the deque. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pennkernel/pcb\+\_\+deque.\+h\end{DoxyCompactItemize}

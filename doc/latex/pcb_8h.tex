@@ -1,0 +1,47 @@
+\doxysection{src/pcb.h File Reference}
+\hypertarget{pcb_8h}{}\label{pcb_8h}\index{src/pcb.h@{src/pcb.h}}
+
+
+Process control block structure and related functions.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$util/spthread.\+h$>$}\newline
+{\ttfamily \#include "{}./pennfat/k\+\_\+fd\+\_\+structs.\+h"{}}\newline
+{\ttfamily \#include "{}./pennfat/local\+\_\+fd\+\_\+struct.\+h"{}}\newline
+{\ttfamily \#include "{}pennkernel/pid\+\_\+deque.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcb}{pcb}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pcb_8h_a3c0f153d2844c3c3248a1795b159ae37}\label{pcb_8h_a3c0f153d2844c3c3248a1795b159ae37} 
+typedef struct \mbox{\hyperlink{structpcb}{pcb}} {\bfseries pcb\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pcb_8h_af9ca40705a5c5f739ca699c48cb3b0f7}\label{pcb_8h_af9ca40705a5c5f739ca699c48cb3b0f7} 
+enum {\bfseries signal\+\_\+type} \{ {\bfseries P\+\_\+\+SIGSTOP}
+, {\bfseries P\+\_\+\+SIGCONT}
+, {\bfseries P\+\_\+\+SIGTERM}
+ \}
+\item 
+\Hypertarget{pcb_8h_a4e1a76273cf189daed25256e3ba34aef}\label{pcb_8h_a4e1a76273cf189daed25256e3ba34aef} 
+enum {\bfseries process\+\_\+state} \{ \newline
+{\bfseries RUNNING}
+, {\bfseries TERMINATED}
+, {\bfseries BLOCKED}
+, {\bfseries ZOMBIED}
+, \newline
+{\bfseries STOPPED}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Process control block structure and related functions. 
+

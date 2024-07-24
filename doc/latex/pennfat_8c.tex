@@ -1,0 +1,63 @@
+\doxysection{src/pennfat.c File Reference}
+\hypertarget{pennfat_8c}{}\label{pennfat_8c}\index{src/pennfat.c@{src/pennfat.c}}
+
+
+The main file for the Penn\+FAT file system.  
+
+
+{\ttfamily \#include "{}pennfat.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pennfat_8c_af864670ac350e354022e9d4010bbd95c}\label{pennfat_8c_af864670ac350e354022e9d4010bbd95c} 
+void {\bfseries setup\+\_\+signal\+\_\+handlers\+\_\+pf} ()
+\begin{DoxyCompactList}\small\item\em Set up signal handlers to ignore SIGINT and SIGTSTP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function to initiate the Penn\+FAT shell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pennfat_8c_a949ec82c8591c8f546499ec6ecc3fd78}{print\+\_\+parser\+\_\+errcode\+\_\+new}} (FILE \texorpdfstring{$\ast$}{*}output, int err\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Print the error message associated with a parser error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main file for the Penn\+FAT file system. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pennfat_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{pennfat_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{pennfat.c@{pennfat.c}!main@{main}}
+\index{main@{main}!pennfat.c@{pennfat.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function to initiate the Penn\+FAT shell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command line arguments. \\
+\hline
+{\em argv} & The argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns EXIT\+\_\+\+SUCCESS upon the termination of the program. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8c_a949ec82c8591c8f546499ec6ecc3fd78}\label{pennfat_8c_a949ec82c8591c8f546499ec6ecc3fd78} 
+\index{pennfat.c@{pennfat.c}!print\_parser\_errcode\_new@{print\_parser\_errcode\_new}}
+\index{print\_parser\_errcode\_new@{print\_parser\_errcode\_new}!pennfat.c@{pennfat.c}}
+\doxysubsubsection{\texorpdfstring{print\_parser\_errcode\_new()}{print\_parser\_errcode\_new()}}
+{\footnotesize\ttfamily void print\+\_\+parser\+\_\+errcode\+\_\+new (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{output,  }\item[{int}]{err\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Print the error message associated with a parser error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The output stream to which the error message is written. \\
+\hline
+{\em err\+\_\+code} & The error code returned by the parser function. \\
+\hline
+\end{DoxyParams}

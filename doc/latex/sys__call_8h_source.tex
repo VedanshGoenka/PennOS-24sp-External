@@ -1,0 +1,62 @@
+\doxysection{sys\+\_\+call.\+h}
+\hypertarget{sys__call_8h_source}{}\label{sys__call_8h_source}\index{src/sys\_call.h@{src/sys\_call.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_POSIX\_C\_SOURCE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_POSIX\_C\_SOURCE\ 200809L}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ \_DEFAULT\_SOURCE}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ \_DEFAULT\_SOURCE\ 1}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_XOPEN\_SOURCE\ 700}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_SYS\_CALL\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_SYS\_CALL\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pcb_8h}{pcb.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ pid\_t\ \mbox{\hyperlink{sys__call_8c_a835d1667a32fcaf1f369f6d1949883e9}{s\_get\_pid}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_a3e0d339ec25da1069df1b4501ec26b0c}{s\_init}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ pid\_t\ \mbox{\hyperlink{sys__call_8c_aae6cb187ea60902d9f4d4dfec0fcddd5}{s\_spawn}}(\textcolor{keywordtype}{void}*\ (*func)(\textcolor{keywordtype}{void}*),\ \textcolor{keywordtype}{void}*\ argv[],\ \textcolor{keywordtype}{int}\ fd0,\ \textcolor{keywordtype}{int}\ fd1,\ \textcolor{keywordtype}{bool}\ is\_foreground,\ \textcolor{keywordtype}{int}\ num\_commands);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ pid\_t\ \mbox{\hyperlink{sys__call_8c_a3c0c6c4ae69799354d707ff57ac925d3}{s\_waitpid}}(pid\_t\ pid,\ \textcolor{keywordtype}{int}*\ wstatus,\ \textcolor{keywordtype}{bool}\ nohang);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sys__call_8c_abcc85a8526beec217250765426f0608b}{s\_kill}}(pid\_t\ pid,\ \textcolor{keywordtype}{int}\ signal,\ \textcolor{keywordtype}{void}*\ args);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_a53c8865d5bf1ca946e5b5405190f6690}{s\_exit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sys__call_8c_ac711d33fcf2573a590b224b6debab996}{s\_nice}}(pid\_t\ pid,\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_aec37528a3c7935864924764d1911126c}{s\_sleep}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ticks);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \mbox{\hyperlink{structpcb}{pcb\_t}}**\ \mbox{\hyperlink{sys__call_8c_aaeb1bbb8ee1affdef7a3a4e29e406114}{s\_get\_all\_process\_pcbs}}(\textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_a981418f0048d915e7ca051723576cf65}{s\_stop}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_ace1731e62f775cd30d443019bc626498}{s\_cont}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_abaac3865799db492d2ad87aea656f2c7}{s\_fg}}(\textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sys__call_8c_a3e800fc81773b3cfcd287e472d3139e0}{s\_bg}}(\textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}*\ \mbox{\hyperlink{sys__call_8c_af48520dc63e92e0aa454d37307167afc}{s\_get\_fd\_table}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sys__call_8c_a3290e1061b1d901e3de43e169c44c9cd}{s\_get\_f0}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sys__call_8c_acc090c6b0218bc75a95094f28fffad51}{s\_get\_f1}}();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}**\ \mbox{\hyperlink{sys__call_8c_aec93961fe0dc8de787192f64770e7cc1}{s\_get\_args}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sys__call_8c_ad352b3c08626ca131d817f02eb8a3209}{s\_get\_num\_args}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{int}\ s\_number\_of\_pcbs();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_SYS\_CALL\_H}}
+
+\end{DoxyCode}

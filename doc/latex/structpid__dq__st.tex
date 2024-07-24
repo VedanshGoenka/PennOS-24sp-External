@@ -1,0 +1,49 @@
+\doxysection{pid\+\_\+dq\+\_\+st Struct Reference}
+\hypertarget{structpid__dq__st}{}\label{structpid__dq__st}\index{pid\_dq\_st@{pid\_dq\_st}}
+
+
+A double-\/ended queue (deque) for managing process IDs.  
+
+
+
+
+{\ttfamily \#include $<$pid\+\_\+deque.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structpid__dq__st_a076e729e730061561f1b212f9c6480fc}{num\+\_\+elements}}
+\item 
+\mbox{\hyperlink{structpid__dq__node__st}{PIDDeque\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structpid__dq__st_a3c5cb54366bf221284c75dd83ff8654d}{front}}
+\item 
+\mbox{\hyperlink{structpid__dq__node__st}{PIDDeque\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structpid__dq__st_adc95a9c72df5d4d5dc71ed2d3f1a9125}{back}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A double-\/ended queue (deque) for managing process IDs. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structpid__dq__st_adc95a9c72df5d4d5dc71ed2d3f1a9125}\label{structpid__dq__st_adc95a9c72df5d4d5dc71ed2d3f1a9125} 
+\index{pid\_dq\_st@{pid\_dq\_st}!back@{back}}
+\index{back@{back}!pid\_dq\_st@{pid\_dq\_st}}
+\doxysubsubsection{\texorpdfstring{back}{back}}
+{\footnotesize\ttfamily pid\+\_\+dq\+\_\+st\+::back}
+
+Pointer to the back node of the deque. \Hypertarget{structpid__dq__st_a3c5cb54366bf221284c75dd83ff8654d}\label{structpid__dq__st_a3c5cb54366bf221284c75dd83ff8654d} 
+\index{pid\_dq\_st@{pid\_dq\_st}!front@{front}}
+\index{front@{front}!pid\_dq\_st@{pid\_dq\_st}}
+\doxysubsubsection{\texorpdfstring{front}{front}}
+{\footnotesize\ttfamily pid\+\_\+dq\+\_\+st\+::front}
+
+Pointer to the front node of the deque. \Hypertarget{structpid__dq__st_a076e729e730061561f1b212f9c6480fc}\label{structpid__dq__st_a076e729e730061561f1b212f9c6480fc} 
+\index{pid\_dq\_st@{pid\_dq\_st}!num\_elements@{num\_elements}}
+\index{num\_elements@{num\_elements}!pid\_dq\_st@{pid\_dq\_st}}
+\doxysubsubsection{\texorpdfstring{num\_elements}{num\_elements}}
+{\footnotesize\ttfamily pid\+\_\+dq\+\_\+st\+::num\+\_\+elements}
+
+Number of elements currently in the deque. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pennkernel/pid\+\_\+deque.\+h\end{DoxyCompactItemize}

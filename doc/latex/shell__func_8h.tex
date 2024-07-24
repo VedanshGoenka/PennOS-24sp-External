@@ -1,0 +1,287 @@
+\doxysection{src/shell/shell\+\_\+func.h File Reference}
+\hypertarget{shell__func_8h}{}\label{shell__func_8h}\index{src/shell/shell\_func.h@{src/shell/shell\_func.h}}
+
+
+Function declarations for shell commands.  
+
+
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+{\ttfamily \#include $<$logging.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys\+\_\+call.\+h$>$}\newline
+{\ttfamily \#include "{}../parser/parser.\+h"{}}\newline
+{\ttfamily \#include "{}../pennfat/u\+\_\+pennfat.\+h"{}}\newline
+{\ttfamily \#include "{}../pennfat/k\+\_\+routines.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{shell__func_8h_a6821bafc3c88dfb2e433a095df9940c6}\label{shell__func_8h_a6821bafc3c88dfb2e433a095df9940c6} 
+\#define {\bfseries BUF\+\_\+\+SIZE}~65536
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a0c190c5db53ba8d6a773610c628f7ade}{cat}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em The ususal {\ttfamily cat} program. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_ab19e025c91e5378c0a5aeeaeb4431f6e}{sleep\+\_\+travis}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Sleep for {\ttfamily n} seconds. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a9afe3108d99ddd2ba581cc7ebbf2a8b8}{busy}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Busy wait indefinitely. It can only be interrupted via signals. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_afb7e6ef3589544d60d392c450dd1e5af}{echo}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Echo back an input string. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a505f3b315d7a75325e855567e7fcd07c}{ls}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Lists all files in the working directory. For extra credit, it should support relative and absolute file paths. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a8cd9eba4290506b4c1c3887ff5ddaccd}{touch}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em For each file, create an empty file if it doesn\textquotesingle{}t exist, else update its timestamp. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a8c31963de92d6dd77eaee0de52c8d129}{mv}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Rename a file. If the {\ttfamily dst\+\_\+file} file already exists, overwrite it. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a49b83228de5e6206ae67342010e3e4d5}{cp}} (void \texorpdfstring{$\ast$}{*}arg)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_abe142d1213d8770742c6b15239eb17f6}{rm}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Remove a list of files. Treat each file in the list as a separate transaction. (i.\+e. if removing file1 fails, still attempt to remove file2, file3, etc.) \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_acb477aeae79bbfe8e011e676beb14b59}{chmod}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Change permissions of a file. There\textquotesingle{}s no need to error if a permission being added already exists, or if a permission being removed is already not granted. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_aca3df72c3570cfcc00bda4e0c174aaf5}{ps}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em List all processes on Penn\+OS, displaying PID, PPID, priority, status, and command name. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_adba8bbdef59ace7972b954c84f913222}{shell\+\_\+kill}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Sends a specified signal to a list of processes. If a signal name is not specified, default to "{}term"{}. Valid signals are -\/term, -\/stop, and -\/cont. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a18295cb2babd6f9eb7b7a803c263dc8e}{nice\+\_\+travis}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Spawn a new process for {\ttfamily command} and set its priority to {\ttfamily priority}. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_afb6814d0815a8ae7cb660fc650a8d9b9}{man}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Adjust the priority level of an existing process. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_ae03fa263a3c005f17e62ec9c6cadaaeb}{bg}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Resumes the most recently stopped job in the background, or the job specified by job\+\_\+id. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a46449f0c9629d9db463b9e52c7dab346}{fg}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Brings the most recently stopped or background job to the foreground, or the job specified by job\+\_\+id. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_a922be9cb889a058b36f77dc8baacea3a}{jobs}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Lists all jobs. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell__func_8h_aad0e34f6faccea9bf13355c9d707064f}{logout}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Exits the shell and shutsdown Penn\+OS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Function declarations for shell commands. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{shell__func_8h_ae03fa263a3c005f17e62ec9c6cadaaeb}\label{shell__func_8h_ae03fa263a3c005f17e62ec9c6cadaaeb} 
+\index{shell\_func.h@{shell\_func.h}!bg@{bg}}
+\index{bg@{bg}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{bg()}{bg()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} bg (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Resumes the most recently stopped job in the background, or the job specified by job\+\_\+id. 
+
+Example Usage\+: bg Example Usage\+: bg 2 (job\+\_\+id is 2) \Hypertarget{shell__func_8h_a9afe3108d99ddd2ba581cc7ebbf2a8b8}\label{shell__func_8h_a9afe3108d99ddd2ba581cc7ebbf2a8b8} 
+\index{shell\_func.h@{shell\_func.h}!busy@{busy}}
+\index{busy@{busy}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{busy()}{busy()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} busy (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Busy wait indefinitely. It can only be interrupted via signals. 
+
+Example Usage\+: busy \Hypertarget{shell__func_8h_a0c190c5db53ba8d6a773610c628f7ade}\label{shell__func_8h_a0c190c5db53ba8d6a773610c628f7ade} 
+\index{shell\_func.h@{shell\_func.h}!cat@{cat}}
+\index{cat@{cat}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{cat()}{cat()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} cat (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+The ususal {\ttfamily cat} program. 
+
+If {\ttfamily files} arg is provided, concatenate these files and print to stdout If {\ttfamily files} arg is {\itshape not} provided, read from stdin and print back to stdout
+
+Example Usage\+: cat f1 f2 (concatenates f1 and f2 and print to stdout) Example Usage\+: cat f1 f2 \texorpdfstring{$<$}{<} f3 (concatenates f1 and f2 and prints to stdout, ignores f3) Example Usage\+: cat \texorpdfstring{$<$}{<} f3 (concatenates f3, prints to stdout) \Hypertarget{shell__func_8h_acb477aeae79bbfe8e011e676beb14b59}\label{shell__func_8h_acb477aeae79bbfe8e011e676beb14b59} 
+\index{shell\_func.h@{shell\_func.h}!chmod@{chmod}}
+\index{chmod@{chmod}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{chmod()}{chmod()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} chmod (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Change permissions of a file. There\textquotesingle{}s no need to error if a permission being added already exists, or if a permission being removed is already not granted. 
+
+Print appropriate error message if\+:
+\begin{DoxyItemize}
+\item {\ttfamily file} is not a file that exists
+\item {\ttfamily perms} is invalid
+\end{DoxyItemize}
+
+Example Usage\+: chmod +x file (adds executable permission to file) Example Usage\+: chmod +rw file (adds read + write permissions to file) Example Usage\+: chmod -\/wx file (removes write + executable permissions from file) \Hypertarget{shell__func_8h_a49b83228de5e6206ae67342010e3e4d5}\label{shell__func_8h_a49b83228de5e6206ae67342010e3e4d5} 
+\index{shell\_func.h@{shell\_func.h}!cp@{cp}}
+\index{cp@{cp}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{cp()}{cp()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} cp (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+Copy a file. If the {\ttfamily dst\+\_\+file} file already exists, overwrite it.
+
+Print appropriate error message if\+:
+\begin{DoxyItemize}
+\item {\ttfamily src\+\_\+file} is not a file that exists
+\item {\ttfamily src\+\_\+file} does not have read permissions
+\item {\ttfamily dst\+\_\+file} file already exists but does not have write permissions
+\end{DoxyItemize}
+
+Example Usage\+: cp src\+\_\+file dst\+\_\+file \Hypertarget{shell__func_8h_afb7e6ef3589544d60d392c450dd1e5af}\label{shell__func_8h_afb7e6ef3589544d60d392c450dd1e5af} 
+\index{shell\_func.h@{shell\_func.h}!echo@{echo}}
+\index{echo@{echo}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{echo()}{echo()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} echo (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Echo back an input string. 
+
+Example Usage\+: echo Hello World \Hypertarget{shell__func_8h_a46449f0c9629d9db463b9e52c7dab346}\label{shell__func_8h_a46449f0c9629d9db463b9e52c7dab346} 
+\index{shell\_func.h@{shell\_func.h}!fg@{fg}}
+\index{fg@{fg}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{fg()}{fg()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} fg (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Brings the most recently stopped or background job to the foreground, or the job specified by job\+\_\+id. 
+
+Example Usage\+: fg Example Usage\+: fg 2 (job\+\_\+id is 2) \Hypertarget{shell__func_8h_a922be9cb889a058b36f77dc8baacea3a}\label{shell__func_8h_a922be9cb889a058b36f77dc8baacea3a} 
+\index{shell\_func.h@{shell\_func.h}!jobs@{jobs}}
+\index{jobs@{jobs}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{jobs()}{jobs()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} jobs (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Lists all jobs. 
+
+Example Usage\+: jobs \Hypertarget{shell__func_8h_aad0e34f6faccea9bf13355c9d707064f}\label{shell__func_8h_aad0e34f6faccea9bf13355c9d707064f} 
+\index{shell\_func.h@{shell\_func.h}!logout@{logout}}
+\index{logout@{logout}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} logout (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Exits the shell and shutsdown Penn\+OS. 
+
+Example Usage\+: logout \Hypertarget{shell__func_8h_a505f3b315d7a75325e855567e7fcd07c}\label{shell__func_8h_a505f3b315d7a75325e855567e7fcd07c} 
+\index{shell\_func.h@{shell\_func.h}!ls@{ls}}
+\index{ls@{ls}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{ls()}{ls()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ls (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Lists all files in the working directory. For extra credit, it should support relative and absolute file paths. 
+
+Example Usage\+: ls (regular credit) Example Usage\+: ls ../../foo/./bar/sample (only for EC) \Hypertarget{shell__func_8h_afb6814d0815a8ae7cb660fc650a8d9b9}\label{shell__func_8h_afb6814d0815a8ae7cb660fc650a8d9b9} 
+\index{shell\_func.h@{shell\_func.h}!man@{man}}
+\index{man@{man}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{man()}{man()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} man (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Adjust the priority level of an existing process. 
+
+Example Usage\+: nice\+\_\+pid 0 123 (sets priority 0 to PID 123)
+
+Lists all available commands.
+
+Example Usage\+: man \Hypertarget{shell__func_8h_a8c31963de92d6dd77eaee0de52c8d129}\label{shell__func_8h_a8c31963de92d6dd77eaee0de52c8d129} 
+\index{shell\_func.h@{shell\_func.h}!mv@{mv}}
+\index{mv@{mv}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{mv()}{mv()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} mv (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Rename a file. If the {\ttfamily dst\+\_\+file} file already exists, overwrite it. 
+
+Print appropriate error message if\+:
+\begin{DoxyItemize}
+\item {\ttfamily src\+\_\+file} is not a file that exists
+\item {\ttfamily src\+\_\+file} does not have read permissions
+\item {\ttfamily dst\+\_\+file} file already exists but does not have write permissions
+\end{DoxyItemize}
+
+Example Usage\+: mv src\+\_\+file dst\+\_\+file \Hypertarget{shell__func_8h_a18295cb2babd6f9eb7b7a803c263dc8e}\label{shell__func_8h_a18295cb2babd6f9eb7b7a803c263dc8e} 
+\index{shell\_func.h@{shell\_func.h}!nice\_travis@{nice\_travis}}
+\index{nice\_travis@{nice\_travis}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{nice\_travis()}{nice\_travis()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} nice\+\_\+travis (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Spawn a new process for {\ttfamily command} and set its priority to {\ttfamily priority}. 
+
+
+\begin{DoxyEnumerate}
+\item Adjust the priority level of an existing process.
+\end{DoxyEnumerate}
+
+Example Usage\+: nice 2 cat f1 f2 f3 (spawns cat with priority 2) \Hypertarget{shell__func_8h_aca3df72c3570cfcc00bda4e0c174aaf5}\label{shell__func_8h_aca3df72c3570cfcc00bda4e0c174aaf5} 
+\index{shell\_func.h@{shell\_func.h}!ps@{ps}}
+\index{ps@{ps}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{ps()}{ps()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} ps (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+List all processes on Penn\+OS, displaying PID, PPID, priority, status, and command name. 
+
+Example Usage\+: ps \Hypertarget{shell__func_8h_abe142d1213d8770742c6b15239eb17f6}\label{shell__func_8h_abe142d1213d8770742c6b15239eb17f6} 
+\index{shell\_func.h@{shell\_func.h}!rm@{rm}}
+\index{rm@{rm}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{rm()}{rm()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} rm (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Remove a list of files. Treat each file in the list as a separate transaction. (i.\+e. if removing file1 fails, still attempt to remove file2, file3, etc.) 
+
+Print appropriate error message if\+:
+\begin{DoxyItemize}
+\item {\ttfamily file} is not a file that exists
+\end{DoxyItemize}
+
+Example Usage\+: rm f1 f2 f3 f4 f5 \Hypertarget{shell__func_8h_adba8bbdef59ace7972b954c84f913222}\label{shell__func_8h_adba8bbdef59ace7972b954c84f913222} 
+\index{shell\_func.h@{shell\_func.h}!shell\_kill@{shell\_kill}}
+\index{shell\_kill@{shell\_kill}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{shell\_kill()}{shell\_kill()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} shell\+\_\+kill (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Sends a specified signal to a list of processes. If a signal name is not specified, default to "{}term"{}. Valid signals are -\/term, -\/stop, and -\/cont. 
+
+Example Usage\+: kill 1 2 3 (sends term to processes 1, 2, and 3) Example Usage\+: kill -\/term 1 2 (sends term to processes 1 and 2) Example Usage\+: kill -\/stop 1 2 (sends stop to processes 1 and 2) Example Usage\+: kill -\/cont 1 (sends cont to process 1) \Hypertarget{shell__func_8h_ab19e025c91e5378c0a5aeeaeb4431f6e}\label{shell__func_8h_ab19e025c91e5378c0a5aeeaeb4431f6e} 
+\index{shell\_func.h@{shell\_func.h}!sleep\_travis@{sleep\_travis}}
+\index{sleep\_travis@{sleep\_travis}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{sleep\_travis()}{sleep\_travis()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} sleep\+\_\+travis (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+Sleep for {\ttfamily n} seconds. 
+
+Note that you\textquotesingle{}ll have to convert the number of seconds to the correct number of ticks.
+
+Example Usage\+: sleep 10 \Hypertarget{shell__func_8h_a8cd9eba4290506b4c1c3887ff5ddaccd}\label{shell__func_8h_a8cd9eba4290506b4c1c3887ff5ddaccd} 
+\index{shell\_func.h@{shell\_func.h}!touch@{touch}}
+\index{touch@{touch}!shell\_func.h@{shell\_func.h}}
+\doxysubsubsection{\texorpdfstring{touch()}{touch()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} touch (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+
+
+For each file, create an empty file if it doesn\textquotesingle{}t exist, else update its timestamp. 
+
+Example Usage\+: touch f1 f2 f3 f4 f5 

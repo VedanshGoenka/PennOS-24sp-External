@@ -1,0 +1,48 @@
+\doxysection{logging.\+h}
+\hypertarget{logging_8h_source}{}\label{logging_8h_source}\index{src/logging.h@{src/logging.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_LOGGING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_LOGGING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LOG\_FILE\_PATH\ "{}system\_log.txt"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ log\_init\_logging(\textcolor{keywordtype}{char}*\ log\_file\_path);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ log\_close\_logging();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ log\_event(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ log\_schedule\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ queue);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ log\_create\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ log\_process\_exit(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ log\_process\_signal(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ log\_zombie\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ log\_orphan\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ log\_wait\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ log\_adjust\_nice(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ old\_nice,\ \textcolor{keywordtype}{int}\ new\_nice,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ log\_blocked\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ log\_unblocked\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ log\_stopped\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ log\_continue\_process(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ process\_name);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_LOGGING\_H}}
+
+\end{DoxyCode}

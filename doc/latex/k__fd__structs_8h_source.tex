@@ -1,0 +1,32 @@
+\doxysection{k\+\_\+fd\+\_\+structs.\+h}
+\hypertarget{k__fd__structs_8h_source}{}\label{k__fd__structs_8h_source}\index{src/pennfat/k\_fd\_structs.h@{src/pennfat/k\_fd\_structs.h}}
+\mbox{\hyperlink{k__fd__structs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ K\_FD\_STRUCTS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ K\_FD\_STRUCTS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{k__fs__structs_8h}{k\_fs\_structs.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MAX\_FD\ 1024}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a8d17b4f5bc28a7102c467492b8f26b2e}{F\_WRITE}}\ =\ 0,\ \ }
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a327988a43a2cd3bbf68e7241964b331d}{F\_READ}}\ =\ 1,\ \ \ }
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a0998f5aef4b98808df7181445c4b34d7}{F\_APPEND}}\ =\ 2\ \ }
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{FileMode}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{char}\ name[32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ uint16\_t\ \mbox{\hyperlink{struct_k_file_descriptor_a10eacf0bdcb9e87eefa5de31ab813e9f}{first\_block\_index}};\ \ }
+\DoxyCodeLine{00031\ \ \ uint32\_t\ \mbox{\hyperlink{struct_k_file_descriptor_a5177a24f3c8c90a2edca7ce9691369f1}{offset}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{FileMode}}\ \mbox{\hyperlink{struct_k_file_descriptor_aa1b426f1444751a52a331735381f86f9}{mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ uint8\_t\ \mbox{\hyperlink{struct_k_file_descriptor_a4549d6df7d641878894820700bcefa18}{ref\_count}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{struct_k_file_descriptor}{KFileDescriptor}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ K\_FD\_STRUCTS\_H}}
+
+\end{DoxyCode}

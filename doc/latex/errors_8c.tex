@@ -1,0 +1,56 @@
+\doxysection{src/errors.c File Reference}
+\hypertarget{errors_8c}{}\label{errors_8c}\index{src/errors.c@{src/errors.c}}
+
+
+Error handling functions.  
+
+
+{\ttfamily \#include "{}errors.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{errors_8c_a8cce4b083a42f399db36d3ce534db875}{get\+\_\+error\+\_\+description}} (int error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Returns a description of the error code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{errors_8c_aeb115638782cd836d53c436ab24ec5e7}{log\+\_\+error}} (int error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Logs an error message to stderr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Error handling functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{errors_8c_a8cce4b083a42f399db36d3ce534db875}\label{errors_8c_a8cce4b083a42f399db36d3ce534db875} 
+\index{errors.c@{errors.c}!get\_error\_description@{get\_error\_description}}
+\index{get\_error\_description@{get\_error\_description}!errors.c@{errors.c}}
+\doxysubsubsection{\texorpdfstring{get\_error\_description()}{get\_error\_description()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} get\+\_\+error\+\_\+description (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Returns a description of the error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+code} & The error code to describe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A description of the error code. 
+\end{DoxyReturn}
+\Hypertarget{errors_8c_aeb115638782cd836d53c436ab24ec5e7}\label{errors_8c_aeb115638782cd836d53c436ab24ec5e7} 
+\index{errors.c@{errors.c}!log\_error@{log\_error}}
+\index{log\_error@{log\_error}!errors.c@{errors.c}}
+\doxysubsubsection{\texorpdfstring{log\_error()}{log\_error()}}
+{\footnotesize\ttfamily void log\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Logs an error message to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+code} & The error code to log. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,67 @@
+\doxysection{parser.\+h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}\index{parser/parser.h@{parser/parser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Penn-\/Shell\ Parser}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ hanbangw,\ 21fa\ \ \ \ */}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Here\ defines\ all\ possible\ parser\ errors\ */}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ parser\ encountered\ an\ unexpected\ file\ input\ token\ '<'}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ UNEXPECTED\_FILE\_INPUT\ 1}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ parser\ encountered\ an\ unexpected\ file\ output\ token\ '>'}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ UNEXPECTED\_FILE\_OUTPUT\ 2}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ parser\ encountered\ an\ unexpected\ pipeline\ token\ '|'}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ UNEXPECTED\_PIPELINE\ 3}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ parser\ encountered\ an\ unexpected\ ampersand\ token\ '\&'}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ UNEXPECTED\_AMPERSAND\ 4}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ parser\ didn't\ find\ input\ filename\ following\ '<'}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ EXPECT\_INPUT\_FILENAME\ 5}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ parser\ didn't\ find\ output\ filename\ following\ '>'\ or\ '>>'}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ EXPECT\_OUTPUT\_FILENAME\ 6}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ parser\ didn't\ find\ any\ commands\ or\ arguments\ where\ it\ expects\ one}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ EXPECT\_COMMANDS\ 7}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparsed__command}{parsed\_command}}\ \{}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ indicates\ the\ command\ shall\ be\ executed\ in\ background}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ (ends\ with\ an\ ampersand\ '\&')}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ is\_background;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ indicates\ if\ the\ stdout\_file\ shall\ be\ opened\ in\ append\ mode}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ ignore\ this\ value\ when\ stdout\_file\ is\ NULL}}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{bool}\ is\_file\_append;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ filename\ for\ redirecting\ input\ from}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ stdin\_file;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ filename\ for\ redirecting\ output\ to}}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ stdout\_file;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ number\ of\ commands\ (pipeline\ stages)}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{size\_t}\ num\_commands;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ an\ array\ to\ a\ list\ of\ arguments}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ size\ of\ \`{}commands`\ is\ \`{}num\_commands`}}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{char}**\ commands[];}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{int}\ parse\_command(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmd\_line,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structparsed__command}{parsed\_command}}**\ result);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{/*\ This\ is\ a\ debugging\ function\ used\ for\ outputting\ a\ parsed\ command\ line.\ */}}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ print\_parsed\_command(FILE*\ output,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structparsed__command}{parsed\_command}}*\ cmd);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ a\ debugging\ function\ for\ printing\ out\ what\ error\ was\ encountered\ */}}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ print\_parser\_errcode(FILE*\ output,\ \textcolor{keywordtype}{int}\ err\_code);}
+
+\end{DoxyCode}

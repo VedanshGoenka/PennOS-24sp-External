@@ -1,0 +1,496 @@
+\doxysection{src/kernel.c File Reference}
+\hypertarget{kernel_8c}{}\label{kernel_8c}\index{src/kernel.c@{src/kernel.c}}
+
+
+Implementation of the kernel functions.  
+
+
+{\ttfamily \#include "{}kernel.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{kernel_8c_a258e3b580e688a0cf46e4258525aeaf1}\label{kernel_8c_a258e3b580e688a0cf46e4258525aeaf1} 
+void {\bfseries sigint\+\_\+handler} (int sig)
+\item 
+\Hypertarget{kernel_8c_a8fe248fef022d7900670f0446c936356}\label{kernel_8c_a8fe248fef022d7900670f0446c936356} 
+void {\bfseries sigstp\+\_\+handler} (int sig)
+\item 
+\Hypertarget{kernel_8c_a7df47e37fd55c553b8fd39cf996d786c}\label{kernel_8c_a7df47e37fd55c553b8fd39cf996d786c} 
+void {\bfseries setup\+\_\+signal\+\_\+handlers} ()
+\item 
+pid\+\_\+t \mbox{\hyperlink{kernel_8c_a1cd910ff61e59f6579e417cba3f260c8}{k\+\_\+get\+\_\+pid}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the process ID of the current process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a97cc19a1bfaff73bb8c1c2f3c1c91ff0}{k\+\_\+get\+\_\+f0}} ()
+\begin{DoxyCompactList}\small\item\em Get the first file descriptor of the current process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_aa4c74ba6caf5283e666b6c7c8649a57d}{k\+\_\+get\+\_\+f1}} ()
+\begin{DoxyCompactList}\small\item\em Get the second file descriptor of the current process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a6fab6f4235cc92665769509dcd3c4b95}{k\+\_\+get\+\_\+num\+\_\+args}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of arguments of the current process. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{kernel_8c_ab55752924818db7a90927ba76bcceb9e}{k\+\_\+proc\+\_\+create}} (void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}func)(void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, int fd0, int fd1, int is\+\_\+foreground, int num\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Create a process and return its PID. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a3dc32c96a3556ce3d6c140704cd3db61}\label{kernel_8c_a3dc32c96a3556ce3d6c140704cd3db61} 
+void {\bfseries k\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize kernel resources and setups. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a9c9732a9775e27b7b99acb159e4c9fb2}\label{kernel_8c_a9c9732a9775e27b7b99acb159e4c9fb2} 
+void {\bfseries scheduler\+\_\+tick} ()
+\begin{DoxyCompactList}\small\item\em Perform a scheduling tick. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{kernel_8c_ac8ec2f005b6d328750498817485559ba}{choose\+\_\+next\+\_\+process}} ()
+\begin{DoxyCompactList}\small\item\em Choose the next process to run based on priority. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{kernel_8c_a9eb349f23e4db8ecb7e489f1bd0708b7}{k\+\_\+get\+\_\+args}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve arguments for the current process. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{kernel_8c_a0e22081dea7cd8a31eeef3bb6046d3fc}{k\+\_\+get\+\_\+fd\+\_\+table}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the file descriptor table for the current process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_aaccec703be6bf9bda60b44ffa8792949}{k\+\_\+bg}} (int pid)
+\begin{DoxyCompactList}\small\item\em Place a process in the background. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a61575f5362e4a8bc9130486d32efe059}{k\+\_\+fg}} (int pid)
+\begin{DoxyCompactList}\small\item\em Bring a process to the foreground. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_a139360bcc62063856fdfeab1ad2fa6bb}{k\+\_\+bring\+\_\+to\+\_\+front}} (int pid)
+\begin{DoxyCompactList}\small\item\em Bring a process to the foreground. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a8c29781c4d8d251f3762feb9534edc0a}\label{kernel_8c_a8c29781c4d8d251f3762feb9534edc0a} 
+int {\bfseries continue\+\_\+process} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}stop\+\_\+pcb)
+\item 
+\Hypertarget{kernel_8c_a180311ed42547dfc3723acad4b12a8d8}\label{kernel_8c_a180311ed42547dfc3723acad4b12a8d8} 
+int {\bfseries stop\+\_\+process} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}stop\+\_\+pcb)
+\item 
+\Hypertarget{kernel_8c_a8b8018c995177ff643787ef42cae6c22}\label{kernel_8c_a8b8018c995177ff643787ef42cae6c22} 
+void {\bfseries unblock\+\_\+processes} ()
+\begin{DoxyCompactList}\small\item\em Unblock processes that are ready to run. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a0ac18a1c28a8695df651f6d4ba5af5b6}\label{kernel_8c_a0ac18a1c28a8695df651f6d4ba5af5b6} 
+void {\bfseries setup\+\_\+priority\+\_\+queues} ()
+\begin{DoxyCompactList}\small\item\em Setup priority queues for process scheduling. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a8f28a83ff5024dd9062be8e7dc7e9272}\label{kernel_8c_a8f28a83ff5024dd9062be8e7dc7e9272} 
+void {\bfseries setup\+\_\+alt\+\_\+queues} ()
+\begin{DoxyCompactList}\small\item\em Setup alternative queues for process management. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_afebf6866a20d44535fa2220ffb9ed8bd}{k\+\_\+signal}} (pid\+\_\+t pid, enum signal\+\_\+type signal, void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Send a signal to a process. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{kernel_8c_a0aaa5852572aec987679ad41d5339c93}{find\+\_\+pcb\+\_\+by\+\_\+pid}} (pid\+\_\+t pid)
+\begin{DoxyCompactList}\small\item\em Find a process control block by its process ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_a617268715347c8d24e2e0d0b2d5e562b}{cleanup\+\_\+pcb\+\_\+resources}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structpcb}{pcb}})
+\begin{DoxyCompactList}\small\item\em Clean up resources associated with a process control block. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_aaaca9e1579113a779b8fddb0009daa94}\label{kernel_8c_aaaca9e1579113a779b8fddb0009daa94} 
+void {\bfseries print\+Sizes} ()
+\item 
+int \mbox{\hyperlink{kernel_8c_afa2a4f3741b726a11fa22b401dd77286}{k\+\_\+nice}} (pid\+\_\+t pid, int new\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Adjust the priority (nice value) of a process. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a17661c3b523da8748836481bf5269a26}\label{kernel_8c_a17661c3b523da8748836481bf5269a26} 
+void {\bfseries trigger\+\_\+scheduler} ()
+\item 
+void \mbox{\hyperlink{kernel_8c_aa06b7fc3922bc7ecb43ba0d9a011019a}{k\+\_\+sleep}} (unsigned int delay\+\_\+ticks)
+\begin{DoxyCompactList}\small\item\em Put the current process to sleep for a specified number of ticks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a408b742d51fc86be5274adf3187db4ab}{block\+\_\+pcb}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structpcb}{pcb}})
+\begin{DoxyCompactList}\small\item\em Block a process control block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a21c28be25ae77aa342da996463e5012e}{zombify\+\_\+by\+\_\+pcb}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structpcb}{pcb}})
+\begin{DoxyCompactList}\small\item\em Zombify a process by its control block. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_acb2ab79eaafd39caba9e3be8f9cf696d}\label{kernel_8c_acb2ab79eaafd39caba9e3be8f9cf696d} 
+void {\bfseries k\+\_\+exit} (void)
+\begin{DoxyCompactList}\small\item\em Exit the current process. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_ad70c78de80adbcbef0385a417352b08b}\label{kernel_8c_ad70c78de80adbcbef0385a417352b08b} 
+void {\bfseries display\+\_\+child\+\_\+pids} ()
+\item 
+\Hypertarget{kernel_8c_aa161259dc419163df4d0ba57e7353502}\label{kernel_8c_aa161259dc419163df4d0ba57e7353502} 
+void {\bfseries display\+\_\+all\+\_\+pcb\+\_\+pids} ()
+\begin{DoxyCompactList}\small\item\em Display all process IDs from all PCB deques. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_8c_ab9ccaa02e5f843e78e30fb03ffcbb2a7}{display\+\_\+pcb\+\_\+pids}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque)
+\begin{DoxyCompactList}\small\item\em Display process IDs from a PCB deque. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_aba5fe7ff0f4ddd1226894d20dba719ea}\label{kernel_8c_aba5fe7ff0f4ddd1226894d20dba719ea} 
+void {\bfseries terminate\+\_\+pcb} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structpcb}{pcb}})
+\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{kernel_8c_a86e1204af275e7775dacb32c9b629c5e}{k\+\_\+get\+\_\+all\+\_\+process\+\_\+pcbs}} (int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Retrieve all process control blocks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_8c_a42a22bb4af1f88477c659e27172de165}{k\+\_\+waitpid}} (pid\+\_\+t pid, int \texorpdfstring{$\ast$}{*}wstatus, int nohang)
+\begin{DoxyCompactList}\small\item\em Waits for a specific process to change state. \end{DoxyCompactList}\item 
+\Hypertarget{kernel_8c_a922c2fe36f4adbd13d13bf80d7168d44}\label{kernel_8c_a922c2fe36f4adbd13d13bf80d7168d44} 
+void {\bfseries alarm\+\_\+handler} (int sig)
+\item 
+int \mbox{\hyperlink{kernel_8c_a15ee82bf390bfde76b867d5cc1f85e56}{schedule\+\_\+process}} ()
+\begin{DoxyCompactList}\small\item\em Unblock a process control block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{kernel_8c_acf0d3664d00f9b2e75858aff29634a42}\label{kernel_8c_acf0d3664d00f9b2e75858aff29634a42} 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries current\+\_\+pcb} = NULL
+\item 
+\Hypertarget{kernel_8c_af81dfe52743b2509be6383280c927ffc}\label{kernel_8c_af81dfe52743b2509be6383280c927ffc} 
+int {\bfseries num\+\_\+pcbs} = 0
+\item 
+\Hypertarget{kernel_8c_a8d0065299615176169ceac2c65f38365}\label{kernel_8c_a8d0065299615176169ceac2c65f38365} 
+int {\bfseries ticks} = 1
+\item 
+\Hypertarget{kernel_8c_a27d65f6d4a5e620d6bbd45078b03b875}\label{kernel_8c_a27d65f6d4a5e620d6bbd45078b03b875} 
+int {\bfseries cycle\+\_\+ticks} = 0
+\item 
+\Hypertarget{kernel_8c_abe67016cf1604b2e4597955e4e042c9a}\label{kernel_8c_abe67016cf1604b2e4597955e4e042c9a} 
+int {\bfseries reactiv} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the kernel functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{kernel_8c_a408b742d51fc86be5274adf3187db4ab}\label{kernel_8c_a408b742d51fc86be5274adf3187db4ab} 
+\index{kernel.c@{kernel.c}!block\_pcb@{block\_pcb}}
+\index{block\_pcb@{block\_pcb}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{block\_pcb()}{block\_pcb()}}
+{\footnotesize\ttfamily int block\+\_\+pcb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Block a process control block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the process control block to block. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_ac8ec2f005b6d328750498817485559ba}\label{kernel_8c_ac8ec2f005b6d328750498817485559ba} 
+\index{kernel.c@{kernel.c}!choose\_next\_process@{choose\_next\_process}}
+\index{choose\_next\_process@{choose\_next\_process}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{choose\_next\_process()}{choose\_next\_process()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*} choose\+\_\+next\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Choose the next process to run based on priority. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the chosen process control block. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a617268715347c8d24e2e0d0b2d5e562b}\label{kernel_8c_a617268715347c8d24e2e0d0b2d5e562b} 
+\index{kernel.c@{kernel.c}!cleanup\_pcb\_resources@{cleanup\_pcb\_resources}}
+\index{cleanup\_pcb\_resources@{cleanup\_pcb\_resources}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{cleanup\_pcb\_resources()}{cleanup\_pcb\_resources()}}
+{\footnotesize\ttfamily void cleanup\+\_\+pcb\+\_\+resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Clean up resources associated with a process control block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the process control block. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{kernel_8c_ab9ccaa02e5f843e78e30fb03ffcbb2a7}\label{kernel_8c_ab9ccaa02e5f843e78e30fb03ffcbb2a7} 
+\index{kernel.c@{kernel.c}!display\_pcb\_pids@{display\_pcb\_pids}}
+\index{display\_pcb\_pids@{display\_pcb\_pids}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{display\_pcb\_pids()}{display\_pcb\_pids()}}
+{\footnotesize\ttfamily void display\+\_\+pcb\+\_\+pids (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque }\end{DoxyParamCaption})}
+
+
+
+Display process IDs from a PCB deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & Pointer to the deque. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{kernel_8c_a0aaa5852572aec987679ad41d5339c93}\label{kernel_8c_a0aaa5852572aec987679ad41d5339c93} 
+\index{kernel.c@{kernel.c}!find\_pcb\_by\_pid@{find\_pcb\_by\_pid}}
+\index{find\_pcb\_by\_pid@{find\_pcb\_by\_pid}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{find\_pcb\_by\_pid()}{find\_pcb\_by\_pid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*} find\+\_\+pcb\+\_\+by\+\_\+pid (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+
+
+Find a process control block by its process ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the process control block, or NULL if not found. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_aaccec703be6bf9bda60b44ffa8792949}\label{kernel_8c_aaccec703be6bf9bda60b44ffa8792949} 
+\index{kernel.c@{kernel.c}!k\_bg@{k\_bg}}
+\index{k\_bg@{k\_bg}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_bg()}{k\_bg()}}
+{\footnotesize\ttfamily int k\+\_\+bg (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Place a process in the background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to background. If -\/1, use the most recently stopped process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a139360bcc62063856fdfeab1ad2fa6bb}\label{kernel_8c_a139360bcc62063856fdfeab1ad2fa6bb} 
+\index{kernel.c@{kernel.c}!k\_bring\_to\_front@{k\_bring\_to\_front}}
+\index{k\_bring\_to\_front@{k\_bring\_to\_front}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_bring\_to\_front()}{k\_bring\_to\_front()}}
+{\footnotesize\ttfamily void k\+\_\+bring\+\_\+to\+\_\+front (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Bring a process to the foreground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to bring to the foreground. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{kernel_8c_a61575f5362e4a8bc9130486d32efe059}\label{kernel_8c_a61575f5362e4a8bc9130486d32efe059} 
+\index{kernel.c@{kernel.c}!k\_fg@{k\_fg}}
+\index{k\_fg@{k\_fg}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_fg()}{k\_fg()}}
+{\footnotesize\ttfamily int k\+\_\+fg (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Bring a process to the foreground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to foreground. If -\/1, use the most recently stopped process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a86e1204af275e7775dacb32c9b629c5e}\label{kernel_8c_a86e1204af275e7775dacb32c9b629c5e} 
+\index{kernel.c@{kernel.c}!k\_get\_all\_process\_pcbs@{k\_get\_all\_process\_pcbs}}
+\index{k\_get\_all\_process\_pcbs@{k\_get\_all\_process\_pcbs}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_all\_process\_pcbs()}{k\_get\_all\_process\_pcbs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} k\+\_\+get\+\_\+all\+\_\+process\+\_\+pcbs (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Retrieve all process control blocks. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to an array of all PCBs. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a9eb349f23e4db8ecb7e489f1bd0708b7}\label{kernel_8c_a9eb349f23e4db8ecb7e489f1bd0708b7} 
+\index{kernel.c@{kernel.c}!k\_get\_args@{k\_get\_args}}
+\index{k\_get\_args@{k\_get\_args}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_args()}{k\_get\_args()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} k\+\_\+get\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve arguments for the current process. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to arguments array. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a97cc19a1bfaff73bb8c1c2f3c1c91ff0}\label{kernel_8c_a97cc19a1bfaff73bb8c1c2f3c1c91ff0} 
+\index{kernel.c@{kernel.c}!k\_get\_f0@{k\_get\_f0}}
+\index{k\_get\_f0@{k\_get\_f0}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_f0()}{k\_get\_f0()}}
+{\footnotesize\ttfamily int k\+\_\+get\+\_\+f0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the first file descriptor of the current process. 
+
+\begin{DoxyReturn}{Returns}
+First file descriptor. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_aa4c74ba6caf5283e666b6c7c8649a57d}\label{kernel_8c_aa4c74ba6caf5283e666b6c7c8649a57d} 
+\index{kernel.c@{kernel.c}!k\_get\_f1@{k\_get\_f1}}
+\index{k\_get\_f1@{k\_get\_f1}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_f1()}{k\_get\_f1()}}
+{\footnotesize\ttfamily int k\+\_\+get\+\_\+f1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the second file descriptor of the current process. 
+
+\begin{DoxyReturn}{Returns}
+Second file descriptor. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a0e22081dea7cd8a31eeef3bb6046d3fc}\label{kernel_8c_a0e22081dea7cd8a31eeef3bb6046d3fc} 
+\index{kernel.c@{kernel.c}!k\_get\_fd\_table@{k\_get\_fd\_table}}
+\index{k\_get\_fd\_table@{k\_get\_fd\_table}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_fd\_table()}{k\_get\_fd\_table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*} k\+\_\+get\+\_\+fd\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the file descriptor table for the current process. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the file descriptor table. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a6fab6f4235cc92665769509dcd3c4b95}\label{kernel_8c_a6fab6f4235cc92665769509dcd3c4b95} 
+\index{kernel.c@{kernel.c}!k\_get\_num\_args@{k\_get\_num\_args}}
+\index{k\_get\_num\_args@{k\_get\_num\_args}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_num\_args()}{k\_get\_num\_args()}}
+{\footnotesize\ttfamily int k\+\_\+get\+\_\+num\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the number of arguments of the current process. 
+
+\begin{DoxyReturn}{Returns}
+Number of arguments. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a1cd910ff61e59f6579e417cba3f260c8}\label{kernel_8c_a1cd910ff61e59f6579e417cba3f260c8} 
+\index{kernel.c@{kernel.c}!k\_get\_pid@{k\_get\_pid}}
+\index{k\_get\_pid@{k\_get\_pid}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_get\_pid()}{k\_get\_pid()}}
+{\footnotesize\ttfamily pid\+\_\+t k\+\_\+get\+\_\+pid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the process ID of the current process. 
+
+\begin{DoxyReturn}{Returns}
+Process ID. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_afa2a4f3741b726a11fa22b401dd77286}\label{kernel_8c_afa2a4f3741b726a11fa22b401dd77286} 
+\index{kernel.c@{kernel.c}!k\_nice@{k\_nice}}
+\index{k\_nice@{k\_nice}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_nice()}{k\_nice()}}
+{\footnotesize\ttfamily int k\+\_\+nice (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Adjust the priority (nice value) of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to adjust. \\
+\hline
+{\em priority} & New priority value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_ab55752924818db7a90927ba76bcceb9e}\label{kernel_8c_ab55752924818db7a90927ba76bcceb9e} 
+\index{kernel.c@{kernel.c}!k\_proc\_create@{k\_proc\_create}}
+\index{k\_proc\_create@{k\_proc\_create}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_proc\_create()}{k\_proc\_create()}}
+{\footnotesize\ttfamily pid\+\_\+t k\+\_\+proc\+\_\+create (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{func,  }\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int}]{fd0,  }\item[{int}]{fd1,  }\item[{int}]{is\+\_\+foreground,  }\item[{int}]{num\+\_\+commands }\end{DoxyParamCaption})}
+
+
+
+Create a process and return its PID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the function to run in the new process. \\
+\hline
+{\em argv} & Arguments for the function. \\
+\hline
+{\em fd0} & File descriptor for stdin. \\
+\hline
+{\em fd1} & File descriptor for stdout. \\
+\hline
+{\em is\+\_\+foreground} & Flag to set process foreground status. \\
+\hline
+{\em num\+\_\+commands} & Number of commands to process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PID of the created process. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_afebf6866a20d44535fa2220ffb9ed8bd}\label{kernel_8c_afebf6866a20d44535fa2220ffb9ed8bd} 
+\index{kernel.c@{kernel.c}!k\_signal@{k\_signal}}
+\index{k\_signal@{k\_signal}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_signal()}{k\_signal()}}
+{\footnotesize\ttfamily int k\+\_\+signal (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{enum signal\+\_\+type}]{signal,  }\item[{void \texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+
+
+Send a signal to a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to signal. \\
+\hline
+{\em signal} & Type of signal. \\
+\hline
+{\em args} & Additional arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_aa06b7fc3922bc7ecb43ba0d9a011019a}\label{kernel_8c_aa06b7fc3922bc7ecb43ba0d9a011019a} 
+\index{kernel.c@{kernel.c}!k\_sleep@{k\_sleep}}
+\index{k\_sleep@{k\_sleep}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_sleep()}{k\_sleep()}}
+{\footnotesize\ttfamily void k\+\_\+sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{ticks }\end{DoxyParamCaption})}
+
+
+
+Put the current process to sleep for a specified number of ticks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticks} & Number of ticks to sleep. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{kernel_8c_a42a22bb4af1f88477c659e27172de165}\label{kernel_8c_a42a22bb4af1f88477c659e27172de165} 
+\index{kernel.c@{kernel.c}!k\_waitpid@{k\_waitpid}}
+\index{k\_waitpid@{k\_waitpid}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{k\_waitpid()}{k\_waitpid()}}
+{\footnotesize\ttfamily int k\+\_\+waitpid (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int \texorpdfstring{$\ast$}{*}}]{wstatus,  }\item[{int}]{nohang }\end{DoxyParamCaption})}
+
+
+
+Waits for a specific process to change state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to wait on. \\
+\hline
+{\em wstatus} & Pointer to store exit status. \\
+\hline
+{\em nohang} & If non-\/zero, return immediately if no child has exited. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Process ID of the changed process. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a15ee82bf390bfde76b867d5cc1f85e56}\label{kernel_8c_a15ee82bf390bfde76b867d5cc1f85e56} 
+\index{kernel.c@{kernel.c}!schedule\_process@{schedule\_process}}
+\index{schedule\_process@{schedule\_process}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{schedule\_process()}{schedule\_process()}}
+{\footnotesize\ttfamily int schedule\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unblock a process control block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the process control block to unblock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}
+\Hypertarget{kernel_8c_a21c28be25ae77aa342da996463e5012e}\label{kernel_8c_a21c28be25ae77aa342da996463e5012e} 
+\index{kernel.c@{kernel.c}!zombify\_by\_pcb@{zombify\_by\_pcb}}
+\index{zombify\_by\_pcb@{zombify\_by\_pcb}!kernel.c@{kernel.c}}
+\doxysubsubsection{\texorpdfstring{zombify\_by\_pcb()}{zombify\_by\_pcb()}}
+{\footnotesize\ttfamily int zombify\+\_\+by\+\_\+pcb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Zombify a process by its control block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the process control block to zombify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of the operation. 
+\end{DoxyReturn}

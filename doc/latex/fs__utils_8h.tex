@@ -1,0 +1,154 @@
+\doxysection{src/pennfat/fs\+\_\+utils.h File Reference}
+\hypertarget{fs__utils_8h}{}\label{fs__utils_8h}\index{src/pennfat/fs\_utils.h@{src/pennfat/fs\_utils.h}}
+
+
+Utility functions for file system operations.  
+
+
+{\ttfamily \#include "{}k\+\_\+routines.\+h"{}}\newline
+{\ttfamily \#include "{}k\+\_\+fd\+\_\+structs.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{fs__utils_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{fs__utils_8h_a6b20d41d6252e9871430c242cb1a56e7} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~65536
+\item 
+\Hypertarget{fs__utils_8h_a1ef13105d633398124107348801824ee}\label{fs__utils_8h_a1ef13105d633398124107348801824ee} 
+\#define {\bfseries FS\+\_\+\+PATH}~"{}./src/fs/"{}
+\item 
+\Hypertarget{fs__utils_8h_a198633229fb551a2d74b7e13dd9fa9dd}\label{fs__utils_8h_a198633229fb551a2d74b7e13dd9fa9dd} 
+\#define {\bfseries OS\+\_\+\+PATH}~"{}./src/os/"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{fs__utils_8h_a7967cc03a73317a234b8fa9eeb8dfbce}{create\+\_\+fs\+\_\+path}} (char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Creates a file system path based on the given file system name. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{fs__utils_8h_adcfb780d26e7048333af7d9d9b6d0bf7}{create\+\_\+os\+\_\+path}} (char \texorpdfstring{$\ast$}{*}os\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Creates an operating system path by concatenating the OS\+\_\+\+PATH and the given OS name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fs__utils_8h_a2a56ad7f0c9241c9a68961959cebf2e3}{mkfs}} (char \texorpdfstring{$\ast$}{*}fs\+\_\+name, int blocks\+\_\+in\+\_\+fat, int block\+\_\+size\+\_\+config)
+\begin{DoxyCompactList}\small\item\em Creates a Penn\+FAT filesystem in the file named fs\+\_\+name. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{fs__utils_8h_ab8da871e93145caa37c7d3c1761fa968}{calculate\+\_\+fs\+\_\+size}} (char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Calculates the size of the filesystem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fs__utils_8h_a7fcbb9d9f8927aa356a9081b4e6c3280}{mount}} (char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Mounts the filesystem by loading its FAT into memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fs__utils_8h_ac87c06145b272705cfac7529b90e8f25}{unmount}} (void)
+\begin{DoxyCompactList}\small\item\em Unmounts the currently mounted filesystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility functions for file system operations. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{fs__utils_8h_ab8da871e93145caa37c7d3c1761fa968}\label{fs__utils_8h_ab8da871e93145caa37c7d3c1761fa968} 
+\index{fs\_utils.h@{fs\_utils.h}!calculate\_fs\_size@{calculate\_fs\_size}}
+\index{calculate\_fs\_size@{calculate\_fs\_size}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_fs\_size()}{calculate\_fs\_size()}}
+{\footnotesize\ttfamily uint32\+\_\+t calculate\+\_\+fs\+\_\+size (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Calculates the size of the filesystem. 
+
+This function calculates the size of the specified filesystem file. It takes the name of the filesystem file as input and returns the size of the filesystem in bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & Name of the filesystem file to calculate the size of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the filesystem. 
+\end{DoxyReturn}
+\Hypertarget{fs__utils_8h_a7967cc03a73317a234b8fa9eeb8dfbce}\label{fs__utils_8h_a7967cc03a73317a234b8fa9eeb8dfbce} 
+\index{fs\_utils.h@{fs\_utils.h}!create\_fs\_path@{create\_fs\_path}}
+\index{create\_fs\_path@{create\_fs\_path}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{create\_fs\_path()}{create\_fs\_path()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} create\+\_\+fs\+\_\+path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Creates a file system path based on the given file system name. 
+
+This function takes a file system name as input and returns a dynamically allocated string representing the file system path. The returned string should be freed by the caller when it is no longer needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the file system. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dynamically allocated string representing the file system path. 
+\end{DoxyReturn}
+\Hypertarget{fs__utils_8h_adcfb780d26e7048333af7d9d9b6d0bf7}\label{fs__utils_8h_adcfb780d26e7048333af7d9d9b6d0bf7} 
+\index{fs\_utils.h@{fs\_utils.h}!create\_os\_path@{create\_os\_path}}
+\index{create\_os\_path@{create\_os\_path}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{create\_os\_path()}{create\_os\_path()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} create\+\_\+os\+\_\+path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{os\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Creates an operating system path by concatenating the OS\+\_\+\+PATH and the given OS name. 
+
+This function dynamically allocates memory for the resulting path and returns it. The caller is responsible for freeing the memory when it is no longer needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os\+\_\+name} & The name of the operating system. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dynamically allocated string representing the operating system path. 
+\end{DoxyReturn}
+\Hypertarget{fs__utils_8h_a2a56ad7f0c9241c9a68961959cebf2e3}\label{fs__utils_8h_a2a56ad7f0c9241c9a68961959cebf2e3} 
+\index{fs\_utils.h@{fs\_utils.h}!mkfs@{mkfs}}
+\index{mkfs@{mkfs}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{mkfs()}{mkfs()}}
+{\footnotesize\ttfamily void mkfs (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name,  }\item[{int}]{blocks\+\_\+in\+\_\+fat,  }\item[{int}]{block\+\_\+size\+\_\+config }\end{DoxyParamCaption})}
+
+
+
+Creates a Penn\+FAT filesystem in the file named fs\+\_\+name. 
+
+This function creates a Penn\+FAT filesystem in the specified file. It takes the name of the filesystem file, the number of blocks in the FAT region, and the configuration value for the first\+\_\+block\+\_\+index size as input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & Name of the filesystem file to create. \\
+\hline
+{\em blocks\+\_\+in\+\_\+fat} & Number of blocks in the FAT region. \\
+\hline
+{\em block\+\_\+size\+\_\+config} & Configuration value for first\+\_\+block\+\_\+index size. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{fs__utils_8h_a7fcbb9d9f8927aa356a9081b4e6c3280}\label{fs__utils_8h_a7fcbb9d9f8927aa356a9081b4e6c3280} 
+\index{fs\_utils.h@{fs\_utils.h}!mount@{mount}}
+\index{mount@{mount}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{mount()}{mount()}}
+{\footnotesize\ttfamily void mount (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Mounts the filesystem by loading its FAT into memory. 
+
+This function mounts the specified filesystem file by loading its FAT (File Allocation Table) into memory. It takes the name of the filesystem file as input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & Name of the filesystem file to mount. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{fs__utils_8h_ac87c06145b272705cfac7529b90e8f25}\label{fs__utils_8h_ac87c06145b272705cfac7529b90e8f25} 
+\index{fs\_utils.h@{fs\_utils.h}!unmount@{unmount}}
+\index{unmount@{unmount}!fs\_utils.h@{fs\_utils.h}}
+\doxysubsubsection{\texorpdfstring{unmount()}{unmount()}}
+{\footnotesize\ttfamily void unmount (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Unmounts the currently mounted filesystem. 
+
+This function unmounts the currently mounted filesystem by releasing the memory occupied by its FAT. 

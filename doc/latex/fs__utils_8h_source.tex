@@ -1,0 +1,31 @@
+\doxysection{fs\+\_\+utils.\+h}
+\hypertarget{fs__utils_8h_source}{}\label{fs__utils_8h_source}\index{src/pennfat/fs\_utils.h@{src/pennfat/fs\_utils.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FS\_UTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FS\_UTILS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}k\_routines.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{k__fd__structs_8h}{k\_fd\_structs.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZE\ 65536\ \ }\textcolor{comment}{//\ 64KB\ buffer}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FS\_PATH\ "{}./src/fs/"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ OS\_PATH\ "{}./src/os/"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{fs__utils_8c_a7967cc03a73317a234b8fa9eeb8dfbce}{create\_fs\_path}}(\textcolor{keywordtype}{char}\ *fs\_name);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{fs__utils_8c_adcfb780d26e7048333af7d9d9b6d0bf7}{create\_os\_path}}(\textcolor{keywordtype}{char}\ *os\_name);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fs__utils_8c_a2a56ad7f0c9241c9a68961959cebf2e3}{mkfs}}(\textcolor{keywordtype}{char}\ *fs\_name,\ \textcolor{keywordtype}{int}\ blocks\_in\_fat,\ \textcolor{keywordtype}{int}\ block\_size\_config);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00062\ uint32\_t\ \mbox{\hyperlink{fs__utils_8c_ab8da871e93145caa37c7d3c1761fa968}{calculate\_fs\_size}}(\textcolor{keywordtype}{char}\ *fs\_name);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fs__utils_8c_a7fcbb9d9f8927aa356a9081b4e6c3280}{mount}}(\textcolor{keywordtype}{char}\ *fs\_name);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fs__utils_8c_ac87c06145b272705cfac7529b90e8f25}{unmount}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FS\_UTILS\_H}}
+
+\end{DoxyCode}

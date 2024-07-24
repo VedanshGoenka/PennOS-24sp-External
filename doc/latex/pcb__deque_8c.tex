@@ -1,0 +1,294 @@
+\doxysection{src/pennkernel/pcb\+\_\+deque.c File Reference}
+\hypertarget{pcb__deque_8c}{}\label{pcb__deque_8c}\index{src/pennkernel/pcb\_deque.c@{src/pennkernel/pcb\_deque.c}}
+
+
+This file contains the implementation of the PCB deque.  
+
+
+{\ttfamily \#include "{}pcb\+\_\+deque.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pcb__deque_8c_ac1993d0a6e7f4d3490110ecc4c6cb4ed}{PCBDeque\+\_\+\+Size}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque)
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in the PCB deque. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pcb__deque_8c_aea97272dea2fd9be779d59b3f5d1567b}{PCBDeque\+\_\+\+Allocate}} (void)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a new PCB deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pcb__deque_8c_a07d328f9372db0444c427cafba578f0f}{PCBDeque\+\_\+\+Free}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque)
+\begin{DoxyCompactList}\small\item\em Frees a PCB deque and all its contained nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pcb__deque_8c_af3bcd6d85561a08e15165bf32b09815f}{PCBDeque\+\_\+\+Push\+\_\+\+Front}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} payload)
+\begin{DoxyCompactList}\small\item\em Inserts a new PCB at the front of the deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pcb__deque_8c_abf1b2f88d1b9a89e6e4035b0c29465da}{PCBDeque\+\_\+\+Push\+\_\+\+Back}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} payload)
+\begin{DoxyCompactList}\small\item\em Inserts a new PCB at the back of the deque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a205f508057df7e5c7ce62f2566ef24e9}{PCBDeque\+\_\+\+Peek\+\_\+\+Front}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Retrieves the PCB at the front of the deque without removing it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a23c9670406fe6689a4bc61cbe2039934}{PCBDeque\+\_\+\+Peek\+\_\+\+Back}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Retrieves the PCB at the back of the deque without removing it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_af0ad852c05eb1f4ce8e3c76242b21439}{PCBDeque\+\_\+\+Pop\+\_\+\+Front}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Removes and returns the PCB at the front of the deque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a8b6e3953bfad4ce7e02f731182dcb53f}{PCBDeque\+\_\+\+Pop\+\_\+\+Back}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Removes and returns the PCB at the back of the deque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a53aca899dac439c1071544f45229cabd}{PCBDeque\+\_\+\+Remove\+\_\+\+By\+\_\+\+PID}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, pid\+\_\+t pid, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Removes a PCB from the deque by its PID and returns the removed PCB. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pcb__deque_8c_a3776d4b3ccec3296b184eadb9a89f862}{PCBDeque\+\_\+\+Get\+\_\+\+All\+\_\+\+PCBs}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, size\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Retrieves all PCBs stored in the deque as an array of pointers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a102f24e36a983d79b94f472ae7879af1}{PCBDeque\+\_\+\+Find\+\_\+\+By\+\_\+\+PID}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, pid\+\_\+t pid, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Finds a PCB in the deque by its PID and returns the found PCB. \end{DoxyCompactList}\item 
+\Hypertarget{pcb__deque_8c_ab99eeb3222cdab191dee6fec34a06470}\label{pcb__deque_8c_ab99eeb3222cdab191dee6fec34a06470} 
+void {\bfseries copy\+\_\+pcb\+\_\+fields} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}dest, const \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}src)
+\item 
+bool \mbox{\hyperlink{pcb__deque_8c_a41d5bc01df798f1fdf172d39a4273d7e}{PCBDeque\+\_\+\+Update\+\_\+\+By\+\_\+\+PID}} (\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}deque, const \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} input\+\_\+pcb)
+\begin{DoxyCompactList}\small\item\em Updates a PCB in the deque by its PID with new data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of the PCB deque. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pcb__deque_8c_aea97272dea2fd9be779d59b3f5d1567b}\label{pcb__deque_8c_aea97272dea2fd9be779d59b3f5d1567b} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Allocate@{PCBDeque\_Allocate}}
+\index{PCBDeque\_Allocate@{PCBDeque\_Allocate}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Allocate()}{PCBDeque\_Allocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*} PCBDeque\+\_\+\+Allocate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Allocates and initializes a new PCB deque. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the allocated PCB deque, or NULL if allocation fails. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a102f24e36a983d79b94f472ae7879af1}\label{pcb__deque_8c_a102f24e36a983d79b94f472ae7879af1} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Find\_By\_PID@{PCBDeque\_Find\_By\_PID}}
+\index{PCBDeque\_Find\_By\_PID@{PCBDeque\_Find\_By\_PID}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Find\_By\_PID()}{PCBDeque\_Find\_By\_PID()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Find\+\_\+\+By\+\_\+\+PID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Finds a PCB in the deque by its PID and returns the found PCB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em pid} & The PID of the PCB to find. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the found PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the PCB was found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a07d328f9372db0444c427cafba578f0f}\label{pcb__deque_8c_a07d328f9372db0444c427cafba578f0f} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Free@{PCBDeque\_Free}}
+\index{PCBDeque\_Free@{PCBDeque\_Free}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Free()}{PCBDeque\_Free()}}
+{\footnotesize\ttfamily void PCBDeque\+\_\+\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque }\end{DoxyParamCaption})}
+
+
+
+Frees a PCB deque and all its contained nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque to free. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pcb__deque_8c_a3776d4b3ccec3296b184eadb9a89f862}\label{pcb__deque_8c_a3776d4b3ccec3296b184eadb9a89f862} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Get\_All\_PCBs@{PCBDeque\_Get\_All\_PCBs}}
+\index{PCBDeque\_Get\_All\_PCBs@{PCBDeque\_Get\_All\_PCBs}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Get\_All\_PCBs()}{PCBDeque\_Get\_All\_PCBs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} PCBDeque\+\_\+\+Get\+\_\+\+All\+\_\+\+PCBs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Retrieves all PCBs stored in the deque as an array of pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em count} & Pointer to store the number of PCBs retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of pointers to PCBs, or NULL if an error occurred. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a23c9670406fe6689a4bc61cbe2039934}\label{pcb__deque_8c_a23c9670406fe6689a4bc61cbe2039934} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Peek\_Back@{PCBDeque\_Peek\_Back}}
+\index{PCBDeque\_Peek\_Back@{PCBDeque\_Peek\_Back}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Peek\_Back()}{PCBDeque\_Peek\_Back()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Peek\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Retrieves the PCB at the back of the deque without removing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the peeked PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a PCB was successfully retrieved, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a205f508057df7e5c7ce62f2566ef24e9}\label{pcb__deque_8c_a205f508057df7e5c7ce62f2566ef24e9} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Peek\_Front@{PCBDeque\_Peek\_Front}}
+\index{PCBDeque\_Peek\_Front@{PCBDeque\_Peek\_Front}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Peek\_Front()}{PCBDeque\_Peek\_Front()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Peek\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Retrieves the PCB at the front of the deque without removing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the peeked PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a PCB was successfully retrieved, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a8b6e3953bfad4ce7e02f731182dcb53f}\label{pcb__deque_8c_a8b6e3953bfad4ce7e02f731182dcb53f} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Pop\_Back@{PCBDeque\_Pop\_Back}}
+\index{PCBDeque\_Pop\_Back@{PCBDeque\_Pop\_Back}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Pop\_Back()}{PCBDeque\_Pop\_Back()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Pop\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Removes and returns the PCB at the back of the deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the popped PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a PCB was successfully popped, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_af0ad852c05eb1f4ce8e3c76242b21439}\label{pcb__deque_8c_af0ad852c05eb1f4ce8e3c76242b21439} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Pop\_Front@{PCBDeque\_Pop\_Front}}
+\index{PCBDeque\_Pop\_Front@{PCBDeque\_Pop\_Front}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Pop\_Front()}{PCBDeque\_Pop\_Front()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Pop\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Removes and returns the PCB at the front of the deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the popped PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a PCB was successfully popped, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_abf1b2f88d1b9a89e6e4035b0c29465da}\label{pcb__deque_8c_abf1b2f88d1b9a89e6e4035b0c29465da} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Push\_Back@{PCBDeque\_Push\_Back}}
+\index{PCBDeque\_Push\_Back@{PCBDeque\_Push\_Back}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Push\_Back()}{PCBDeque\_Push\_Back()}}
+{\footnotesize\ttfamily void PCBDeque\+\_\+\+Push\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}}}]{payload }\end{DoxyParamCaption})}
+
+
+
+Inserts a new PCB at the back of the deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload} & The PCB to insert. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pcb__deque_8c_af3bcd6d85561a08e15165bf32b09815f}\label{pcb__deque_8c_af3bcd6d85561a08e15165bf32b09815f} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Push\_Front@{PCBDeque\_Push\_Front}}
+\index{PCBDeque\_Push\_Front@{PCBDeque\_Push\_Front}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Push\_Front()}{PCBDeque\_Push\_Front()}}
+{\footnotesize\ttfamily void PCBDeque\+\_\+\+Push\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}}}]{payload }\end{DoxyParamCaption})}
+
+
+
+Inserts a new PCB at the front of the deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em payload} & The PCB to insert. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pcb__deque_8c_a53aca899dac439c1071544f45229cabd}\label{pcb__deque_8c_a53aca899dac439c1071544f45229cabd} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Remove\_By\_PID@{PCBDeque\_Remove\_By\_PID}}
+\index{PCBDeque\_Remove\_By\_PID@{PCBDeque\_Remove\_By\_PID}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Remove\_By\_PID()}{PCBDeque\_Remove\_By\_PID()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Remove\+\_\+\+By\+\_\+\+PID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Removes a PCB from the deque by its PID and returns the removed PCB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em pid} & The PID of the PCB to remove. \\
+\hline
+{\em payload\+\_\+ptr} & Pointer to store the removed PCB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the PCB was successfully removed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_ac1993d0a6e7f4d3490110ecc4c6cb4ed}\label{pcb__deque_8c_ac1993d0a6e7f4d3490110ecc4c6cb4ed} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Size@{PCBDeque\_Size}}
+\index{PCBDeque\_Size@{PCBDeque\_Size}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Size()}{PCBDeque\_Size()}}
+{\footnotesize\ttfamily int PCBDeque\+\_\+\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque }\end{DoxyParamCaption})}
+
+
+
+Returns the number of elements in the PCB deque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of elements in the deque. 
+\end{DoxyReturn}
+\Hypertarget{pcb__deque_8c_a41d5bc01df798f1fdf172d39a4273d7e}\label{pcb__deque_8c_a41d5bc01df798f1fdf172d39a4273d7e} 
+\index{pcb\_deque.c@{pcb\_deque.c}!PCBDeque\_Update\_By\_PID@{PCBDeque\_Update\_By\_PID}}
+\index{PCBDeque\_Update\_By\_PID@{PCBDeque\_Update\_By\_PID}!pcb\_deque.c@{pcb\_deque.c}}
+\doxysubsubsection{\texorpdfstring{PCBDeque\_Update\_By\_PID()}{PCBDeque\_Update\_By\_PID()}}
+{\footnotesize\ttfamily bool PCBDeque\+\_\+\+Update\+\_\+\+By\+\_\+\+PID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}} \texorpdfstring{$\ast$}{*}}]{deque,  }\item[{const \mbox{\hyperlink{structpcb}{pcb\+\_\+t}}}]{input\+\_\+pcb }\end{DoxyParamCaption})}
+
+
+
+Updates a PCB in the deque by its PID with new data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deque} & The PCB deque. \\
+\hline
+{\em input\+\_\+pcb} & The new PCB data to update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the PCB was successfully updated, false otherwise. 
+\end{DoxyReturn}

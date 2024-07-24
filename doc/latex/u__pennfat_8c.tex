@@ -1,0 +1,296 @@
+\doxysection{src/pennfat/u\+\_\+pennfat.c File Reference}
+\hypertarget{u__pennfat_8c}{}\label{u__pennfat_8c}\index{src/pennfat/u\_pennfat.c@{src/pennfat/u\_pennfat.c}}
+
+
+User level functions for Penn\+FAT.  
+
+
+{\ttfamily \#include "{}u\+\_\+pennfat.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{u__pennfat_8c_a925a6964631ca44f6b846803efb33157}{is\+\_\+fd\+\_\+within\+\_\+table\+\_\+local}} (int fd, \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Checks if the file descriptor is within the local table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{u__pennfat_8c_a74a615bc99efbea104f4fffbb7388195}{add\+\_\+fd\+\_\+to\+\_\+table}} (\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}fd, \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Adds a file descriptor to the local table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{u__pennfat_8c_abeae568a51e28c024b7cdeb920922863}{remove\+\_\+fd\+\_\+from\+\_\+table}} (int fd, \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Removes a file descriptor from the local table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{u__pennfat_8c_ab5bcf3f0905044ab75e2f5f42ad25f7d}{get\+\_\+fd\+\_\+address\+\_\+from\+\_\+index\+\_\+global}} (int index)
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to a global file descriptor based on its index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_ace36a06c30174cb4990d3b8ea89780f0}{get\+\_\+fd\+\_\+index\+\_\+from\+\_\+address\+\_\+global}} (\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}fd)
+\begin{DoxyCompactList}\small\item\em Computes the index of a global file descriptor based on its address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a395cf22f465ac6027f6f1b42138ea621}{u\+\_\+open}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Opens a file specified by path and mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a481aa2a3956f23d4e85dc38e86163917}{u\+\_\+read}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Reads data from a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a863f9e27febc3fa9ee416c80659e8be5}{u\+\_\+write}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Writes data to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_aa76f64592305d123cec54e17ceb668f0}{u\+\_\+append}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Appends data to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a68fefad1567e1962944be15c5a106be3}{u\+\_\+close}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Closes a file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a4af72f3d31be06c276a44bb0e7eefded}{u\+\_\+unlink}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Unlinks (deletes) a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a474cd8f29b052a6d4f82b35b9f96111d}{u\+\_\+lseek}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Seeks to a specific position in a file based on offset and origin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{u__pennfat_8c_a439205eac07d92c740510868524140c5}{u\+\_\+ls}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lists the contents of a directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__pennfat_8c_a8837f96d4312bc12cdd137c092138cee}{u\+\_\+is\+\_\+executable}} (void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Checks if the specified file is executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User level functions for Penn\+FAT. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{u__pennfat_8c_a74a615bc99efbea104f4fffbb7388195}\label{u__pennfat_8c_a74a615bc99efbea104f4fffbb7388195} 
+\index{u\_pennfat.c@{u\_pennfat.c}!add\_fd\_to\_table@{add\_fd\_to\_table}}
+\index{add\_fd\_to\_table@{add\_fd\_to\_table}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{add\_fd\_to\_table()}{add\_fd\_to\_table()}}
+{\footnotesize\ttfamily void add\+\_\+fd\+\_\+to\+\_\+table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{fd,  }\item[{\mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Adds a file descriptor to the local table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & Pointer to the \doxylink{struct_k_file_descriptor}{KFile\+Descriptor} to be added. \\
+\hline
+{\em table} & Pointer to the \doxylink{struct_s_file_descriptor}{SFile\+Descriptor} structure where the file descriptor should be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{u__pennfat_8c_ab5bcf3f0905044ab75e2f5f42ad25f7d}\label{u__pennfat_8c_ab5bcf3f0905044ab75e2f5f42ad25f7d} 
+\index{u\_pennfat.c@{u\_pennfat.c}!get\_fd\_address\_from\_index\_global@{get\_fd\_address\_from\_index\_global}}
+\index{get\_fd\_address\_from\_index\_global@{get\_fd\_address\_from\_index\_global}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{get\_fd\_address\_from\_index\_global()}{get\_fd\_address\_from\_index\_global()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*} get\+\_\+fd\+\_\+address\+\_\+from\+\_\+index\+\_\+global (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Retrieves a pointer to a global file descriptor based on its index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the file descriptor in the global table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{struct_k_file_descriptor}{KFile\+Descriptor} if valid index, NULL otherwise. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_ace36a06c30174cb4990d3b8ea89780f0}\label{u__pennfat_8c_ace36a06c30174cb4990d3b8ea89780f0} 
+\index{u\_pennfat.c@{u\_pennfat.c}!get\_fd\_index\_from\_address\_global@{get\_fd\_index\_from\_address\_global}}
+\index{get\_fd\_index\_from\_address\_global@{get\_fd\_index\_from\_address\_global}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{get\_fd\_index\_from\_address\_global()}{get\_fd\_index\_from\_address\_global()}}
+{\footnotesize\ttfamily int get\+\_\+fd\+\_\+index\+\_\+from\+\_\+address\+\_\+global (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{fd }\end{DoxyParamCaption})}
+
+
+
+Computes the index of a global file descriptor based on its address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & Pointer to the \doxylink{struct_k_file_descriptor}{KFile\+Descriptor} whose index is to be determined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the file descriptor on success, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a925a6964631ca44f6b846803efb33157}\label{u__pennfat_8c_a925a6964631ca44f6b846803efb33157} 
+\index{u\_pennfat.c@{u\_pennfat.c}!is\_fd\_within\_table\_local@{is\_fd\_within\_table\_local}}
+\index{is\_fd\_within\_table\_local@{is\_fd\_within\_table\_local}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{is\_fd\_within\_table\_local()}{is\_fd\_within\_table\_local()}}
+{\footnotesize\ttfamily bool is\+\_\+fd\+\_\+within\+\_\+table\+\_\+local (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{\mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Checks if the file descriptor is within the local table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file descriptor to check. \\
+\hline
+{\em table} & Pointer to the \doxylink{struct_s_file_descriptor}{SFile\+Descriptor} structure representing the local file descriptor table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the file descriptor is within the local table, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_abeae568a51e28c024b7cdeb920922863}\label{u__pennfat_8c_abeae568a51e28c024b7cdeb920922863} 
+\index{u\_pennfat.c@{u\_pennfat.c}!remove\_fd\_from\_table@{remove\_fd\_from\_table}}
+\index{remove\_fd\_from\_table@{remove\_fd\_from\_table}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{remove\_fd\_from\_table()}{remove\_fd\_from\_table()}}
+{\footnotesize\ttfamily void remove\+\_\+fd\+\_\+from\+\_\+table (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{\mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Removes a file descriptor from the local table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The index of the file descriptor to be removed. \\
+\hline
+{\em table} & Pointer to the \doxylink{struct_s_file_descriptor}{SFile\+Descriptor} structure from which the file descriptor should be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{u__pennfat_8c_aa76f64592305d123cec54e17ceb668f0}\label{u__pennfat_8c_aa76f64592305d123cec54e17ceb668f0} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_append@{u\_append}}
+\index{u\_append@{u\_append}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_append()}{u\_append()}}
+{\footnotesize\ttfamily int u\+\_\+append (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Appends data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table, file descriptor, buffer containing data, and number of bytes to append. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes appended on success, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a68fefad1567e1962944be15c5a106be3}\label{u__pennfat_8c_a68fefad1567e1962944be15c5a106be3} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_close@{u\_close}}
+\index{u\_close@{u\_close}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_close()}{u\_close()}}
+{\footnotesize\ttfamily int u\+\_\+close (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Closes a file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table and the file descriptor to be closed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result code, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a8837f96d4312bc12cdd137c092138cee}\label{u__pennfat_8c_a8837f96d4312bc12cdd137c092138cee} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_is\_executable@{u\_is\_executable}}
+\index{u\_is\_executable@{u\_is\_executable}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_is\_executable()}{u\_is\_executable()}}
+{\footnotesize\ttfamily int u\+\_\+is\+\_\+executable (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Checks if the specified file is executable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing the file name to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is executable, ERROR otherwise. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a439205eac07d92c740510868524140c5}\label{u__pennfat_8c_a439205eac07d92c740510868524140c5} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_ls@{u\_ls}}
+\index{u\_ls@{u\_ls}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_ls()}{u\_ls()}}
+{\footnotesize\ttfamily void u\+\_\+ls (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Lists the contents of a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing the directory descriptor. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{u__pennfat_8c_a474cd8f29b052a6d4f82b35b9f96111d}\label{u__pennfat_8c_a474cd8f29b052a6d4f82b35b9f96111d} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_lseek@{u\_lseek}}
+\index{u\_lseek@{u\_lseek}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_lseek()}{u\_lseek()}}
+{\footnotesize\ttfamily int u\+\_\+lseek (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Seeks to a specific position in a file based on offset and origin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table, file descriptor, offset, and whence indicator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New position from the beginning of the file on success, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a395cf22f465ac6027f6f1b42138ea621}\label{u__pennfat_8c_a395cf22f465ac6027f6f1b42138ea621} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_open@{u\_open}}
+\index{u\_open@{u\_open}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_open()}{u\_open()}}
+{\footnotesize\ttfamily int u\+\_\+open (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Opens a file specified by path and mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table, file name, and mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File descriptor on success, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a481aa2a3956f23d4e85dc38e86163917}\label{u__pennfat_8c_a481aa2a3956f23d4e85dc38e86163917} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_read@{u\_read}}
+\index{u\_read@{u\_read}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_read()}{u\_read()}}
+{\footnotesize\ttfamily int u\+\_\+read (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Reads data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table, file descriptor, number of bytes to read, and buffer to store the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes read on success, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a4af72f3d31be06c276a44bb0e7eefded}\label{u__pennfat_8c_a4af72f3d31be06c276a44bb0e7eefded} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_unlink@{u\_unlink}}
+\index{u\_unlink@{u\_unlink}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_unlink()}{u\_unlink()}}
+{\footnotesize\ttfamily int u\+\_\+unlink (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Unlinks (deletes) a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing the file name to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result code, ERROR on failure. 
+\end{DoxyReturn}
+\Hypertarget{u__pennfat_8c_a863f9e27febc3fa9ee416c80659e8be5}\label{u__pennfat_8c_a863f9e27febc3fa9ee416c80659e8be5} 
+\index{u\_pennfat.c@{u\_pennfat.c}!u\_write@{u\_write}}
+\index{u\_write@{u\_write}!u\_pennfat.c@{u\_pennfat.c}}
+\doxysubsubsection{\texorpdfstring{u\_write()}{u\_write()}}
+{\footnotesize\ttfamily int u\+\_\+write (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Writes data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & Array containing pointers to the local file descriptor table, file descriptor, buffer containing data, and number of bytes to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes written on success, ERROR on failure. 
+\end{DoxyReturn}

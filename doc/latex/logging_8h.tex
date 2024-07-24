@@ -1,0 +1,193 @@
+\doxysection{src/logging.h File Reference}
+\hypertarget{logging_8h}{}\label{logging_8h}\index{src/logging.h@{src/logging.h}}
+
+
+Logging functions and definitions.  
+
+
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{logging_8h_a2889e8288a815b7468172bbf1cec1ead}\label{logging_8h_a2889e8288a815b7468172bbf1cec1ead} 
+\#define {\bfseries LOG\+\_\+\+FILE\+\_\+\+PATH}~"{}system\+\_\+log.\+txt"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logging_8h_a19738edceda471751ca26495155c34fb}{log\+\_\+init\+\_\+logging}} (char \texorpdfstring{$\ast$}{*}log\+\_\+file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Initialize the logging system. \end{DoxyCompactList}\item 
+\Hypertarget{logging_8h_afab0b60e8cc00be73e06a0f9e265edae}\label{logging_8h_afab0b60e8cc00be73e06a0f9e265edae} 
+void {\bfseries log\+\_\+close\+\_\+logging} ()
+\begin{DoxyCompactList}\small\item\em Close the logging system and release any resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a29d2463e31a1ee12e2a71793643a9baf}{log\+\_\+event}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em Log an event with a formatted message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a72a48f5b4e1712fe8272351fa2bc37b4}{log\+\_\+schedule\+\_\+process}} (int pid, int priority, const char \texorpdfstring{$\ast$}{*}queue)
+\begin{DoxyCompactList}\small\item\em Log the scheduling of a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a4d8b9f0d9127772cee3bc35185536c74}{log\+\_\+create\+\_\+process}} (int pid, int priority, const char \texorpdfstring{$\ast$}{*}process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Log the creation of a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a11e98335f850924546d7cff92eefbfd4}{log\+\_\+process\+\_\+exit}} (int pid, int priority, const char \texorpdfstring{$\ast$}{*}process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Log the exit of a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a7067aafe46878ae835cd0ba4456b7213}{log\+\_\+process\+\_\+signal}} (int pid, int priority, const char \texorpdfstring{$\ast$}{*}process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Log a signal sent to a process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a166d2a8196f9fcd86429555a50f62efb}{log\+\_\+adjust\+\_\+nice}} (int pid, int old\+\_\+nice, int new\+\_\+nice)
+\begin{DoxyCompactList}\small\item\em Log an adjustment to a process\textquotesingle{}s nice value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logging_8h_a3fc22425ee582f20d40964fc6552b27e}{log\+\_\+zombie\+\_\+process}} (int pid, int priority, const char \texorpdfstring{$\ast$}{*}process\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Log the transition of a process to a zombie state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logging functions and definitions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{logging_8h_a166d2a8196f9fcd86429555a50f62efb}\label{logging_8h_a166d2a8196f9fcd86429555a50f62efb} 
+\index{logging.h@{logging.h}!log\_adjust\_nice@{log\_adjust\_nice}}
+\index{log\_adjust\_nice@{log\_adjust\_nice}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_adjust\_nice()}{log\_adjust\_nice()}}
+{\footnotesize\ttfamily void log\+\_\+adjust\+\_\+nice (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{old\+\_\+nice,  }\item[{int}]{new\+\_\+nice }\end{DoxyParamCaption})}
+
+
+
+Log an adjustment to a process\textquotesingle{}s nice value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID whose nice value is being adjusted. \\
+\hline
+{\em old\+\_\+nice} & The old nice value. \\
+\hline
+{\em new\+\_\+nice} & The new nice value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a4d8b9f0d9127772cee3bc35185536c74}\label{logging_8h_a4d8b9f0d9127772cee3bc35185536c74} 
+\index{logging.h@{logging.h}!log\_create\_process@{log\_create\_process}}
+\index{log\_create\_process@{log\_create\_process}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_create\_process()}{log\_create\_process()}}
+{\footnotesize\ttfamily void log\+\_\+create\+\_\+process (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{priority,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{process\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Log the creation of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID of the newly created process. \\
+\hline
+{\em priority} & The priority assigned to the new process. \\
+\hline
+{\em process\+\_\+name} & The name of the process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a29d2463e31a1ee12e2a71793643a9baf}\label{logging_8h_a29d2463e31a1ee12e2a71793643a9baf} 
+\index{logging.h@{logging.h}!log\_event@{log\_event}}
+\index{log\_event@{log\_event}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_event()}{log\_event()}}
+{\footnotesize\ttfamily void log\+\_\+event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Log an event with a formatted message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Format string for the log message followed by additional arguments. \\
+\hline
+{\em ...} & Variable arguments providing additional information. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a19738edceda471751ca26495155c34fb}\label{logging_8h_a19738edceda471751ca26495155c34fb} 
+\index{logging.h@{logging.h}!log\_init\_logging@{log\_init\_logging}}
+\index{log\_init\_logging@{log\_init\_logging}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_init\_logging()}{log\_init\_logging()}}
+{\footnotesize\ttfamily void log\+\_\+init\+\_\+logging (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{log\+\_\+file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Initialize the logging system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+\_\+file\+\_\+path} & Path to the log file or NULL to use the default path. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a11e98335f850924546d7cff92eefbfd4}\label{logging_8h_a11e98335f850924546d7cff92eefbfd4} 
+\index{logging.h@{logging.h}!log\_process\_exit@{log\_process\_exit}}
+\index{log\_process\_exit@{log\_process\_exit}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_process\_exit()}{log\_process\_exit()}}
+{\footnotesize\ttfamily void log\+\_\+process\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{priority,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{process\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Log the exit of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID of the exiting process. \\
+\hline
+{\em priority} & The priority of the process at the time of exit. \\
+\hline
+{\em process\+\_\+name} & The name of the process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a7067aafe46878ae835cd0ba4456b7213}\label{logging_8h_a7067aafe46878ae835cd0ba4456b7213} 
+\index{logging.h@{logging.h}!log\_process\_signal@{log\_process\_signal}}
+\index{log\_process\_signal@{log\_process\_signal}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_process\_signal()}{log\_process\_signal()}}
+{\footnotesize\ttfamily void log\+\_\+process\+\_\+signal (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{priority,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{process\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Log a signal sent to a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID receiving the signal. \\
+\hline
+{\em priority} & The priority of the process at the time of signaling. \\
+\hline
+{\em process\+\_\+name} & The name of the process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a72a48f5b4e1712fe8272351fa2bc37b4}\label{logging_8h_a72a48f5b4e1712fe8272351fa2bc37b4} 
+\index{logging.h@{logging.h}!log\_schedule\_process@{log\_schedule\_process}}
+\index{log\_schedule\_process@{log\_schedule\_process}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_schedule\_process()}{log\_schedule\_process()}}
+{\footnotesize\ttfamily void log\+\_\+schedule\+\_\+process (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{priority,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{queue }\end{DoxyParamCaption})}
+
+
+
+Log the scheduling of a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID of the scheduled process. \\
+\hline
+{\em priority} & The priority of the process. \\
+\hline
+{\em queue} & The name of the queue the process is scheduled in. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{logging_8h_a3fc22425ee582f20d40964fc6552b27e}\label{logging_8h_a3fc22425ee582f20d40964fc6552b27e} 
+\index{logging.h@{logging.h}!log\_zombie\_process@{log\_zombie\_process}}
+\index{log\_zombie\_process@{log\_zombie\_process}!logging.h@{logging.h}}
+\doxysubsubsection{\texorpdfstring{log\_zombie\_process()}{log\_zombie\_process()}}
+{\footnotesize\ttfamily void log\+\_\+zombie\+\_\+process (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{priority,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{process\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Log the transition of a process to a zombie state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID of the zombie process. \\
+\hline
+{\em priority} & The priority of the process when it became a zombie. \\
+\hline
+{\em process\+\_\+name} & The name of the process. \\
+\hline
+\end{DoxyParams}

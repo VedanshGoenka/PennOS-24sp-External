@@ -1,0 +1,36 @@
+\doxysection{fs\+\_\+structs.\+h}
+\hypertarget{fs__structs_8h_source}{}\label{fs__structs_8h_source}\index{src/pennfat/fs\_structs.h@{src/pennfat/fs\_structs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ fs\_structs.h}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ FS\_STRUCTS\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ FS\_STRUCTS\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MAX\_ENTRIES\ 64}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_BLOCKS\ 32}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{char}\ name[32];}
+\DoxyCodeLine{00013\ \ \ uint32\_t\ size;}
+\DoxyCodeLine{00014\ \ \ uint16\_t\ firstBlock;}
+\DoxyCodeLine{00015\ \ \ uint8\_t\ type;}
+\DoxyCodeLine{00016\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ Permissions:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ 0:\ none}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 2:\ write\ only}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ 4:\ read\ only}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ 5:\ read\ and\ executable\ (shell\ scripts)}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ 6:\ read\ and\ write}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ 7:\ read,\ write,\ and\ executable}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00025\ \ \ uint8\_t\ perm;}
+\DoxyCodeLine{00026\ \ \ time\_t\ mtime;}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{char}\ reserved[16];}
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{struct_directory_entry}{DirectoryEntry}};\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FS\_STRUCTS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\doxysection{shell\+\_\+func.\+h}
+\hypertarget{shell__func_8h_source}{}\label{shell__func_8h_source}\index{src/shell/shell\_func.h@{src/shell/shell\_func.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <fcntl.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <kernel.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <logging.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sys\_call.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../parser/parser.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../pennfat/u\_pennfat.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../pennfat/k\_routines.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUF\_SIZE\ 65536\ }\textcolor{comment}{//\ Unreasonably\ large\ buffer\ size\ solves\ all\ problems}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a0c190c5db53ba8d6a773610c628f7ade}{cat}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_ab19e025c91e5378c0a5aeeaeb4431f6e}{sleep\_travis}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a9afe3108d99ddd2ba581cc7ebbf2a8b8}{busy}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_afb7e6ef3589544d60d392c450dd1e5af}{echo}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a505f3b315d7a75325e855567e7fcd07c}{ls}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a8cd9eba4290506b4c1c3887ff5ddaccd}{touch}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a8c31963de92d6dd77eaee0de52c8d129}{mv}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a49b83228de5e6206ae67342010e3e4d5}{cp}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_abe142d1213d8770742c6b15239eb17f6}{rm}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_acb477aeae79bbfe8e011e676beb14b59}{chmod}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_aca3df72c3570cfcc00bda4e0c174aaf5}{ps}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_adba8bbdef59ace7972b954c84f913222}{shell\_kill}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a18295cb2babd6f9eb7b7a803c263dc8e}{nice\_travis}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ void*\ nice\_pid(void*\ arg);}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_afb6814d0815a8ae7cb660fc650a8d9b9}{man}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a4c87d4245a36682d4dabe4f69755531f}{bg}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00178\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_ae379d25fcf21288a0864d685fb68f007}{fg}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_a922be9cb889a058b36f77dc8baacea3a}{jobs}}(\textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{shell__func_8c_aad0e34f6faccea9bf13355c9d707064f}{logout}}(\textcolor{keywordtype}{void}*\ arg);}
+
+\end{DoxyCode}

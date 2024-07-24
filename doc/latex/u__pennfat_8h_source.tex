@@ -1,0 +1,45 @@
+\doxysection{u\+\_\+pennfat.\+h}
+\hypertarget{u__pennfat_8h_source}{}\label{u__pennfat_8h_source}\index{src/pennfat/u\_pennfat.h@{src/pennfat/u\_pennfat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ U\_PENNFAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ U\_PENNFAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pcb_8h}{../pcb.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}k\_pennfat.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{local__fd__struct_8h}{local\_fd\_struct.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}s\_pennfat.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../sys\_call.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{u__pennfat_8c_a925a6964631ca44f6b846803efb33157}{is\_fd\_within\_table\_local}}(\textcolor{keywordtype}{int}\ fd,\ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}\ *table);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{u__pennfat_8c_a74a615bc99efbea104f4fffbb7388195}{add\_fd\_to\_table}}(\mbox{\hyperlink{struct_k_file_descriptor}{KFileDescriptor}}\ *fd,\ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}\ *table);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{u__pennfat_8c_abeae568a51e28c024b7cdeb920922863}{remove\_fd\_from\_table}}(\textcolor{keywordtype}{int}\ fd,\ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}\ *table);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{struct_k_file_descriptor}{KFileDescriptor}}\ *\mbox{\hyperlink{u__pennfat_8c_ab5bcf3f0905044ab75e2f5f42ad25f7d}{get\_fd\_address\_from\_index\_global}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_ace36a06c30174cb4990d3b8ea89780f0}{get\_fd\_index\_from\_address\_global}}(\mbox{\hyperlink{struct_k_file_descriptor}{KFileDescriptor}}\ *fd);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a395cf22f465ac6027f6f1b42138ea621}{u\_open}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a481aa2a3956f23d4e85dc38e86163917}{u\_read}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a863f9e27febc3fa9ee416c80659e8be5}{u\_write}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_aa76f64592305d123cec54e17ceb668f0}{u\_append}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a68fefad1567e1962944be15c5a106be3}{u\_close}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a4af72f3d31be06c276a44bb0e7eefded}{u\_unlink}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a474cd8f29b052a6d4f82b35b9f96111d}{u\_lseek}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{u__pennfat_8c_a439205eac07d92c740510868524140c5}{u\_ls}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{u__pennfat_8c_a8837f96d4312bc12cdd137c092138cee}{u\_is\_executable}}(\textcolor{keywordtype}{void}\ *argv[]);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ U\_PENNFAT\_H}}
+
+\end{DoxyCode}

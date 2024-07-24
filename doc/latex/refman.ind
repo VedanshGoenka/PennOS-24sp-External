@@ -1,0 +1,663 @@
+\begin{theindex}
+
+  \item {add\_directory\_entry}
+    \subitem {k\_pennfat.c}, \hyperpage{34}
+  \item {add\_fd\_to\_table}
+    \subitem {u\_pennfat.c}, \hyperpage{62}
+  \item {allocate\_new\_block}
+    \subitem {k\_pennfat.c}, \hyperpage{35}
+
+  \indexspace
+
+  \item {back}
+    \subitem {pcb\_dq\_st}, \hyperpage{14}
+    \subitem {pid\_dq\_st}, \hyperpage{16}
+  \item {bg}
+    \subitem {shell\_func.c}, \hyperpage{82}
+  \item {busy}
+    \subitem {shell\_func.c}, \hyperpage{82}
+
+  \indexspace
+
+  \item {calculate\_fs\_size}
+    \subitem {fs\_utils.c}, \hyperpage{27}
+  \item {cat}
+    \subitem {shell\_func.c}, \hyperpage{82}
+  \item {chmod}
+    \subitem {shell\_func.c}, \hyperpage{83}
+  \item {clear\_block}
+    \subitem {k\_pennfat.c}, \hyperpage{35}
+  \item {close\_fd}
+    \subitem {k\_pennfat.c}, \hyperpage{35}
+  \item {combine\_bytes}
+    \subitem {k\_pennfat.c}, \hyperpage{36}
+  \item {convert\_STD}
+    \subitem {k\_pennfat.c}, \hyperpage{36}
+  \item {copy\_string}
+    \subitem {k\_pennfat.c}, \hyperpage{36}
+  \item {cp}
+    \subitem {shell\_func.c}, \hyperpage{83}
+  \item {create\_fd\_from\_entry}
+    \subitem {k\_pennfat.c}, \hyperpage{37}
+  \item {create\_file}
+    \subitem {k\_pennfat.c}, \hyperpage{37}
+  \item {create\_fs\_path}
+    \subitem {fs\_utils.c}, \hyperpage{27}
+  \item {create\_os\_path}
+    \subitem {fs\_utils.c}, \hyperpage{27}
+
+  \indexspace
+
+  \item {deletable\_file}
+    \subitem {k\_pennfat.c}, \hyperpage{37}
+  \item {DirectoryEntry}, \hyperpage{9}
+    \subitem {firstBlock}, \hyperpage{9}
+    \subitem {mtime}, \hyperpage{9}
+    \subitem {name}, \hyperpage{9}
+    \subitem {perm}, \hyperpage{10}
+    \subitem {reserved}, \hyperpage{10}
+    \subitem {size}, \hyperpage{10}
+    \subitem {type}, \hyperpage{10}
+
+  \indexspace
+
+  \item {echo}
+    \subitem {shell\_func.c}, \hyperpage{83}
+  \item {errors.c}
+    \subitem {get\_error\_description}, \hyperpage{20}
+    \subitem {log\_error}, \hyperpage{20}
+
+  \indexspace
+
+  \item {F\_APPEND}
+    \subitem {k\_fd\_structs.h}, \hyperpage{30}
+  \item {F\_READ}
+    \subitem {k\_fd\_structs.h}, \hyperpage{30}
+  \item {F\_WRITE}
+    \subitem {k\_fd\_structs.h}, \hyperpage{30}
+  \item {fg}
+    \subitem {shell\_func.c}, \hyperpage{83}
+  \item {fileDescriptors}
+    \subitem {SFileDescriptor}, \hyperpage{17}
+  \item {FileMode}
+    \subitem {k\_fd\_structs.h}, \hyperpage{30}
+  \item {first\_block\_index}
+    \subitem {KFileDescriptor}, \hyperpage{11}
+  \item {firstBlock}
+    \subitem {DirectoryEntry}, \hyperpage{9}
+  \item {front}
+    \subitem {pcb\_dq\_st}, \hyperpage{14}
+    \subitem {pid\_dq\_st}, \hyperpage{16}
+  \item {fs\_fat}
+    \subitem {k\_routines.c}, \hyperpage{55}
+  \item {fs\_mounted}
+    \subitem {k\_routines.c}, \hyperpage{55}
+  \item {fs\_size}
+    \subitem {k\_routines.c}, \hyperpage{55}
+  \item {fs\_utils.c}
+    \subitem {calculate\_fs\_size}, \hyperpage{27}
+    \subitem {create\_fs\_path}, \hyperpage{27}
+    \subitem {create\_os\_path}, \hyperpage{27}
+    \subitem {mkfs}, \hyperpage{28}
+    \subitem {mount}, \hyperpage{28}
+    \subitem {unmount}, \hyperpage{29}
+
+  \indexspace
+
+  \item {g\_fdTable}
+    \subitem {k\_routines.c}, \hyperpage{55}
+  \item {get\_block\_index\_from\_count}
+    \subitem {k\_pennfat.c}, \hyperpage{38}
+  \item {get\_block\_size}
+    \subitem {k\_pennfat.c}, \hyperpage{38}
+  \item {get\_block\_size\_config}
+    \subitem {k\_pennfat.c}, \hyperpage{38}
+  \item {get\_blocks\_allocated}
+    \subitem {k\_pennfat.c}, \hyperpage{38}
+  \item {get\_blocks\_in\_fat}
+    \subitem {k\_pennfat.c}, \hyperpage{39}
+  \item {get\_current\_fd\_block\_offset}
+    \subitem {k\_pennfat.c}, \hyperpage{39}
+  \item {get\_current\_fd\_fat\_index}
+    \subitem {k\_pennfat.c}, \hyperpage{39}
+  \item {get\_data\_block\_address}
+    \subitem {k\_pennfat.c}, \hyperpage{41}
+  \item {get\_directory\_entry\_by\_filename}
+    \subitem {k\_pennfat.c}, \hyperpage{41}
+  \item {get\_error\_description}
+    \subitem {errors.c}, \hyperpage{20}
+  \item {get\_fd\_address\_from\_index\_global}
+    \subitem {u\_pennfat.c}, \hyperpage{63}
+  \item {get\_fd\_block\_count\_from\_offset}
+    \subitem {k\_pennfat.c}, \hyperpage{41}
+  \item {get\_fd\_by\_index}
+    \subitem {k\_pennfat.c}, \hyperpage{42}
+  \item {get\_fd\_by\_name}
+    \subitem {k\_pennfat.c}, \hyperpage{42}
+  \item {get\_fd\_index}
+    \subitem {k\_pennfat.c}, \hyperpage{42}
+  \item {get\_fd\_index\_from\_address}
+    \subitem {s\_pennfat.c}, \hyperpage{58}
+  \item {get\_fd\_index\_from\_address\_global}
+    \subitem {u\_pennfat.c}, \hyperpage{63}
+  \item {get\_last\_block}
+    \subitem {k\_pennfat.c}, \hyperpage{43}
+  \item {get\_next\_free\_data\_block\_index}
+    \subitem {k\_pennfat.c}, \hyperpage{43}
+  \item {get\_next\_free\_fd}
+    \subitem {k\_pennfat.c}, \hyperpage{43}
+  \item {get\_permission}
+    \subitem {k\_pennfat.c}, \hyperpage{43}
+
+  \indexspace
+
+  \item {initialize\_fd\_table}
+    \subitem {k\_pennfat.c}, \hyperpage{44}
+  \item {initialize\_file\_system}
+    \subitem {test\_routines.c}, \hyperpage{94}
+  \item {is\_fd\_within\_table\_local}
+    \subitem {u\_pennfat.c}, \hyperpage{63}
+
+  \indexspace
+
+  \item {jobs}
+    \subitem {shell\_func.c}, \hyperpage{84}
+
+  \indexspace
+
+  \item {k\_append}
+    \subitem {k\_pennfat.c}, \hyperpage{44}
+  \item {k\_close}
+    \subitem {k\_pennfat.c}, \hyperpage{45}
+  \item {k\_fd\_structs.h}
+    \subitem {F\_APPEND}, \hyperpage{30}
+    \subitem {F\_READ}, \hyperpage{30}
+    \subitem {F\_WRITE}, \hyperpage{30}
+    \subitem {FileMode}, \hyperpage{30}
+  \item {k\_is\_executable}
+    \subitem {k\_pennfat.c}, \hyperpage{45}
+  \item {k\_ls}
+    \subitem {k\_pennfat.c}, \hyperpage{45}
+  \item {k\_lseek}
+    \subitem {k\_pennfat.c}, \hyperpage{45}
+  \item {k\_open}
+    \subitem {k\_pennfat.c}, \hyperpage{46}
+  \item {k\_pennfat.c}
+    \subitem {add\_directory\_entry}, \hyperpage{34}
+    \subitem {allocate\_new\_block}, \hyperpage{35}
+    \subitem {clear\_block}, \hyperpage{35}
+    \subitem {close\_fd}, \hyperpage{35}
+    \subitem {combine\_bytes}, \hyperpage{36}
+    \subitem {convert\_STD}, \hyperpage{36}
+    \subitem {copy\_string}, \hyperpage{36}
+    \subitem {create\_fd\_from\_entry}, \hyperpage{37}
+    \subitem {create\_file}, \hyperpage{37}
+    \subitem {deletable\_file}, \hyperpage{37}
+    \subitem {get\_block\_index\_from\_count}, \hyperpage{38}
+    \subitem {get\_block\_size}, \hyperpage{38}
+    \subitem {get\_block\_size\_config}, \hyperpage{38}
+    \subitem {get\_blocks\_allocated}, \hyperpage{38}
+    \subitem {get\_blocks\_in\_fat}, \hyperpage{39}
+    \subitem {get\_current\_fd\_block\_offset}, \hyperpage{39}
+    \subitem {get\_current\_fd\_fat\_index}, \hyperpage{39}
+    \subitem {get\_data\_block\_address}, \hyperpage{41}
+    \subitem {get\_directory\_entry\_by\_filename}, \hyperpage{41}
+    \subitem {get\_fd\_block\_count\_from\_offset}, \hyperpage{41}
+    \subitem {get\_fd\_by\_index}, \hyperpage{42}
+    \subitem {get\_fd\_by\_name}, \hyperpage{42}
+    \subitem {get\_fd\_index}, \hyperpage{42}
+    \subitem {get\_last\_block}, \hyperpage{43}
+    \subitem {get\_next\_free\_data\_block\_index}, \hyperpage{43}
+    \subitem {get\_next\_free\_fd}, \hyperpage{43}
+    \subitem {get\_permission}, \hyperpage{43}
+    \subitem {initialize\_fd\_table}, \hyperpage{44}
+    \subitem {k\_append}, \hyperpage{44}
+    \subitem {k\_close}, \hyperpage{45}
+    \subitem {k\_is\_executable}, \hyperpage{45}
+    \subitem {k\_ls}, \hyperpage{45}
+    \subitem {k\_lseek}, \hyperpage{45}
+    \subitem {k\_open}, \hyperpage{46}
+    \subitem {k\_read}, \hyperpage{46}
+    \subitem {k\_unlink}, \hyperpage{47}
+    \subitem {k\_write}, \hyperpage{47}
+    \subitem {max}, \hyperpage{48}
+    \subitem {read\_line\_from\_terminal}, \hyperpage{48}
+    \subitem {read\_std}, \hyperpage{48}
+    \subitem {recover\_blocks}, \hyperpage{49}
+    \subitem {remove\_directory\_entry}, \hyperpage{49}
+    \subitem {validate\_permission\_and\_mode}, \hyperpage{49}
+    \subitem {write\_std}, \hyperpage{49}
+    \subitem {writeable\_file}, \hyperpage{50}
+  \item {k\_read}
+    \subitem {k\_pennfat.c}, \hyperpage{46}
+  \item {k\_routines.c}
+    \subitem {fs\_fat}, \hyperpage{55}
+    \subitem {fs\_mounted}, \hyperpage{55}
+    \subitem {fs\_size}, \hyperpage{55}
+    \subitem {g\_fdTable}, \hyperpage{55}
+    \subitem {pf\_cat}, \hyperpage{53}
+    \subitem {pf\_chmod}, \hyperpage{54}
+    \subitem {pf\_cp}, \hyperpage{54}
+    \subitem {pf\_mv}, \hyperpage{54}
+    \subitem {pf\_rm}, \hyperpage{54}
+    \subitem {pf\_touch}, \hyperpage{55}
+  \item {k\_unlink}
+    \subitem {k\_pennfat.c}, \hyperpage{47}
+  \item {k\_write}
+    \subitem {k\_pennfat.c}, \hyperpage{47}
+  \item {KFileDescriptor}, \hyperpage{10}
+    \subitem {first\_block\_index}, \hyperpage{11}
+    \subitem {mode}, \hyperpage{11}
+    \subitem {name}, \hyperpage{11}
+    \subitem {offset}, \hyperpage{11}
+    \subitem {ref\_count}, \hyperpage{11}
+
+  \indexspace
+
+  \item {log\_error}
+    \subitem {errors.c}, \hyperpage{20}
+  \item {logout}
+    \subitem {shell\_func.c}, \hyperpage{84}
+  \item {ls}
+    \subitem {shell\_func.c}, \hyperpage{84}
+
+  \indexspace
+
+  \item {main}
+    \subitem {pennfat.c}, \hyperpage{25}
+  \item {man}
+    \subitem {shell\_func.c}, \hyperpage{84}
+  \item {max}
+    \subitem {k\_pennfat.c}, \hyperpage{48}
+  \item {mkfs}
+    \subitem {fs\_utils.c}, \hyperpage{28}
+  \item {mode}
+    \subitem {KFileDescriptor}, \hyperpage{11}
+  \item {mount}
+    \subitem {fs\_utils.c}, \hyperpage{28}
+  \item {mtime}
+    \subitem {DirectoryEntry}, \hyperpage{9}
+  \item {mv}
+    \subitem {shell\_func.c}, \hyperpage{84}
+
+  \indexspace
+
+  \item {name}
+    \subitem {DirectoryEntry}, \hyperpage{9}
+    \subitem {KFileDescriptor}, \hyperpage{11}
+  \item {next}
+    \subitem {pcb\_dq\_node\_st}, \hyperpage{13}
+    \subitem {pid\_dq\_node\_st}, \hyperpage{15}
+  \item {nice\_travis}
+    \subitem {shell\_func.c}, \hyperpage{85}
+  \item {num\_elements}
+    \subitem {pcb\_dq\_st}, \hyperpage{14}
+    \subitem {pid\_dq\_st}, \hyperpage{16}
+
+  \indexspace
+
+  \item {offset}
+    \subitem {KFileDescriptor}, \hyperpage{11}
+
+  \indexspace
+
+  \item {parsed\_command}, \hyperpage{11}
+  \item {parser/parser.h}, \hyperpage{19}
+  \item {payload}
+    \subitem {pcb\_dq\_node\_st}, \hyperpage{13}
+  \item {pcb}, \hyperpage{12}
+  \item {pcb\_deque.c}
+    \subitem {PCBDeque\_Allocate}, \hyperpage{70}
+    \subitem {PCBDeque\_Find\_By\_PID}, \hyperpage{70}
+    \subitem {PCBDeque\_Free}, \hyperpage{70}
+    \subitem {PCBDeque\_Get\_All\_PCBs}, \hyperpage{70}
+    \subitem {PCBDeque\_Peek\_Back}, \hyperpage{71}
+    \subitem {PCBDeque\_Peek\_Front}, \hyperpage{71}
+    \subitem {PCBDeque\_Pop\_Back}, \hyperpage{71}
+    \subitem {PCBDeque\_Pop\_Front}, \hyperpage{72}
+    \subitem {PCBDeque\_Push\_Back}, \hyperpage{72}
+    \subitem {PCBDeque\_Push\_Front}, \hyperpage{72}
+    \subitem {PCBDeque\_Remove\_By\_PID}, \hyperpage{73}
+    \subitem {PCBDeque\_Size}, \hyperpage{73}
+    \subitem {PCBDeque\_Update\_By\_PID}, \hyperpage{73}
+  \item {pcb\_dq\_node\_st}, \hyperpage{13}
+    \subitem {next}, \hyperpage{13}
+    \subitem {payload}, \hyperpage{13}
+    \subitem {prev}, \hyperpage{13}
+  \item {pcb\_dq\_st}, \hyperpage{13}
+    \subitem {back}, \hyperpage{14}
+    \subitem {front}, \hyperpage{14}
+    \subitem {num\_elements}, \hyperpage{14}
+  \item {PCBDeque\_Allocate}
+    \subitem {pcb\_deque.c}, \hyperpage{70}
+  \item {PCBDeque\_Find\_By\_PID}
+    \subitem {pcb\_deque.c}, \hyperpage{70}
+  \item {PCBDeque\_Free}
+    \subitem {pcb\_deque.c}, \hyperpage{70}
+  \item {PCBDeque\_Get\_All\_PCBs}
+    \subitem {pcb\_deque.c}, \hyperpage{70}
+  \item {PCBDeque\_Peek\_Back}
+    \subitem {pcb\_deque.c}, \hyperpage{71}
+  \item {PCBDeque\_Peek\_Front}
+    \subitem {pcb\_deque.c}, \hyperpage{71}
+  \item {PCBDeque\_Pop\_Back}
+    \subitem {pcb\_deque.c}, \hyperpage{71}
+  \item {PCBDeque\_Pop\_Front}
+    \subitem {pcb\_deque.c}, \hyperpage{72}
+  \item {PCBDeque\_Push\_Back}
+    \subitem {pcb\_deque.c}, \hyperpage{72}
+  \item {PCBDeque\_Push\_Front}
+    \subitem {pcb\_deque.c}, \hyperpage{72}
+  \item {PCBDeque\_Remove\_By\_PID}
+    \subitem {pcb\_deque.c}, \hyperpage{73}
+  \item {PCBDeque\_Size}
+    \subitem {pcb\_deque.c}, \hyperpage{73}
+  \item {PCBDeque\_Update\_By\_PID}
+    \subitem {pcb\_deque.c}, \hyperpage{73}
+  \item {pennfat.c}
+    \subitem {main}, \hyperpage{25}
+    \subitem {print\_parser\_errcode\_new}, \hyperpage{25}
+  \item {PennOS}, \hyperpage{1}
+  \item {pennos.c}
+    \subitem {shell\_process}, \hyperpage{81}
+  \item {perm}
+    \subitem {DirectoryEntry}, \hyperpage{10}
+  \item {pf\_cat}
+    \subitem {k\_routines.c}, \hyperpage{53}
+  \item {pf\_chmod}
+    \subitem {k\_routines.c}, \hyperpage{54}
+  \item {pf\_cp}
+    \subitem {k\_routines.c}, \hyperpage{54}
+  \item {pf\_mv}
+    \subitem {k\_routines.c}, \hyperpage{54}
+  \item {pf\_rm}
+    \subitem {k\_routines.c}, \hyperpage{54}
+  \item {pf\_touch}
+    \subitem {k\_routines.c}, \hyperpage{55}
+  \item {pid}
+    \subitem {pid\_dq\_node\_st}, \hyperpage{15}
+  \item {pid\_deque.c}
+    \subitem {PIDDeque\_Allocate}, \hyperpage{75}
+    \subitem {PIDDeque\_Find\_By\_PID}, \hyperpage{75}
+    \subitem {PIDDeque\_Free}, \hyperpage{76}
+    \subitem {PIDDeque\_Get\_All\_pids}, \hyperpage{76}
+    \subitem {PIDDeque\_Peek\_Back}, \hyperpage{76}
+    \subitem {PIDDeque\_Peek\_Front}, \hyperpage{77}
+    \subitem {PIDDeque\_Pop\_Back}, \hyperpage{77}
+    \subitem {PIDDeque\_Pop\_Front}, \hyperpage{78}
+    \subitem {PIDDeque\_Push\_Back}, \hyperpage{78}
+    \subitem {PIDDeque\_Push\_Front}, \hyperpage{78}
+    \subitem {PIDDeque\_Remove\_By\_PID}, \hyperpage{78}
+    \subitem {PIDDeque\_Size}, \hyperpage{79}
+  \item {pid\_dq\_node\_st}, \hyperpage{14}
+    \subitem {next}, \hyperpage{15}
+    \subitem {pid}, \hyperpage{15}
+    \subitem {prev}, \hyperpage{15}
+  \item {pid\_dq\_st}, \hyperpage{15}
+    \subitem {back}, \hyperpage{16}
+    \subitem {front}, \hyperpage{16}
+    \subitem {num\_elements}, \hyperpage{16}
+  \item {PIDDeque\_Allocate}
+    \subitem {pid\_deque.c}, \hyperpage{75}
+  \item {PIDDeque\_Find\_By\_PID}
+    \subitem {pid\_deque.c}, \hyperpage{75}
+  \item {PIDDeque\_Free}
+    \subitem {pid\_deque.c}, \hyperpage{76}
+  \item {PIDDeque\_Get\_All\_pids}
+    \subitem {pid\_deque.c}, \hyperpage{76}
+  \item {PIDDeque\_Peek\_Back}
+    \subitem {pid\_deque.c}, \hyperpage{76}
+  \item {PIDDeque\_Peek\_Front}
+    \subitem {pid\_deque.c}, \hyperpage{77}
+  \item {PIDDeque\_Pop\_Back}
+    \subitem {pid\_deque.c}, \hyperpage{77}
+  \item {PIDDeque\_Pop\_Front}
+    \subitem {pid\_deque.c}, \hyperpage{78}
+  \item {PIDDeque\_Push\_Back}
+    \subitem {pid\_deque.c}, \hyperpage{78}
+  \item {PIDDeque\_Push\_Front}
+    \subitem {pid\_deque.c}, \hyperpage{78}
+  \item {PIDDeque\_Remove\_By\_PID}
+    \subitem {pid\_deque.c}, \hyperpage{78}
+  \item {PIDDeque\_Size}
+    \subitem {pid\_deque.c}, \hyperpage{79}
+  \item {prev}
+    \subitem {pcb\_dq\_node\_st}, \hyperpage{13}
+    \subitem {pid\_dq\_node\_st}, \hyperpage{15}
+  \item {print\_parser\_errcode\_new}
+    \subitem {pennfat.c}, \hyperpage{25}
+  \item {ps}
+    \subitem {shell\_func.c}, \hyperpage{85}
+
+  \indexspace
+
+  \item {read\_line\_from\_terminal}
+    \subitem {k\_pennfat.c}, \hyperpage{48}
+  \item {read\_std}
+    \subitem {k\_pennfat.c}, \hyperpage{48}
+  \item {recover\_blocks}
+    \subitem {k\_pennfat.c}, \hyperpage{49}
+  \item {ref\_count}
+    \subitem {KFileDescriptor}, \hyperpage{11}
+  \item {remove\_directory\_entry}
+    \subitem {k\_pennfat.c}, \hyperpage{49}
+  \item {remove\_fd\_from\_table}
+    \subitem {u\_pennfat.c}, \hyperpage{64}
+  \item {reserved}
+    \subitem {DirectoryEntry}, \hyperpage{10}
+  \item {rm}
+    \subitem {shell\_func.c}, \hyperpage{85}
+  \item {run\_demo}
+    \subitem {test\_routines.c}, \hyperpage{94}
+  \item {run\_test}
+    \subitem {test\_routines.c}, \hyperpage{94}
+
+  \indexspace
+
+  \item {s\_append}
+    \subitem {s\_pennfat.c}, \hyperpage{58}
+  \item {s\_bg}
+    \subitem {sys\_call.c}, \hyperpage{88}
+  \item {s\_close}
+    \subitem {s\_pennfat.c}, \hyperpage{58}
+  \item {s\_fg}
+    \subitem {sys\_call.c}, \hyperpage{88}
+  \item {s\_get\_all\_process\_pcbs}
+    \subitem {sys\_call.c}, \hyperpage{89}
+  \item {s\_get\_args}
+    \subitem {sys\_call.c}, \hyperpage{89}
+  \item {s\_get\_f0}
+    \subitem {sys\_call.c}, \hyperpage{89}
+  \item {s\_get\_f1}
+    \subitem {sys\_call.c}, \hyperpage{89}
+  \item {s\_get\_fd\_table}
+    \subitem {sys\_call.c}, \hyperpage{89}
+  \item {s\_get\_num\_args}
+    \subitem {sys\_call.c}, \hyperpage{90}
+  \item {s\_get\_pid}
+    \subitem {sys\_call.c}, \hyperpage{90}
+  \item {s\_is\_executable}
+    \subitem {s\_pennfat.c}, \hyperpage{59}
+  \item {s\_kill}
+    \subitem {sys\_call.c}, \hyperpage{90}
+  \item {s\_ls}
+    \subitem {s\_pennfat.c}, \hyperpage{59}
+  \item {s\_lseek}
+    \subitem {s\_pennfat.c}, \hyperpage{59}
+  \item {s\_nice}
+    \subitem {sys\_call.c}, \hyperpage{91}
+  \item {s\_open}
+    \subitem {s\_pennfat.c}, \hyperpage{60}
+  \item {s\_pennfat.c}
+    \subitem {get\_fd\_index\_from\_address}, \hyperpage{58}
+    \subitem {s\_append}, \hyperpage{58}
+    \subitem {s\_close}, \hyperpage{58}
+    \subitem {s\_is\_executable}, \hyperpage{59}
+    \subitem {s\_ls}, \hyperpage{59}
+    \subitem {s\_lseek}, \hyperpage{59}
+    \subitem {s\_open}, \hyperpage{60}
+    \subitem {s\_read}, \hyperpage{60}
+    \subitem {s\_unlink}, \hyperpage{60}
+    \subitem {s\_write}, \hyperpage{61}
+  \item {s\_read}
+    \subitem {s\_pennfat.c}, \hyperpage{60}
+  \item {s\_sleep}
+    \subitem {sys\_call.c}, \hyperpage{91}
+  \item {s\_spawn}
+    \subitem {sys\_call.c}, \hyperpage{91}
+  \item {s\_unlink}
+    \subitem {s\_pennfat.c}, \hyperpage{60}
+  \item {s\_waitpid}
+    \subitem {sys\_call.c}, \hyperpage{92}
+  \item {s\_write}
+    \subitem {s\_pennfat.c}, \hyperpage{61}
+  \item {SFileDescriptor}, \hyperpage{16}
+    \subitem {fileDescriptors}, \hyperpage{17}
+  \item {shell\_func.c}
+    \subitem {bg}, \hyperpage{82}
+    \subitem {busy}, \hyperpage{82}
+    \subitem {cat}, \hyperpage{82}
+    \subitem {chmod}, \hyperpage{83}
+    \subitem {cp}, \hyperpage{83}
+    \subitem {echo}, \hyperpage{83}
+    \subitem {fg}, \hyperpage{83}
+    \subitem {jobs}, \hyperpage{84}
+    \subitem {logout}, \hyperpage{84}
+    \subitem {ls}, \hyperpage{84}
+    \subitem {man}, \hyperpage{84}
+    \subitem {mv}, \hyperpage{84}
+    \subitem {nice\_travis}, \hyperpage{85}
+    \subitem {ps}, \hyperpage{85}
+    \subitem {rm}, \hyperpage{85}
+    \subitem {shell\_kill}, \hyperpage{85}
+    \subitem {sleep\_travis}, \hyperpage{86}
+    \subitem {touch}, \hyperpage{86}
+  \item {shell\_kill}
+    \subitem {shell\_func.c}, \hyperpage{85}
+  \item {shell\_process}
+    \subitem {pennos.c}, \hyperpage{81}
+  \item {size}
+    \subitem {DirectoryEntry}, \hyperpage{10}
+  \item {sleep\_travis}
+    \subitem {shell\_func.c}, \hyperpage{86}
+  \item {spthread\_fwd\_args\_st}, \hyperpage{17}
+  \item {spthread\_meta\_st}, \hyperpage{17}
+  \item {spthread\_signal\_args\_st}, \hyperpage{17}
+  \item {spthread\_st}, \hyperpage{18}
+  \item {src/errors.c}, \hyperpage{20}
+  \item {src/errors.h}, \hyperpage{21}
+  \item {src/kernel.h}, \hyperpage{21}
+  \item {src/logging.h}, \hyperpage{23}
+  \item {src/pcb.h}, \hyperpage{23, 24}
+  \item {src/pennfat.c}, \hyperpage{24}
+  \item {src/pennfat.h}, \hyperpage{26}
+  \item {src/pennfat/fs\_utils.c}, \hyperpage{26}
+  \item {src/pennfat/fs\_utils.h}, \hyperpage{29}
+  \item {src/pennfat/k\_fd\_structs.h}, \hyperpage{29, 30}
+  \item {src/pennfat/k\_fs\_structs.h}, \hyperpage{30, 31}
+  \item {src/pennfat/k\_pennfat.c}, \hyperpage{31}
+  \item {src/pennfat/k\_pennfat.h}, \hyperpage{50}
+  \item {src/pennfat/k\_routines.c}, \hyperpage{53}
+  \item {src/pennfat/k\_routines.h}, \hyperpage{56}
+  \item {src/pennfat/local\_fd\_struct.h}, \hyperpage{56, 57}
+  \item {src/pennfat/s\_pennfat.c}, \hyperpage{57}
+  \item {src/pennfat/s\_pennfat.h}, \hyperpage{61}
+  \item {src/pennfat/u\_pennfat.c}, \hyperpage{62}
+  \item {src/pennfat/u\_pennfat.h}, \hyperpage{67}
+  \item {src/pennfat/u\_test\_suite.c}, \hyperpage{67}
+  \item {src/pennfat/u\_test\_suite.h}, \hyperpage{68}
+  \item {src/pennkernel/pcb\_deque.c}, \hyperpage{69}
+  \item {src/pennkernel/pcb\_deque.h}, \hyperpage{74}
+  \item {src/pennkernel/pid\_deque.c}, \hyperpage{75}
+  \item {src/pennkernel/pid\_deque.h}, \hyperpage{79}
+  \item {src/pennos.c}, \hyperpage{80}
+  \item {src/shell/shell\_func.c}, \hyperpage{81}
+  \item {src/shell/shell\_func.h}, \hyperpage{86}
+  \item {src/shell/stress.h}, \hyperpage{87}
+  \item {src/sys\_call.c}, \hyperpage{87}
+  \item {src/sys\_call.h}, \hyperpage{92}
+  \item {src/test\_routines.c}, \hyperpage{93}
+  \item {src/test\_routines.h}, \hyperpage{94}
+  \item {src/util/spthread.h}, \hyperpage{95}
+  \item {sys\_call.c}
+    \subitem {s\_bg}, \hyperpage{88}
+    \subitem {s\_fg}, \hyperpage{88}
+    \subitem {s\_get\_all\_process\_pcbs}, \hyperpage{89}
+    \subitem {s\_get\_args}, \hyperpage{89}
+    \subitem {s\_get\_f0}, \hyperpage{89}
+    \subitem {s\_get\_f1}, \hyperpage{89}
+    \subitem {s\_get\_fd\_table}, \hyperpage{89}
+    \subitem {s\_get\_num\_args}, \hyperpage{90}
+    \subitem {s\_get\_pid}, \hyperpage{90}
+    \subitem {s\_kill}, \hyperpage{90}
+    \subitem {s\_nice}, \hyperpage{91}
+    \subitem {s\_sleep}, \hyperpage{91}
+    \subitem {s\_spawn}, \hyperpage{91}
+    \subitem {s\_waitpid}, \hyperpage{92}
+
+  \indexspace
+
+  \item {test\_routines.c}
+    \subitem {initialize\_file\_system}, \hyperpage{94}
+    \subitem {run\_demo}, \hyperpage{94}
+    \subitem {run\_test}, \hyperpage{94}
+  \item {test\_u\_functions}
+    \subitem {u\_test\_suite.c}, \hyperpage{68}
+  \item {touch}
+    \subitem {shell\_func.c}, \hyperpage{86}
+  \item {type}
+    \subitem {DirectoryEntry}, \hyperpage{10}
+
+  \indexspace
+
+  \item {u\_append}
+    \subitem {u\_pennfat.c}, \hyperpage{64}
+  \item {u\_close}
+    \subitem {u\_pennfat.c}, \hyperpage{64}
+  \item {u\_is\_executable}
+    \subitem {u\_pennfat.c}, \hyperpage{64}
+  \item {u\_ls}
+    \subitem {u\_pennfat.c}, \hyperpage{65}
+  \item {u\_lseek}
+    \subitem {u\_pennfat.c}, \hyperpage{65}
+  \item {u\_open}
+    \subitem {u\_pennfat.c}, \hyperpage{65}
+  \item {u\_pennfat.c}
+    \subitem {add\_fd\_to\_table}, \hyperpage{62}
+    \subitem {get\_fd\_address\_from\_index\_global}, \hyperpage{63}
+    \subitem {get\_fd\_index\_from\_address\_global}, \hyperpage{63}
+    \subitem {is\_fd\_within\_table\_local}, \hyperpage{63}
+    \subitem {remove\_fd\_from\_table}, \hyperpage{64}
+    \subitem {u\_append}, \hyperpage{64}
+    \subitem {u\_close}, \hyperpage{64}
+    \subitem {u\_is\_executable}, \hyperpage{64}
+    \subitem {u\_ls}, \hyperpage{65}
+    \subitem {u\_lseek}, \hyperpage{65}
+    \subitem {u\_open}, \hyperpage{65}
+    \subitem {u\_read}, \hyperpage{66}
+    \subitem {u\_unlink}, \hyperpage{66}
+    \subitem {u\_write}, \hyperpage{66}
+  \item {u\_read}
+    \subitem {u\_pennfat.c}, \hyperpage{66}
+  \item {u\_test\_suite.c}
+    \subitem {test\_u\_functions}, \hyperpage{68}
+  \item {u\_unlink}
+    \subitem {u\_pennfat.c}, \hyperpage{66}
+  \item {u\_write}
+    \subitem {u\_pennfat.c}, \hyperpage{66}
+  \item {unmount}
+    \subitem {fs\_utils.c}, \hyperpage{29}
+
+  \indexspace
+
+  \item {validate\_permission\_and\_mode}
+    \subitem {k\_pennfat.c}, \hyperpage{49}
+
+  \indexspace
+
+  \item {write\_std}
+    \subitem {k\_pennfat.c}, \hyperpage{49}
+  \item {writeable\_file}
+    \subitem {k\_pennfat.c}, \hyperpage{50}
+
+\end{theindex}

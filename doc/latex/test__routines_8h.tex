@@ -1,0 +1,126 @@
+\doxysection{src/test\+\_\+routines.h File Reference}
+\hypertarget{test__routines_8h}{}\label{test__routines_8h}\index{src/test\_routines.h@{src/test\_routines.h}}
+
+
+Test routines for the Penn\+FAT file system.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include "{}pennfat.\+h"{}}\newline
+{\ttfamily \#include "{}pennfat/k\+\_\+fd\+\_\+structs.\+h"{}}\newline
+{\ttfamily \#include "{}pennfat/k\+\_\+pennfat.\+h"{}}\newline
+{\ttfamily \#include "{}pennfat/k\+\_\+routines.\+h"{}}\newline
+{\ttfamily \#include "{}errors.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__routines_8h_a8aa37b4b9995a4cea1e9baf41a2e9a3b}{initialize\+\_\+file\+\_\+system}} (int fs\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Initialize the file system with a specific test file system number. \end{DoxyCompactList}\item 
+\Hypertarget{test__routines_8h_a78b66b72d1142caa3232fb561f56284e}\label{test__routines_8h_a78b66b72d1142caa3232fb561f56284e} 
+void {\bfseries cleanup\+\_\+file\+\_\+system} ()
+\begin{DoxyCompactList}\small\item\em Clean up and unmount the file system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test__routines_8h_a1cb3b25c862a989835f25b7a9b0f1bd5}{run\+\_\+demo}} ()
+\begin{DoxyCompactList}\small\item\em Run a demonstration of specific file system operations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test__routines_8h_a884ea12650d2fa68011489f3b383fb01}{run\+\_\+test}} ()
+\begin{DoxyCompactList}\small\item\em Run a set of tests to validate file system operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{test__routines_8h_a3b5a8ee252d9773230c8ae1527f1a5e2}{fs\+\_\+fat}}
+\begin{DoxyCompactList}\small\item\em FAT. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \mbox{\hyperlink{test__routines_8h_afb70d003bafb1ecebcbaa94d613e4e78}{g\+\_\+fd\+Table}} \mbox{[}MAX\+\_\+\+FD\mbox{]}
+\begin{DoxyCompactList}\small\item\em Structure representing a file descriptor in the kernel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{test__routines_8h_ab8a04a1fd835f09bcc71b462b63b1eb6}{fs\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Filesystem size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test routines for the Penn\+FAT file system. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__routines_8h_a8aa37b4b9995a4cea1e9baf41a2e9a3b}\label{test__routines_8h_a8aa37b4b9995a4cea1e9baf41a2e9a3b} 
+\index{test\_routines.h@{test\_routines.h}!initialize\_file\_system@{initialize\_file\_system}}
+\index{initialize\_file\_system@{initialize\_file\_system}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{initialize\_file\_system()}{initialize\_file\_system()}}
+{\footnotesize\ttfamily void initialize\+\_\+file\+\_\+system (\begin{DoxyParamCaption}\item[{int}]{fs\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Initialize the file system with a specific test file system number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+number} & The file system number to initialize. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{test__routines_8h_a1cb3b25c862a989835f25b7a9b0f1bd5}\label{test__routines_8h_a1cb3b25c862a989835f25b7a9b0f1bd5} 
+\index{test\_routines.h@{test\_routines.h}!run\_demo@{run\_demo}}
+\index{run\_demo@{run\_demo}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{run\_demo()}{run\_demo()}}
+{\footnotesize\ttfamily int run\+\_\+demo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run a demonstration of specific file system operations. 
+
+\begin{DoxyReturn}{Returns}
+Integer status code of the demonstration run (0 for success). 
+\end{DoxyReturn}
+\Hypertarget{test__routines_8h_a884ea12650d2fa68011489f3b383fb01}\label{test__routines_8h_a884ea12650d2fa68011489f3b383fb01} 
+\index{test\_routines.h@{test\_routines.h}!run\_test@{run\_test}}
+\index{run\_test@{run\_test}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{run\_test()}{run\_test()}}
+{\footnotesize\ttfamily int run\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run a set of tests to validate file system operations. 
+
+\begin{DoxyReturn}{Returns}
+Integer status code of the test run (0 for success). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test__routines_8h_a3b5a8ee252d9773230c8ae1527f1a5e2}\label{test__routines_8h_a3b5a8ee252d9773230c8ae1527f1a5e2} 
+\index{test\_routines.h@{test\_routines.h}!fs\_fat@{fs\_fat}}
+\index{fs\_fat@{fs\_fat}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{fs\_fat}{fs\_fat}}
+{\footnotesize\ttfamily uint16\+\_\+t\texorpdfstring{$\ast$}{*} fs\+\_\+fat\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+FAT. 
+
+External FAT.
+
+This variable represents the FAT used in the program. \Hypertarget{test__routines_8h_ab8a04a1fd835f09bcc71b462b63b1eb6}\label{test__routines_8h_ab8a04a1fd835f09bcc71b462b63b1eb6} 
+\index{test\_routines.h@{test\_routines.h}!fs\_size@{fs\_size}}
+\index{fs\_size@{fs\_size}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{fs\_size}{fs\_size}}
+{\footnotesize\ttfamily uint32\+\_\+t fs\+\_\+size\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Filesystem size. 
+
+External filesystem size.
+
+This variable represents the size of the external filesystem. This includes both FAT + DATA. If the filesystem is not mounted, its value will be 0. \Hypertarget{test__routines_8h_afb70d003bafb1ecebcbaa94d613e4e78}\label{test__routines_8h_afb70d003bafb1ecebcbaa94d613e4e78} 
+\index{test\_routines.h@{test\_routines.h}!g\_fdTable@{g\_fdTable}}
+\index{g\_fdTable@{g\_fdTable}!test\_routines.h@{test\_routines.h}}
+\doxysubsubsection{\texorpdfstring{g\_fdTable}{g\_fdTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} g\+\_\+fd\+Table\mbox{[}MAX\+\_\+\+FD\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Structure representing a file descriptor in the kernel. 
+
+This structure holds information about a file descriptor in the kernel. It is used to track open files and manage file operations. 

@@ -1,0 +1,65 @@
+\doxysection{KFile\+Descriptor Struct Reference}
+\hypertarget{struct_k_file_descriptor}{}\label{struct_k_file_descriptor}\index{KFileDescriptor@{KFileDescriptor}}
+
+
+Represents a file descriptor in the file system.  
+
+
+
+
+{\ttfamily \#include $<$k\+\_\+fd\+\_\+structs.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_k_file_descriptor_aaf412986806c3c3fac8784b46b26cb50}{name}} \mbox{[}32\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_k_file_descriptor_a10eacf0bdcb9e87eefa5de31ab813e9f}{first\+\_\+block\+\_\+index}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_k_file_descriptor_a5177a24f3c8c90a2edca7ce9691369f1}{offset}}
+\item 
+\mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{File\+Mode}} \mbox{\hyperlink{struct_k_file_descriptor_aa1b426f1444751a52a331735381f86f9}{mode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_k_file_descriptor_a4549d6df7d641878894820700bcefa18}{ref\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a file descriptor in the file system. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_k_file_descriptor_a10eacf0bdcb9e87eefa5de31ab813e9f}\label{struct_k_file_descriptor_a10eacf0bdcb9e87eefa5de31ab813e9f} 
+\index{KFileDescriptor@{KFileDescriptor}!first\_block\_index@{first\_block\_index}}
+\index{first\_block\_index@{first\_block\_index}!KFileDescriptor@{KFileDescriptor}}
+\doxysubsubsection{\texorpdfstring{first\_block\_index}{first\_block\_index}}
+{\footnotesize\ttfamily uint16\+\_\+t KFile\+Descriptor\+::first\+\_\+block\+\_\+index}
+
+Index to the file in the directory entries \Hypertarget{struct_k_file_descriptor_aa1b426f1444751a52a331735381f86f9}\label{struct_k_file_descriptor_aa1b426f1444751a52a331735381f86f9} 
+\index{KFileDescriptor@{KFileDescriptor}!mode@{mode}}
+\index{mode@{mode}!KFileDescriptor@{KFileDescriptor}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{File\+Mode}} KFile\+Descriptor\+::mode}
+
+Mode as defined above \Hypertarget{struct_k_file_descriptor_aaf412986806c3c3fac8784b46b26cb50}\label{struct_k_file_descriptor_aaf412986806c3c3fac8784b46b26cb50} 
+\index{KFileDescriptor@{KFileDescriptor}!name@{name}}
+\index{name@{name}!KFileDescriptor@{KFileDescriptor}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char KFile\+Descriptor\+::name\mbox{[}32\mbox{]}}
+
+Name of the file \Hypertarget{struct_k_file_descriptor_a5177a24f3c8c90a2edca7ce9691369f1}\label{struct_k_file_descriptor_a5177a24f3c8c90a2edca7ce9691369f1} 
+\index{KFileDescriptor@{KFileDescriptor}!offset@{offset}}
+\index{offset@{offset}!KFileDescriptor@{KFileDescriptor}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily uint32\+\_\+t KFile\+Descriptor\+::offset}
+
+Offset within the file \Hypertarget{struct_k_file_descriptor_a4549d6df7d641878894820700bcefa18}\label{struct_k_file_descriptor_a4549d6df7d641878894820700bcefa18} 
+\index{KFileDescriptor@{KFileDescriptor}!ref\_count@{ref\_count}}
+\index{ref\_count@{ref\_count}!KFileDescriptor@{KFileDescriptor}}
+\doxysubsubsection{\texorpdfstring{ref\_count}{ref\_count}}
+{\footnotesize\ttfamily uint8\+\_\+t KFile\+Descriptor\+::ref\+\_\+count}
+
+Reference count 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pennfat/\mbox{\hyperlink{k__fd__structs_8h}{k\+\_\+fd\+\_\+structs.\+h}}\end{DoxyCompactItemize}

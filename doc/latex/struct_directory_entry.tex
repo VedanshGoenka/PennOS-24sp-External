@@ -1,0 +1,81 @@
+\doxysection{Directory\+Entry Struct Reference}
+\hypertarget{struct_directory_entry}{}\label{struct_directory_entry}\index{DirectoryEntry@{DirectoryEntry}}
+
+
+Structure representing a directory entry.  
+
+
+
+
+{\ttfamily \#include $<$k\+\_\+fs\+\_\+structs.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_directory_entry_a35453ac17480b51de74996502d58facc}{name}} \mbox{[}32\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_directory_entry_abd0686e3bf2d3cf9c6f840bc8aea8cb6}{size}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_directory_entry_a9c6b25fffa873f64eba74b043a1aabb5}{first\+Block}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_directory_entry_a6f26bb82ca46f8a1a3aa6db616fc4dee}{type}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_directory_entry_ab78107665670cbbb6c1e572f22a4da02}{perm}}
+\item 
+time\+\_\+t \mbox{\hyperlink{struct_directory_entry_a906048e2f7708803c5fbfb9a99d7213f}{mtime}}
+\item 
+char \mbox{\hyperlink{struct_directory_entry_a6e182a6eda5bbc888832bb87a690f62e}{reserved}} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a directory entry. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_directory_entry_a9c6b25fffa873f64eba74b043a1aabb5}\label{struct_directory_entry_a9c6b25fffa873f64eba74b043a1aabb5} 
+\index{DirectoryEntry@{DirectoryEntry}!firstBlock@{firstBlock}}
+\index{firstBlock@{firstBlock}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{firstBlock}{firstBlock}}
+{\footnotesize\ttfamily uint16\+\_\+t Directory\+Entry\+::first\+Block}
+
+The first block of the entry. \Hypertarget{struct_directory_entry_a906048e2f7708803c5fbfb9a99d7213f}\label{struct_directory_entry_a906048e2f7708803c5fbfb9a99d7213f} 
+\index{DirectoryEntry@{DirectoryEntry}!mtime@{mtime}}
+\index{mtime@{mtime}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{mtime}{mtime}}
+{\footnotesize\ttfamily time\+\_\+t Directory\+Entry\+::mtime}
+
+The modification time of the entry. \Hypertarget{struct_directory_entry_a35453ac17480b51de74996502d58facc}\label{struct_directory_entry_a35453ac17480b51de74996502d58facc} 
+\index{DirectoryEntry@{DirectoryEntry}!name@{name}}
+\index{name@{name}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char Directory\+Entry\+::name\mbox{[}32\mbox{]}}
+
+The name of the entry. \Hypertarget{struct_directory_entry_ab78107665670cbbb6c1e572f22a4da02}\label{struct_directory_entry_ab78107665670cbbb6c1e572f22a4da02} 
+\index{DirectoryEntry@{DirectoryEntry}!perm@{perm}}
+\index{perm@{perm}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{perm}{perm}}
+{\footnotesize\ttfamily uint8\+\_\+t Directory\+Entry\+::perm}
+
+The permissions of the entry. \Hypertarget{struct_directory_entry_a6e182a6eda5bbc888832bb87a690f62e}\label{struct_directory_entry_a6e182a6eda5bbc888832bb87a690f62e} 
+\index{DirectoryEntry@{DirectoryEntry}!reserved@{reserved}}
+\index{reserved@{reserved}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily char Directory\+Entry\+::reserved\mbox{[}16\mbox{]}}
+
+Reserved space for future use. \Hypertarget{struct_directory_entry_abd0686e3bf2d3cf9c6f840bc8aea8cb6}\label{struct_directory_entry_abd0686e3bf2d3cf9c6f840bc8aea8cb6} 
+\index{DirectoryEntry@{DirectoryEntry}!size@{size}}
+\index{size@{size}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily uint32\+\_\+t Directory\+Entry\+::size}
+
+The size of the entry. \Hypertarget{struct_directory_entry_a6f26bb82ca46f8a1a3aa6db616fc4dee}\label{struct_directory_entry_a6f26bb82ca46f8a1a3aa6db616fc4dee} 
+\index{DirectoryEntry@{DirectoryEntry}!type@{type}}
+\index{type@{type}!DirectoryEntry@{DirectoryEntry}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily uint8\+\_\+t Directory\+Entry\+::type}
+
+The type of the entry. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pennfat/\mbox{\hyperlink{k__fs__structs_8h}{k\+\_\+fs\+\_\+structs.\+h}}\end{DoxyCompactItemize}

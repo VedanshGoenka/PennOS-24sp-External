@@ -1,0 +1,52 @@
+\doxysection{pid\+\_\+deque.\+h}
+\hypertarget{pid__deque_8h_source}{}\label{pid__deque_8h_source}\index{src/pennkernel/pid\_deque.h@{src/pennkernel/pid\_deque.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PID\_DEQUE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PID\_DEQUE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpid__dq__node__st}{pid\_dq\_node\_st}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpid__dq__node__st_a5fe303ae5a218edc0cd74d02203bb2aa}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpid__dq__node__st}{pid\_dq\_node\_st}}\ *\mbox{\hyperlink{structpid__dq__node__st_a70fda4d4970cc7e1886fa64bda69fbff}{next}};\ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpid__dq__node__st}{pid\_dq\_node\_st}}\ *\mbox{\hyperlink{structpid__dq__node__st_ae02620be61b0eafd24c6b57ac291821a}{prev}};\ \ }
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{structpid__dq__node__st}{PIDDequeNode}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpid__dq__st}{pid\_dq\_st}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpid__dq__st_a076e729e730061561f1b212f9c6480fc}{num\_elements}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structpid__dq__node__st}{PIDDequeNode}}\ *\mbox{\hyperlink{structpid__dq__st_a3c5cb54366bf221284c75dd83ff8654d}{front}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structpid__dq__node__st}{PIDDequeNode}}\ *\mbox{\hyperlink{structpid__dq__st_adc95a9c72df5d4d5dc71ed2d3f1a9125}{back}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{structpid__dq__st}{PIDDeque}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ Function\ declarations}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{structpid__dq__st}{PIDDeque}}*\ \mbox{\hyperlink{pid__deque_8c_a03b4c041c368fa2ea170435cd8bc4838}{PIDDeque\_Allocate}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pid__deque_8c_ac9460414b9b55f41164e44ec6eb44598}{PIDDeque\_Free}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pid__deque_8c_a740d09b54b98b7a18346029e51fbc495}{PIDDeque\_Size}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pid__deque_8c_a05c89ed636292fac083a7f165a3c7c26}{PIDDeque\_Push\_Front}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_a9f65598d4c2d32ca9b7cba767607507b}{PIDDeque\_Pop\_Front}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}\ *pid\_ptr);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_ac30364a993d6a840c5c05334f30b90cf}{PIDDeque\_Peek\_Front}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}\ *pid\_ptr);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pid__deque_8c_acd32644e742ec9018887cea1c95ba025}{PIDDeque\_Push\_Back}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_a0837dc02866d06cf722066d7832d699c}{PIDDeque\_Pop\_Back}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}*\ pid\_ptr);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_a5773e283ab38b4003de71588f35ccf6b}{PIDDeque\_Peek\_Back}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}\ *deque,\ \textcolor{keywordtype}{int}\ *pid\_ptr);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_ae8fff94c3f8f11d98a7acb5f30be8923}{PIDDeque\_Remove\_By\_PID}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}*\ deque,\ pid\_t\ pid,\ \textcolor{keywordtype}{int}*\ pid\_ptr);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{pid__deque_8c_a33432f9f1bc41a09ee3d7055b77774ff}{PIDDeque\_Get\_All\_pids}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}*\ deque,\ \textcolor{keywordtype}{size\_t}*\ count);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pid__deque_8c_a8d23d1c445c470fcd96929cae851c94c}{PIDDeque\_Find\_By\_PID}}(\mbox{\hyperlink{structpid__dq__st}{PIDDeque}}*\ deque,\ pid\_t\ pid,\ \textcolor{keywordtype}{int}*\ pid\_ptr);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PID\_DEQUE\_H}}
+
+\end{DoxyCode}

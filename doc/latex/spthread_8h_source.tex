@@ -1,0 +1,215 @@
+\doxysection{spthread.\+h}
+\hypertarget{spthread_8h_source}{}\label{spthread_8h_source}\index{src/util/spthread.h@{src/util/spthread.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_POSIX\_C\_SOURCE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_POSIX\_C\_SOURCE\ 200809L}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ \_DEFAULT\_SOURCE}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ \_DEFAULT\_SOURCE\ 1}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_XOPEN\_SOURCE\ 700}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ SPTHREAD\_H\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ SPTHREAD\_H\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ CAUTION:\ according\ to\ \`{}man\ 7\ pthread`:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ On\ older\ Linux\ kernels,\ SIGUSR1\ and\ SIGUSR2}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ \ \ are\ used.\ \ Applications\ must\ avoid\ the\ use\ of\ whichever\ set\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ \ \ signals\ is\ employed\ by\ the\ implementation.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ This\ may\ not\ work\ on\ other\ linux\ versions}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ SIGNAL\ PTHREAD}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ NOTE:\ if\ within\ a\ created\ spthread\ you\ change}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ the\ behaviour\ of\ SIGUSR1,\ then\ you\ will\ not\ be\ able}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ to\ suspend\ and\ continue\ a\ spthread}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SIGPTHD\ SIGUSR1}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ declares\ a\ struct,\ but\ the\ internals\ of\ the}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ struct\ cannot\ be\ seen\ by\ functions\ outside\ of\ spthread.c}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structspthread__meta__st}{spthread\_meta\_st}}\ \mbox{\hyperlink{structspthread__meta__st}{spthread\_meta\_t}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ The\ spthread\ wrapper\ struct.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Sometimes\ you\ may\ have\ to\ access\ the\ inner\ pthread\ member}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ but\ you\ shouldn't\ need\ to\ do\ that}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structspthread__st}{spthread\_st}}\ \{}
+\DoxyCodeLine{00039\ \ \ pthread\_t\ thread;}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{structspthread__meta__st}{spthread\_meta\_t}}*\ meta;}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{structspthread__st}{spthread\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ NOTE:}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ None\ of\ these\ are\ signal\ safe}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ Also\ note\ that\ most\ of\ these\ functions\ are\ not\ safe\ to\ suspension,}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ meaning\ that\ if\ the\ thread\ calling\ these\ is\ an\ spthread\ and\ is\ suspended}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ in\ the\ middle\ of\ spthread\_continue\ or\ spthread\_suspend,\ then\ it\ may\ not\ work.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ Make\ sure\ that\ the\ calling\ thread\ cannot\ be\ suspended\ before\ calling\ these}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ functions.\ Exceptions\ to\ this\ are\ spthread\_exit(),\ spthread\_self()\ and\ if\ a}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ thread\ is\ continuing\ or\ suspending\ itself.}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ spthread\_create:}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ this\ function\ works\ similar\ to\ pthread\_create,\ except\ for\ two\ differences.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ 1)\ the\ created\ pthread\ is\ able\ to\ be\ asychronously\ suspended,\ and\ continued}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ using\ the\ functions:}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ spthread\_suspend}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ spthread\_continue}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ 2)\ The\ created\ pthread\ will\ be\ suspended\ before\ it\ executes\ the\ specified}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ \ \ \ routine.\ It\ must\ first\ be\ continued\ with\ \`{}spthread\_continue`\ before}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ it\ will\ start\ executing.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ It\ is\ worth\ noting\ that\ this\ function\ is\ not\ signal\ safe.}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ In\ other\ words,\ it\ should\ not\ be\ called\ from\ a\ signal\ handler.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ to\ avoid\ repetition,\ see\ pthread\_create(3)\ for\ details}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ on\ arguments\ and\ return\ values\ as\ they\ are\ the\ same\ here.}}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{int}\ spthread\_create(\mbox{\hyperlink{structspthread__st}{spthread\_t}}*\ thread,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ pthread\_attr\_t*\ attr,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ (*start\_routine)(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ The\ spthread\_suspend\ function\ will\ signal\ to\ the}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ specified\ thread\ to\ suspend\ execution.}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ Calling\ spthread\_suspend\ on\ an\ already\ suspended}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ thread\ does\ not\ do\ anything.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ It\ is\ worth\ noting\ that\ this\ function\ is\ not\ signal\ safe.}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ In\ other\ words,\ it\ should\ not\ be\ called\ from\ a\ signal\ handler.}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ args:}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ -\/\ pthread\_t\ thread:\ the\ thread\ we\ want\ to\ suspend}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ \ \ This\ thread\ must\ be\ created\ using\ the\ spthread\_create()\ function,}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ \ \ if\ created\ by\ some\ other\ function,\ the\ behaviour\ is\ undefined.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ returns:}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ -\/\ 0\ on\ success}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ -\/\ EAGAIN\ if\ the\ thread\ could\ not\ be\ signaled}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ -\/\ ENOSYS\ if\ not\ supported\ on\ this\ system}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ -\/\ ESRCH\ if\ the\ thread\ specified\ is\ not\ a\ valid\ pthread}}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{int}\ spthread\_suspend(\mbox{\hyperlink{structspthread__st}{spthread\_t}}\ thread);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ The\ spthread\_suspend\_self\ function\ will\ cause\ the\ calling}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ thread\ (which\ should\ be\ created\ by\ spthread\_create)\ to\ suspend}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ itself.}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ returns:}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ -\/\ 0\ on\ success}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ -\/\ EAGAIN\ if\ the\ thread\ could\ not\ be\ signaled}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ -\/\ ENOSYS\ if\ not\ supported\ on\ this\ system}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ -\/\ ESRCH\ if\ the\ calling\ thread\ is\ not\ an\ spthread}}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ spthread\_suspend\_self();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ The\ spthread\_continue\ function\ will\ signal\ to\ the}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ specified\ thread\ to\ resume\ execution\ if\ suspended.}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ Calling\ spthread\_continue\ on\ an\ already\ non-\/suspended}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ thread\ does\ not\ do\ anything.}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ It\ is\ worth\ noting\ that\ this\ function\ is\ not\ signal\ safe.}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ In\ other\ words,\ it\ should\ not\ be\ called\ from\ a\ signal\ handler.}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ args:}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ -\/\ spthread\_t\ thread:\ the\ thread\ we\ want\ to\ continue}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ This\ thread\ must\ be\ created\ using\ the\ spthread\_create()\ function,}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ \ \ if\ created\ by\ some\ other\ function,\ the\ behaviour\ is\ undefined.}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ returns:}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ -\/\ 0\ on\ success}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ -\/\ EAGAIN\ if\ the\ thread\ could\ not\ be\ signaled}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ -\/\ ENOSYS\ if\ not\ supported\ on\ this\ system}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ -\/\ ESRCH\ if\ the\ thread\ specified\ is\ not\ a\ valid\ pthread}}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{int}\ spthread\_continue(\mbox{\hyperlink{structspthread__st}{spthread\_t}}\ thread);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ The\ spthread\_cancel\ function\ will\ send\ a}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ cancellation\ request\ to\ the\ specified\ thread.}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ as\ of\ now,\ this\ function\ is\ identical\ to\ pthread\_cancel(3)}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ so\ to\ avoid\ repitition,\ you\ should\ look\ there.}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//}}
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ Here\ are\ a\ few\ things\ that\ are\ worth\ highlighting:}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//\ -\/\ it\ is\ worth\ noting\ that\ it\ is\ a\ cancellation\ \_\_request\_\_}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ the\ thread\ may\ not\ terminate\ immediately,\ instead\ the}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ \ \ thread\ is\ checked\ whenever\ it\ calls\ a\ function\ that\ is}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ marked\ as\ a\ cancellation\ point.\ At\ those\ points,\ it\ will}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ \ \ start\ the\ cancellation\ procedure}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ -\/\ to\ make\ sure\ all\ things\ are\ de-\/allocated\ properly\ on}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ \ \ normal\ exiting\ of\ the\ thread\ and\ when\ it\ is\ cancelled,}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ \ \ you\ should\ mark\ a\ defered\ de-\/allocation\ with}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ \ \ pthread\_cleanup\_push(3).}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\ \ \ consider\ the\ following\ example:}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ \ \ \ \ void*\ thread\_routine(void*\ arg)\ \{}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ \ \ \ \ \ \ \ int*\ num\ =\ malloc(sizeof(int));}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ \ \ \ \ pthread\_cleanup\_push(\&free,\ num);}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ \ \ \ \ \ \ \ return\ NULL;}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ \ \ \ this\ program\ will\ allocate\ an\ integer\ on\ the\ heap}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ \ \ \ and\ mark\ that\ data\ to\ be\ de-\/allocated\ on\ cleanup.}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ \ \ \ This\ means\ that\ when\ the\ thread\ returns\ from\ the}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ \ \ \ routine\ specified\ in\ spthread\_create,\ free\ will}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ \ \ \ be\ called\ on\ num.\ This\ will\ also\ happen\ if\ the\ thread}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ \ \ \ is\ cancelled\ and\ not\ able\ to\ be\ exited\ normally.}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ \ \ \ Another\ function\ that\ should\ be\ used\ in\ conjunction}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ \ \ \ is\ pthread\_cleanup\_pop(3).\ I\ will\ leave\ that}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ \ \ to\ you\ to\ read\ more\ on.}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ It\ is\ worth\ noting\ that\ this\ function\ is\ not\ signal\ safe.}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ In\ other\ words,\ it\ should\ not\ be\ called\ from\ a\ signal\ handler.}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ args:}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ -\/\ spthread\_t\ thread:\ the\ thread\ we\ want\ to\ cancel.}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ \ \ This\ thread\ must\ be\ created\ using\ the\ spthread\_create()\ function,}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ \ \ if\ created\ by\ some\ other\ function,\ the\ behaviour\ is\ undefined.}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ returns:}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ -\/\ 0\ on\ success}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ -\/\ ESRCH\ if\ the\ thread\ specified\ is\ not\ a\ valid\ pthread}}
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{int}\ spthread\_cancel(\mbox{\hyperlink{structspthread__st}{spthread\_t}}\ thread);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ Can\ be\ called\ by\ a\ thread\ to\ get\ two\ peices\ of\ information:}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ 1.\ Whether\ or\ not\ the\ calling\ thread\ is\ an\ spthread\ (true\ or\ false)}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ 2.\ The\ spthread\_t\ of\ the\ calling\ thread,\ if\ it\ is\ an\ spthread\_t}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ almost\ always\ the\ function\ will\ be\ called\ like\ this:}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//\ spthread\_t\ self;}}
+\DoxyCodeLine{00180\ \textcolor{comment}{//\ bool\ i\_am\_spthread\ =\ spthread\_self(\&self);}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ args:}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ -\/\ spthread\_t*\ thread:\ the\ output\ parameter\ to\ get\ the\ spthread\_t}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ \ \ representing\ the\ calling\ thread,\ if\ it\ is\ an\ spthread}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//\ returns:}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//\ -\/\ true\ if\ the\ calling\ thread\ is\ an\ spthread\_t}}
+\DoxyCodeLine{00188\ \textcolor{comment}{//\ -\/\ false\ otherwise.}}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{bool}\ spthread\_self(\mbox{\hyperlink{structspthread__st}{spthread\_t}}*\ thread);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ The\ equivalent\ of\ pthread\_join\ but\ for\ spthread}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ To\ make\ sure\ all\ resources\ are\ cleaned\ up\ appropriately}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ spthreads\ that\ are\ created\ must\ at\ some\ ppoint\ have\ spthread\_join}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ called\ on\ them.\ Do\ not\ use\ pthread\_join\ on\ an\ spthread.}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ to\ avoid\ repetition,\ see\ pthread\_join(3)\ for\ details}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//\ on\ arguments\ and\ return\ values\ as\ they\ are\ the\ same\ as\ this\ function.}}
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{int}\ spthread\_join(\mbox{\hyperlink{structspthread__st}{spthread\_t}}\ thread,\ \textcolor{keywordtype}{void}**\ retval);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ The\ equivalent\ of\ pthread\_exit\ but\ for\ spthread}}
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ spthread\_exit\ must\ be\ used\ by\ spthreads\ instead\ of\ pthread\_exit.}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ Otherwise,\ calls\ to\ spthread\_join\ or\ other\ functions\ (like\ spthread\_suspend)}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ may\ not\ work\ as\ intended.}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//\ to\ avoid\ repetition,\ see\ pthread\_exit(3)\ for\ details}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ on\ arguments\ and\ return\ values\ as\ they\ are\ the\ same\ as\ this\ function.}}
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{void}\ spthread\_exit(\textcolor{keywordtype}{void}*\ status);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SPTHREAD\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,58 @@
+\doxysection{src/pennfat/u\+\_\+test\+\_\+suite.c File Reference}
+\hypertarget{u__test__suite_8c}{}\label{u__test__suite_8c}\index{src/pennfat/u\_test\_suite.c@{src/pennfat/u\_test\_suite.c}}
+
+
+Implementation of U-\/level test suite for Penn\+FAT.  
+
+
+{\ttfamily \#include "{}u\+\_\+test\+\_\+suite.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{u__test__suite_8c_a7e98f421dac24620971a451b7b164fee}\label{u__test__suite_8c_a7e98f421dac24620971a451b7b164fee} 
+void {\bfseries test\+\_\+u\+\_\+simple\+\_\+file\+\_\+operations} ()
+\begin{DoxyCompactList}\small\item\em Test simple file operations like open, write, and close. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a25d1746ca47315c0c6fd95c426701797}\label{u__test__suite_8c_a25d1746ca47315c0c6fd95c426701797} 
+void {\bfseries test\+\_\+u\+\_\+complex\+\_\+file\+\_\+operations} ()
+\begin{DoxyCompactList}\small\item\em Test complex file operations including multiple files and error handling. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a745aa9f224e01d2f396d601588cb7a77}\label{u__test__suite_8c_a745aa9f224e01d2f396d601588cb7a77} 
+void {\bfseries test\+\_\+u\+\_\+open\+\_\+close} ()
+\begin{DoxyCompactList}\small\item\em Test the open and close operations on files. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a1152ac019f369d126dc40e5e99cb6efd}\label{u__test__suite_8c_a1152ac019f369d126dc40e5e99cb6efd} 
+void {\bfseries test\+\_\+u\+\_\+read\+\_\+write} ()
+\begin{DoxyCompactList}\small\item\em Test read and write operations on files. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a8a5132ef36a56d343bd44e436b005b70}\label{u__test__suite_8c_a8a5132ef36a56d343bd44e436b005b70} 
+void {\bfseries test\+\_\+u\+\_\+append} ()
+\begin{DoxyCompactList}\small\item\em Test append operation on an existing file. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a23944c805238113bcf7f76d2ab52f76a}\label{u__test__suite_8c_a23944c805238113bcf7f76d2ab52f76a} 
+void {\bfseries test\+\_\+u\+\_\+unlink} ()
+\begin{DoxyCompactList}\small\item\em Test the unlink operation to remove a file. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_abe9c3c73441b30b78b2b35b6f25f5f12}\label{u__test__suite_8c_abe9c3c73441b30b78b2b35b6f25f5f12} 
+void {\bfseries test\+\_\+u\+\_\+lseek} ()
+\begin{DoxyCompactList}\small\item\em Test the lseek operation to change the file offset. \end{DoxyCompactList}\item 
+\Hypertarget{u__test__suite_8c_a8383fe2f3fdfe54e1842fdb7859e5bee}\label{u__test__suite_8c_a8383fe2f3fdfe54e1842fdb7859e5bee} 
+void {\bfseries test\+\_\+u\+\_\+ls} ()
+\begin{DoxyCompactList}\small\item\em Test listing files in the directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{u__test__suite_8c_a68da7185d553726f1975413551ca2f2d}{test\+\_\+u\+\_\+functions}} ()
+\begin{DoxyCompactList}\small\item\em Run all the test functions related to file operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of U-\/level test suite for Penn\+FAT. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{u__test__suite_8c_a68da7185d553726f1975413551ca2f2d}\label{u__test__suite_8c_a68da7185d553726f1975413551ca2f2d} 
+\index{u\_test\_suite.c@{u\_test\_suite.c}!test\_u\_functions@{test\_u\_functions}}
+\index{test\_u\_functions@{test\_u\_functions}!u\_test\_suite.c@{u\_test\_suite.c}}
+\doxysubsubsection{\texorpdfstring{test\_u\_functions()}{test\_u\_functions()}}
+{\footnotesize\ttfamily int test\+\_\+u\+\_\+functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run all the test functions related to file operations. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 if all tests pass, non-\/zero for failures. 
+\end{DoxyReturn}

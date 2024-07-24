@@ -1,0 +1,307 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Penn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}OS}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Author Information}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Submitted Source Files}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Top Level}{1}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Penn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FAT}{1}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Kernel}{2}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Shell}{2}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Util}{2}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}Compilation Instructions}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Penn OS}{2}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Penn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FAT}{3}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Overview of Work Accomplished}{3}{subsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.3.1}Key accomplishments\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{3}{subsubsection.1.3.3.1}%
+\contentsline {subsection}{\numberline {1.3.4}Description of Code and Code Layout}{3}{subsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.4.1}Penn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FAT}{3}{subsubsection.1.3.4.1}%
+\contentsline {subsubsection}{\numberline {1.3.4.2}Penn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Kernel}{4}{subsubsection.1.3.4.2}%
+\contentsline {subsubsection}{\numberline {1.3.4.3}Shell}{4}{subsubsection.1.3.4.3}%
+\contentsline {subsubsection}{\numberline {1.3.4.4}Utility}{4}{subsubsection.1.3.4.4}%
+\contentsline {subsubsection}{\numberline {1.3.4.5}Source Top Level}{4}{subsubsection.1.3.4.5}%
+\contentsline {subsection}{\numberline {1.3.5}General Comments}{4}{subsection.1.3.5}%
+\contentsline {chapter}{\numberline {2}Data Structure Index}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Data Structures}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Data Structure Documentation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Directory\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entry Struct Reference}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Field Documentation}{9}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}firstBlock}{9}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}mtime}{9}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}name}{10}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}perm}{10}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}reserved}{10}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}size}{10}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}type}{10}{subsubsection.4.1.2.7}%
+\contentsline {section}{\numberline {4.2}KFile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Descriptor Struct Reference}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Field Documentation}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}first\_block\_index}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}mode}{11}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}name}{11}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}offset}{11}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}ref\_count}{11}{subsubsection.4.2.2.5}%
+\contentsline {section}{\numberline {4.3}parsed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}command Struct Reference}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{12}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}pcb Struct Reference}{12}{section.4.4}%
+\contentsline {section}{\numberline {4.5}pcb\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{13}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{13}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Field Documentation}{13}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}next}{13}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}payload}{13}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}prev}{13}{subsubsection.4.5.2.3}%
+\contentsline {section}{\numberline {4.6}pcb\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{13}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{14}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Field Documentation}{14}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}back}{14}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}front}{14}{subsubsection.4.6.2.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.3}num\_elements}{14}{subsubsection.4.6.2.3}%
+\contentsline {section}{\numberline {4.7}pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{14}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{15}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Field Documentation}{15}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}next}{15}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}pid}{15}{subsubsection.4.7.2.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.3}prev}{15}{subsubsection.4.7.2.3}%
+\contentsline {section}{\numberline {4.8}pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dq\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{15}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{15}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Field Documentation}{16}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}back}{16}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}front}{16}{subsubsection.4.8.2.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.3}num\_elements}{16}{subsubsection.4.8.2.3}%
+\contentsline {section}{\numberline {4.9}SFile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Descriptor Struct Reference}{16}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{16}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Field Documentation}{17}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}fileDescriptors}{17}{subsubsection.4.9.2.1}%
+\contentsline {section}{\numberline {4.10}spthread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fwd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}args\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{17}{section.4.10}%
+\contentsline {section}{\numberline {4.11}spthread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}meta\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{17}{section.4.11}%
+\contentsline {section}{\numberline {4.12}spthread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}signal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}args\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{17}{section.4.12}%
+\contentsline {section}{\numberline {4.13}spthread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}st Struct Reference}{18}{section.4.13}%
+\contentsline {chapter}{\numberline {5}File Documentation}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}parser.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}src/errors.c File Reference}{20}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{20}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Function Documentation}{20}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}get\_error\_description()}{20}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}log\_error()}{20}{subsubsection.5.2.2.2}%
+\contentsline {section}{\numberline {5.3}errors.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}kernel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{21}{section.5.4}%
+\contentsline {section}{\numberline {5.5}logging.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{23}{section.5.5}%
+\contentsline {section}{\numberline {5.6}src/pcb.h File Reference}{23}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{24}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}pcb.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{24}{section.5.7}%
+\contentsline {section}{\numberline {5.8}src/pennfat.c File Reference}{24}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{25}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Function Documentation}{25}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}main()}{25}{subsubsection.5.8.2.1}%
+\contentsline {subsubsection}{\numberline {5.8.2.2}print\_parser\_errcode\_new()}{25}{subsubsection.5.8.2.2}%
+\contentsline {section}{\numberline {5.9}pennfat.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.9}%
+\contentsline {section}{\numberline {5.10}src/pennfat/fs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils.c File Reference}{26}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{26}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Function Documentation}{27}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}calculate\_fs\_size()}{27}{subsubsection.5.10.2.1}%
+\contentsline {subsubsection}{\numberline {5.10.2.2}create\_fs\_path()}{27}{subsubsection.5.10.2.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.3}create\_os\_path()}{28}{subsubsection.5.10.2.3}%
+\contentsline {subsubsection}{\numberline {5.10.2.4}mkfs()}{28}{subsubsection.5.10.2.4}%
+\contentsline {subsubsection}{\numberline {5.10.2.5}mount()}{28}{subsubsection.5.10.2.5}%
+\contentsline {subsubsection}{\numberline {5.10.2.6}unmount()}{29}{subsubsection.5.10.2.6}%
+\contentsline {section}{\numberline {5.11}fs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.5.11}%
+\contentsline {section}{\numberline {5.12}src/pennfat/k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structs.h File Reference}{29}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{30}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Enumeration Type Documentation}{30}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}FileMode}{30}{subsubsection.5.12.2.1}%
+\contentsline {section}{\numberline {5.13}k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{30}{section.5.13}%
+\contentsline {section}{\numberline {5.14}src/pennfat/k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structs.h File Reference}{30}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{31}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{31}{section.5.15}%
+\contentsline {section}{\numberline {5.16}src/pennfat/k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.c File Reference}{31}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{33}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Function Documentation}{34}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}add\_directory\_entry()}{34}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}allocate\_new\_block()}{35}{subsubsection.5.16.2.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.3}clear\_block()}{35}{subsubsection.5.16.2.3}%
+\contentsline {subsubsection}{\numberline {5.16.2.4}close\_fd()}{35}{subsubsection.5.16.2.4}%
+\contentsline {subsubsection}{\numberline {5.16.2.5}combine\_bytes()}{36}{subsubsection.5.16.2.5}%
+\contentsline {subsubsection}{\numberline {5.16.2.6}convert\_STD()}{36}{subsubsection.5.16.2.6}%
+\contentsline {subsubsection}{\numberline {5.16.2.7}copy\_string()}{36}{subsubsection.5.16.2.7}%
+\contentsline {subsubsection}{\numberline {5.16.2.8}create\_fd\_from\_entry()}{37}{subsubsection.5.16.2.8}%
+\contentsline {subsubsection}{\numberline {5.16.2.9}create\_file()}{37}{subsubsection.5.16.2.9}%
+\contentsline {subsubsection}{\numberline {5.16.2.10}deletable\_file()}{37}{subsubsection.5.16.2.10}%
+\contentsline {subsubsection}{\numberline {5.16.2.11}get\_block\_index\_from\_count()}{38}{subsubsection.5.16.2.11}%
+\contentsline {subsubsection}{\numberline {5.16.2.12}get\_block\_size()}{38}{subsubsection.5.16.2.12}%
+\contentsline {subsubsection}{\numberline {5.16.2.13}get\_block\_size\_config()}{38}{subsubsection.5.16.2.13}%
+\contentsline {subsubsection}{\numberline {5.16.2.14}get\_blocks\_allocated()}{39}{subsubsection.5.16.2.14}%
+\contentsline {subsubsection}{\numberline {5.16.2.15}get\_blocks\_in\_fat()}{39}{subsubsection.5.16.2.15}%
+\contentsline {subsubsection}{\numberline {5.16.2.16}get\_current\_fd\_block\_offset()}{39}{subsubsection.5.16.2.16}%
+\contentsline {subsubsection}{\numberline {5.16.2.17}get\_current\_fd\_fat\_index()}{39}{subsubsection.5.16.2.17}%
+\contentsline {subsubsection}{\numberline {5.16.2.18}get\_data\_block\_address()}{41}{subsubsection.5.16.2.18}%
+\contentsline {subsubsection}{\numberline {5.16.2.19}get\_directory\_entry\_by\_filename()}{41}{subsubsection.5.16.2.19}%
+\contentsline {subsubsection}{\numberline {5.16.2.20}get\_fd\_block\_count\_from\_offset()}{41}{subsubsection.5.16.2.20}%
+\contentsline {subsubsection}{\numberline {5.16.2.21}get\_fd\_by\_index()}{42}{subsubsection.5.16.2.21}%
+\contentsline {subsubsection}{\numberline {5.16.2.22}get\_fd\_by\_name()}{42}{subsubsection.5.16.2.22}%
+\contentsline {subsubsection}{\numberline {5.16.2.23}get\_fd\_index()}{42}{subsubsection.5.16.2.23}%
+\contentsline {subsubsection}{\numberline {5.16.2.24}get\_last\_block()}{43}{subsubsection.5.16.2.24}%
+\contentsline {subsubsection}{\numberline {5.16.2.25}get\_next\_free\_data\_block\_index()}{43}{subsubsection.5.16.2.25}%
+\contentsline {subsubsection}{\numberline {5.16.2.26}get\_next\_free\_fd()}{43}{subsubsection.5.16.2.26}%
+\contentsline {subsubsection}{\numberline {5.16.2.27}get\_permission()}{44}{subsubsection.5.16.2.27}%
+\contentsline {subsubsection}{\numberline {5.16.2.28}initialize\_fd\_table()}{44}{subsubsection.5.16.2.28}%
+\contentsline {subsubsection}{\numberline {5.16.2.29}k\_append()}{44}{subsubsection.5.16.2.29}%
+\contentsline {subsubsection}{\numberline {5.16.2.30}k\_close()}{45}{subsubsection.5.16.2.30}%
+\contentsline {subsubsection}{\numberline {5.16.2.31}k\_is\_executable()}{45}{subsubsection.5.16.2.31}%
+\contentsline {subsubsection}{\numberline {5.16.2.32}k\_ls()}{45}{subsubsection.5.16.2.32}%
+\contentsline {subsubsection}{\numberline {5.16.2.33}k\_lseek()}{46}{subsubsection.5.16.2.33}%
+\contentsline {subsubsection}{\numberline {5.16.2.34}k\_open()}{46}{subsubsection.5.16.2.34}%
+\contentsline {subsubsection}{\numberline {5.16.2.35}k\_read()}{47}{subsubsection.5.16.2.35}%
+\contentsline {subsubsection}{\numberline {5.16.2.36}k\_unlink()}{47}{subsubsection.5.16.2.36}%
+\contentsline {subsubsection}{\numberline {5.16.2.37}k\_write()}{47}{subsubsection.5.16.2.37}%
+\contentsline {subsubsection}{\numberline {5.16.2.38}max()}{48}{subsubsection.5.16.2.38}%
+\contentsline {subsubsection}{\numberline {5.16.2.39}read\_line\_from\_terminal()}{48}{subsubsection.5.16.2.39}%
+\contentsline {subsubsection}{\numberline {5.16.2.40}read\_std()}{48}{subsubsection.5.16.2.40}%
+\contentsline {subsubsection}{\numberline {5.16.2.41}recover\_blocks()}{49}{subsubsection.5.16.2.41}%
+\contentsline {subsubsection}{\numberline {5.16.2.42}remove\_directory\_entry()}{49}{subsubsection.5.16.2.42}%
+\contentsline {subsubsection}{\numberline {5.16.2.43}validate\_permission\_and\_mode()}{49}{subsubsection.5.16.2.43}%
+\contentsline {subsubsection}{\numberline {5.16.2.44}write\_std()}{50}{subsubsection.5.16.2.44}%
+\contentsline {subsubsection}{\numberline {5.16.2.45}writeable\_file()}{50}{subsubsection.5.16.2.45}%
+\contentsline {section}{\numberline {5.17}k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{50}{section.5.17}%
+\contentsline {section}{\numberline {5.18}src/pennfat/k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}routines.c File Reference}{53}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{53}{subsection.5.18.1}%
+\contentsline {subsection}{\numberline {5.18.2}Function Documentation}{53}{subsection.5.18.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.1}pf\_cat()}{53}{subsubsection.5.18.2.1}%
+\contentsline {subsubsection}{\numberline {5.18.2.2}pf\_chmod()}{54}{subsubsection.5.18.2.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.3}pf\_cp()}{54}{subsubsection.5.18.2.3}%
+\contentsline {subsubsection}{\numberline {5.18.2.4}pf\_mv()}{54}{subsubsection.5.18.2.4}%
+\contentsline {subsubsection}{\numberline {5.18.2.5}pf\_rm()}{55}{subsubsection.5.18.2.5}%
+\contentsline {subsubsection}{\numberline {5.18.2.6}pf\_touch()}{55}{subsubsection.5.18.2.6}%
+\contentsline {subsection}{\numberline {5.18.3}Variable Documentation}{55}{subsection.5.18.3}%
+\contentsline {subsubsection}{\numberline {5.18.3.1}fs\_fat}{55}{subsubsection.5.18.3.1}%
+\contentsline {subsubsection}{\numberline {5.18.3.2}fs\_mounted}{55}{subsubsection.5.18.3.2}%
+\contentsline {subsubsection}{\numberline {5.18.3.3}fs\_size}{55}{subsubsection.5.18.3.3}%
+\contentsline {subsubsection}{\numberline {5.18.3.4}g\_fdTable}{56}{subsubsection.5.18.3.4}%
+\contentsline {section}{\numberline {5.19}k\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}routines.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{56}{section.5.19}%
+\contentsline {section}{\numberline {5.20}src/pennfat/local\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.h File Reference}{56}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{57}{subsection.5.20.1}%
+\contentsline {section}{\numberline {5.21}local\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.5.21}%
+\contentsline {section}{\numberline {5.22}src/pennfat/s\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.c File Reference}{57}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{58}{subsection.5.22.1}%
+\contentsline {subsection}{\numberline {5.22.2}Function Documentation}{58}{subsection.5.22.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.1}get\_fd\_index\_from\_address()}{58}{subsubsection.5.22.2.1}%
+\contentsline {subsubsection}{\numberline {5.22.2.2}s\_append()}{58}{subsubsection.5.22.2.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.3}s\_close()}{58}{subsubsection.5.22.2.3}%
+\contentsline {subsubsection}{\numberline {5.22.2.4}s\_is\_executable()}{59}{subsubsection.5.22.2.4}%
+\contentsline {subsubsection}{\numberline {5.22.2.5}s\_ls()}{59}{subsubsection.5.22.2.5}%
+\contentsline {subsubsection}{\numberline {5.22.2.6}s\_lseek()}{59}{subsubsection.5.22.2.6}%
+\contentsline {subsubsection}{\numberline {5.22.2.7}s\_open()}{60}{subsubsection.5.22.2.7}%
+\contentsline {subsubsection}{\numberline {5.22.2.8}s\_read()}{60}{subsubsection.5.22.2.8}%
+\contentsline {subsubsection}{\numberline {5.22.2.9}s\_unlink()}{60}{subsubsection.5.22.2.9}%
+\contentsline {subsubsection}{\numberline {5.22.2.10}s\_write()}{61}{subsubsection.5.22.2.10}%
+\contentsline {section}{\numberline {5.23}s\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{61}{section.5.23}%
+\contentsline {section}{\numberline {5.24}src/pennfat/u\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.c File Reference}{62}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{62}{subsection.5.24.1}%
+\contentsline {subsection}{\numberline {5.24.2}Function Documentation}{62}{subsection.5.24.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.1}add\_fd\_to\_table()}{62}{subsubsection.5.24.2.1}%
+\contentsline {subsubsection}{\numberline {5.24.2.2}get\_fd\_address\_from\_index\_global()}{63}{subsubsection.5.24.2.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.3}get\_fd\_index\_from\_address\_global()}{63}{subsubsection.5.24.2.3}%
+\contentsline {subsubsection}{\numberline {5.24.2.4}is\_fd\_within\_table\_local()}{63}{subsubsection.5.24.2.4}%
+\contentsline {subsubsection}{\numberline {5.24.2.5}remove\_fd\_from\_table()}{64}{subsubsection.5.24.2.5}%
+\contentsline {subsubsection}{\numberline {5.24.2.6}u\_append()}{64}{subsubsection.5.24.2.6}%
+\contentsline {subsubsection}{\numberline {5.24.2.7}u\_close()}{64}{subsubsection.5.24.2.7}%
+\contentsline {subsubsection}{\numberline {5.24.2.8}u\_is\_executable()}{65}{subsubsection.5.24.2.8}%
+\contentsline {subsubsection}{\numberline {5.24.2.9}u\_ls()}{65}{subsubsection.5.24.2.9}%
+\contentsline {subsubsection}{\numberline {5.24.2.10}u\_lseek()}{65}{subsubsection.5.24.2.10}%
+\contentsline {subsubsection}{\numberline {5.24.2.11}u\_open()}{65}{subsubsection.5.24.2.11}%
+\contentsline {subsubsection}{\numberline {5.24.2.12}u\_read()}{66}{subsubsection.5.24.2.12}%
+\contentsline {subsubsection}{\numberline {5.24.2.13}u\_unlink()}{66}{subsubsection.5.24.2.13}%
+\contentsline {subsubsection}{\numberline {5.24.2.14}u\_write()}{66}{subsubsection.5.24.2.14}%
+\contentsline {section}{\numberline {5.25}u\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pennfat.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.5.25}%
+\contentsline {section}{\numberline {5.26}src/pennfat/u\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}suite.c File Reference}{67}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{68}{subsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.26.2}Function Documentation}{68}{subsection.5.26.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.1}test\_u\_functions()}{68}{subsubsection.5.26.2.1}%
+\contentsline {section}{\numberline {5.27}u\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}suite.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{68}{section.5.27}%
+\contentsline {section}{\numberline {5.28}src/pennkernel/pcb\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.c File Reference}{69}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{69}{subsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.28.2}Function Documentation}{70}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}PCBDeque\_Allocate()}{70}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}PCBDeque\_Find\_By\_PID()}{70}{subsubsection.5.28.2.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.3}PCBDeque\_Free()}{70}{subsubsection.5.28.2.3}%
+\contentsline {subsubsection}{\numberline {5.28.2.4}PCBDeque\_Get\_All\_PCBs()}{70}{subsubsection.5.28.2.4}%
+\contentsline {subsubsection}{\numberline {5.28.2.5}PCBDeque\_Peek\_Back()}{71}{subsubsection.5.28.2.5}%
+\contentsline {subsubsection}{\numberline {5.28.2.6}PCBDeque\_Peek\_Front()}{71}{subsubsection.5.28.2.6}%
+\contentsline {subsubsection}{\numberline {5.28.2.7}PCBDeque\_Pop\_Back()}{72}{subsubsection.5.28.2.7}%
+\contentsline {subsubsection}{\numberline {5.28.2.8}PCBDeque\_Pop\_Front()}{72}{subsubsection.5.28.2.8}%
+\contentsline {subsubsection}{\numberline {5.28.2.9}PCBDeque\_Push\_Back()}{72}{subsubsection.5.28.2.9}%
+\contentsline {subsubsection}{\numberline {5.28.2.10}PCBDeque\_Push\_Front()}{73}{subsubsection.5.28.2.10}%
+\contentsline {subsubsection}{\numberline {5.28.2.11}PCBDeque\_Remove\_By\_PID()}{73}{subsubsection.5.28.2.11}%
+\contentsline {subsubsection}{\numberline {5.28.2.12}PCBDeque\_Size()}{73}{subsubsection.5.28.2.12}%
+\contentsline {subsubsection}{\numberline {5.28.2.13}PCBDeque\_Update\_By\_PID()}{74}{subsubsection.5.28.2.13}%
+\contentsline {section}{\numberline {5.29}pcb\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{74}{section.5.29}%
+\contentsline {section}{\numberline {5.30}src/pennkernel/pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.c File Reference}{75}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{75}{subsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.30.2}Function Documentation}{75}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}PIDDeque\_Allocate()}{75}{subsubsection.5.30.2.1}%
+\contentsline {subsubsection}{\numberline {5.30.2.2}PIDDeque\_Find\_By\_PID()}{76}{subsubsection.5.30.2.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.3}PIDDeque\_Free()}{76}{subsubsection.5.30.2.3}%
+\contentsline {subsubsection}{\numberline {5.30.2.4}PIDDeque\_Get\_All\_pids()}{76}{subsubsection.5.30.2.4}%
+\contentsline {subsubsection}{\numberline {5.30.2.5}PIDDeque\_Peek\_Back()}{77}{subsubsection.5.30.2.5}%
+\contentsline {subsubsection}{\numberline {5.30.2.6}PIDDeque\_Peek\_Front()}{77}{subsubsection.5.30.2.6}%
+\contentsline {subsubsection}{\numberline {5.30.2.7}PIDDeque\_Pop\_Back()}{77}{subsubsection.5.30.2.7}%
+\contentsline {subsubsection}{\numberline {5.30.2.8}PIDDeque\_Pop\_Front()}{78}{subsubsection.5.30.2.8}%
+\contentsline {subsubsection}{\numberline {5.30.2.9}PIDDeque\_Push\_Back()}{78}{subsubsection.5.30.2.9}%
+\contentsline {subsubsection}{\numberline {5.30.2.10}PIDDeque\_Push\_Front()}{78}{subsubsection.5.30.2.10}%
+\contentsline {subsubsection}{\numberline {5.30.2.11}PIDDeque\_Remove\_By\_PID()}{79}{subsubsection.5.30.2.11}%
+\contentsline {subsubsection}{\numberline {5.30.2.12}PIDDeque\_Size()}{79}{subsubsection.5.30.2.12}%
+\contentsline {section}{\numberline {5.31}pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deque.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{79}{section.5.31}%
+\contentsline {section}{\numberline {5.32}src/pennos.c File Reference}{80}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{80}{subsection.5.32.1}%
+\contentsline {subsection}{\numberline {5.32.2}Function Documentation}{81}{subsection.5.32.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.1}shell\_process()}{81}{subsubsection.5.32.2.1}%
+\contentsline {section}{\numberline {5.33}src/shell/shell\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}func.c File Reference}{81}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{82}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Function Documentation}{82}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}bg()}{82}{subsubsection.5.33.2.1}%
+\contentsline {subsubsection}{\numberline {5.33.2.2}busy()}{82}{subsubsection.5.33.2.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.3}cat()}{83}{subsubsection.5.33.2.3}%
+\contentsline {subsubsection}{\numberline {5.33.2.4}chmod()}{83}{subsubsection.5.33.2.4}%
+\contentsline {subsubsection}{\numberline {5.33.2.5}cp()}{83}{subsubsection.5.33.2.5}%
+\contentsline {subsubsection}{\numberline {5.33.2.6}echo()}{83}{subsubsection.5.33.2.6}%
+\contentsline {subsubsection}{\numberline {5.33.2.7}fg()}{84}{subsubsection.5.33.2.7}%
+\contentsline {subsubsection}{\numberline {5.33.2.8}jobs()}{84}{subsubsection.5.33.2.8}%
+\contentsline {subsubsection}{\numberline {5.33.2.9}logout()}{84}{subsubsection.5.33.2.9}%
+\contentsline {subsubsection}{\numberline {5.33.2.10}ls()}{84}{subsubsection.5.33.2.10}%
+\contentsline {subsubsection}{\numberline {5.33.2.11}man()}{84}{subsubsection.5.33.2.11}%
+\contentsline {subsubsection}{\numberline {5.33.2.12}mv()}{85}{subsubsection.5.33.2.12}%
+\contentsline {subsubsection}{\numberline {5.33.2.13}nice\_travis()}{85}{subsubsection.5.33.2.13}%
+\contentsline {subsubsection}{\numberline {5.33.2.14}ps()}{85}{subsubsection.5.33.2.14}%
+\contentsline {subsubsection}{\numberline {5.33.2.15}rm()}{85}{subsubsection.5.33.2.15}%
+\contentsline {subsubsection}{\numberline {5.33.2.16}shell\_kill()}{86}{subsubsection.5.33.2.16}%
+\contentsline {subsubsection}{\numberline {5.33.2.17}sleep\_travis()}{86}{subsubsection.5.33.2.17}%
+\contentsline {subsubsection}{\numberline {5.33.2.18}touch()}{86}{subsubsection.5.33.2.18}%
+\contentsline {section}{\numberline {5.34}shell\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}func.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{86}{section.5.34}%
+\contentsline {section}{\numberline {5.35}stress.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{87}{section.5.35}%
+\contentsline {section}{\numberline {5.36}src/sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}call.c File Reference}{87}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{88}{subsection.5.36.1}%
+\contentsline {subsection}{\numberline {5.36.2}Function Documentation}{88}{subsection.5.36.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.1}s\_bg()}{88}{subsubsection.5.36.2.1}%
+\contentsline {subsubsection}{\numberline {5.36.2.2}s\_fg()}{89}{subsubsection.5.36.2.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.3}s\_get\_all\_process\_pcbs()}{89}{subsubsection.5.36.2.3}%
+\contentsline {subsubsection}{\numberline {5.36.2.4}s\_get\_args()}{89}{subsubsection.5.36.2.4}%
+\contentsline {subsubsection}{\numberline {5.36.2.5}s\_get\_f0()}{89}{subsubsection.5.36.2.5}%
+\contentsline {subsubsection}{\numberline {5.36.2.6}s\_get\_f1()}{89}{subsubsection.5.36.2.6}%
+\contentsline {subsubsection}{\numberline {5.36.2.7}s\_get\_fd\_table()}{90}{subsubsection.5.36.2.7}%
+\contentsline {subsubsection}{\numberline {5.36.2.8}s\_get\_num\_args()}{90}{subsubsection.5.36.2.8}%
+\contentsline {subsubsection}{\numberline {5.36.2.9}s\_get\_pid()}{90}{subsubsection.5.36.2.9}%
+\contentsline {subsubsection}{\numberline {5.36.2.10}s\_kill()}{90}{subsubsection.5.36.2.10}%
+\contentsline {subsubsection}{\numberline {5.36.2.11}s\_nice()}{91}{subsubsection.5.36.2.11}%
+\contentsline {subsubsection}{\numberline {5.36.2.12}s\_sleep()}{91}{subsubsection.5.36.2.12}%
+\contentsline {subsubsection}{\numberline {5.36.2.13}s\_spawn()}{91}{subsubsection.5.36.2.13}%
+\contentsline {subsubsection}{\numberline {5.36.2.14}s\_waitpid()}{92}{subsubsection.5.36.2.14}%
+\contentsline {section}{\numberline {5.37}sys\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}call.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{92}{section.5.37}%
+\contentsline {section}{\numberline {5.38}src/test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}routines.c File Reference}{93}{section.5.38}%
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{94}{subsection.5.38.1}%
+\contentsline {subsection}{\numberline {5.38.2}Function Documentation}{94}{subsection.5.38.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.1}initialize\_file\_system()}{94}{subsubsection.5.38.2.1}%
+\contentsline {subsubsection}{\numberline {5.38.2.2}run\_demo()}{94}{subsubsection.5.38.2.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.3}run\_test()}{94}{subsubsection.5.38.2.3}%
+\contentsline {section}{\numberline {5.39}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}routines.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{94}{section.5.39}%
+\contentsline {section}{\numberline {5.40}spthread.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{95}{section.5.40}%
+\contentsline {chapter}{Index}{99}{section*.42}%

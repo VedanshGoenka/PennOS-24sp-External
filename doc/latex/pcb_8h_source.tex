@@ -1,0 +1,50 @@
+\doxysection{pcb.\+h}
+\hypertarget{pcb_8h_source}{}\label{pcb_8h_source}\index{src/pcb.h@{src/pcb.h}}
+\mbox{\hyperlink{pcb_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PCB\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PCB\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <util/spthread.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{k__fd__structs_8h}{./pennfat/k\_fd\_structs.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{local__fd__struct_8h}{./pennfat/local\_fd\_struct.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}pennkernel/pid\_deque.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Enumeration\ for\ signal\ types\ used\ within\ the\ kernel}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{enum}\ signal\_type\ \{\ P\_SIGSTOP,\ P\_SIGCONT,\ P\_SIGTERM\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum}\ process\_state\ \{\ RUNNING,\ TERMINATED,\ BLOCKED,\ ZOMBIED,\ STOPPED\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpcb}{pcb}}\ \{}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{structspthread__st}{spthread\_t}}\ thread;\ \ \ \ \ \ \textcolor{comment}{//\ handle\ to\ the\ spthread}}
+\DoxyCodeLine{00023\ \ \ pthread\_mutex\_t\ mutex;\ \ \textcolor{comment}{//\ Mutex\ for\ synchronizing\ access}}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{char}*\ process\_name;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{int}\ pid;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ process\ id}}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{int}\ ppid;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ parent\ process\ id}}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{structpid__dq__st}{PIDDeque}}*\ child\_pids;\ \ \textcolor{comment}{//\ dynamically\ sized\ array\ of\ child\ process\ ids}}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{int}*\ open\_fds;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ array\ of\ open\ file\ descriptors}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ num\_open\_fds;\ \ \ \ \ \ \textcolor{comment}{//\ number\ of\ open\ file\ descriptors}}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{int}\ priority;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ priority\ of\ the\ process}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{int}\ state;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state\ of\ the\ process}}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}*\ file\_descriptors;\ \ \textcolor{comment}{//\ array\ of\ file\ descriptors}}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}**\ thread\_args;}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ num\_args;}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ continue\_to;}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{int}\ f0;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{int}\ f1;}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ is\_foreground;}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ signal\_state;}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{int}\ block\_time;\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{int}\ is\_waiting\_on;\ \ \textcolor{comment}{//\ 0\ if\ not\ waiting\ on\ any\ child,\ -\/1\ if\ waiting\ on\ any}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ child,\ >\ 0\ if\ waiting\ on\ that\ child\ pid}}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{int}\ exit\_status;\ \ \textcolor{comment}{//\ 0\ if\ not\ exited,\ 1\ if\ exited\ normally\ by\ calling\ exit(),}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2\ if\ stopped\ by\ signal,\ 3,\ if\ terminated\ by\ signal}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{structpcb}{pcb\_t}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PCB\_H}}
+
+\end{DoxyCode}

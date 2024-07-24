@@ -1,0 +1,98 @@
+\doxysection{src/pennfat.h File Reference}
+\hypertarget{pennfat_8h}{}\label{pennfat_8h}\index{src/pennfat.h@{src/pennfat.h}}
+
+
+The main file for the Penn\+FAT file system.  
+
+
+{\ttfamily \#include "{}../parser/parser.\+h"{}}\newline
+{\ttfamily \#include "{}./pennfat/k\+\_\+routines.\+h"{}}\newline
+{\ttfamily \#include "{}./pennfat/s\+\_\+pennfat.\+h"{}}\newline
+{\ttfamily \#include "{}./test\+\_\+routines.\+h"{}}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pennfat_8h_a29b7451465deac204c5f7cb1f9c6e1fc}\label{pennfat_8h_a29b7451465deac204c5f7cb1f9c6e1fc} 
+\#define {\bfseries MAX\+\_\+\+ARGS}~32
+\item 
+\Hypertarget{pennfat_8h_a687984f47d8cce148d1b914d2b79612a}\label{pennfat_8h_a687984f47d8cce148d1b914d2b79612a} 
+\#define {\bfseries EXIT\+\_\+\+SUCCESS}~0
+\item 
+\Hypertarget{pennfat_8h_accdbea14ea06c15e271784368bd993e8}\label{pennfat_8h_accdbea14ea06c15e271784368bd993e8} 
+\#define {\bfseries PROMPT}~"{}pennfat$>$ "{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pennfat_8h_ae9c31b51ad2af218587aec7a52c30b29}\label{pennfat_8h_ae9c31b51ad2af218587aec7a52c30b29} 
+void {\bfseries setup\+\_\+signal\+\_\+handlers\+\_\+pf} (void)
+\begin{DoxyCompactList}\small\item\em Set up signal handlers to ignore SIGINT and SIGTSTP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function to initiate the Penn\+FAT shell. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pennfat_8h_ac7c21403e93dcb9444299b5300c0473c}{read\+\_\+line\+\_\+from\+\_\+terminal}} (void)
+\begin{DoxyCompactList}\small\item\em Read a line of input from the terminal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pennfat_8h_a949ec82c8591c8f546499ec6ecc3fd78}{print\+\_\+parser\+\_\+errcode\+\_\+new}} (FILE \texorpdfstring{$\ast$}{*}output, int err\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Print the error message associated with a parser error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main file for the Penn\+FAT file system. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pennfat_8h_a0ddf1224851353fc92bfbff6f499fa97}\label{pennfat_8h_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{pennfat.h@{pennfat.h}!main@{main}}
+\index{main@{main}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function to initiate the Penn\+FAT shell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command line arguments. \\
+\hline
+{\em argv} & The argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns EXIT\+\_\+\+SUCCESS upon the termination of the program. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a949ec82c8591c8f546499ec6ecc3fd78}\label{pennfat_8h_a949ec82c8591c8f546499ec6ecc3fd78} 
+\index{pennfat.h@{pennfat.h}!print\_parser\_errcode\_new@{print\_parser\_errcode\_new}}
+\index{print\_parser\_errcode\_new@{print\_parser\_errcode\_new}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{print\_parser\_errcode\_new()}{print\_parser\_errcode\_new()}}
+{\footnotesize\ttfamily void print\+\_\+parser\+\_\+errcode\+\_\+new (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{output,  }\item[{int}]{err\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Print the error message associated with a parser error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The output stream to which the error message is written. \\
+\hline
+{\em err\+\_\+code} & The error code returned by the parser function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pennfat_8h_ac7c21403e93dcb9444299b5300c0473c}\label{pennfat_8h_ac7c21403e93dcb9444299b5300c0473c} 
+\index{pennfat.h@{pennfat.h}!read\_line\_from\_terminal@{read\_line\_from\_terminal}}
+\index{read\_line\_from\_terminal@{read\_line\_from\_terminal}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{read\_line\_from\_terminal()}{read\_line\_from\_terminal()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} read\+\_\+line\+\_\+from\+\_\+terminal (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read a line of input from the terminal. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the dynamically allocated line of input. 
+\end{DoxyReturn}

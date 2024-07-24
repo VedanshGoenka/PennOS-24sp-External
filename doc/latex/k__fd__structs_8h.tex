@@ -1,0 +1,60 @@
+\doxysection{src/pennfat/k\+\_\+fd\+\_\+structs.h File Reference}
+\hypertarget{k__fd__structs_8h}{}\label{k__fd__structs_8h}\index{src/pennfat/k\_fd\_structs.h@{src/pennfat/k\_fd\_structs.h}}
+
+
+File containing structures for file descriptors.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}k\+\_\+fs\+\_\+structs.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}}
+\begin{DoxyCompactList}\small\item\em Represents a file descriptor in the file system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{k__fd__structs_8h_ae9c7a3fcf619f9aeb244f8e85a68097f}\label{k__fd__structs_8h_ae9c7a3fcf619f9aeb244f8e85a68097f} 
+\#define {\bfseries MAX\+\_\+\+FD}~1024
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{File\+Mode}} \{ \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a8d17b4f5bc28a7102c467492b8f26b2e}{F\+\_\+\+WRITE}} = 0
+, \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a327988a43a2cd3bbf68e7241964b331d}{F\+\_\+\+READ}} = 1
+, \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a0998f5aef4b98808df7181445c4b34d7}{F\+\_\+\+APPEND}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing different file modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing structures for file descriptors. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}\label{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6} 
+\index{k\_fd\_structs.h@{k\_fd\_structs.h}!FileMode@{FileMode}}
+\index{FileMode@{FileMode}!k\_fd\_structs.h@{k\_fd\_structs.h}}
+\doxysubsubsection{\texorpdfstring{FileMode}{FileMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6}{File\+Mode}}}
+
+
+
+Enumeration representing different file modes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_WRITE@{F\_WRITE}!k\_fd\_structs.h@{k\_fd\_structs.h}}\index{k\_fd\_structs.h@{k\_fd\_structs.h}!F\_WRITE@{F\_WRITE}}}\Hypertarget{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a8d17b4f5bc28a7102c467492b8f26b2e}\label{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a8d17b4f5bc28a7102c467492b8f26b2e} 
+F\+\_\+\+WRITE&Write mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_READ@{F\_READ}!k\_fd\_structs.h@{k\_fd\_structs.h}}\index{k\_fd\_structs.h@{k\_fd\_structs.h}!F\_READ@{F\_READ}}}\Hypertarget{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a327988a43a2cd3bbf68e7241964b331d}\label{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a327988a43a2cd3bbf68e7241964b331d} 
+F\+\_\+\+READ&Read mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\_APPEND@{F\_APPEND}!k\_fd\_structs.h@{k\_fd\_structs.h}}\index{k\_fd\_structs.h@{k\_fd\_structs.h}!F\_APPEND@{F\_APPEND}}}\Hypertarget{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a0998f5aef4b98808df7181445c4b34d7}\label{k__fd__structs_8h_a031770da453a180e21dcbef5cf5aeab6a0998f5aef4b98808df7181445c4b34d7} 
+F\+\_\+\+APPEND&Append mode. \\
+\hline
+
+\end{DoxyEnumFields}

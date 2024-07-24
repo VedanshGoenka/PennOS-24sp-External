@@ -1,0 +1,174 @@
+\doxysection{src/errors.h File Reference}
+\hypertarget{errors_8h}{}\label{errors_8h}\index{src/errors.h@{src/errors.h}}
+
+
+Error codes and descriptions for the Penn\+FAT file system.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{errors_8h_a8fe83ac76edc595f6b98cd4a4127aed5}\label{errors_8h_a8fe83ac76edc595f6b98cd4a4127aed5} 
+\#define {\bfseries ERROR}~-\/1
+\item 
+\Hypertarget{errors_8h_a5570301c863e2a1c4cdcc49083d8a041}\label{errors_8h_a5570301c863e2a1c4cdcc49083d8a041} 
+\#define {\bfseries FS\+\_\+\+NOT\+\_\+\+MOUNTED}~-\/2
+\item 
+\Hypertarget{errors_8h_ae8820ea3a62b739be5fb57e5bd1b79ef}\label{errors_8h_ae8820ea3a62b739be5fb57e5bd1b79ef} 
+\#define {\bfseries FS\+\_\+\+ALREADY\+\_\+\+MOUNTED}~-\/3
+\item 
+\Hypertarget{errors_8h_aa88acf2b76b2ffbd24d621b3d1c5aaf1}\label{errors_8h_aa88acf2b76b2ffbd24d621b3d1c5aaf1} 
+\#define {\bfseries FS\+\_\+\+NOT\+\_\+\+FOUND}~-\/4
+\item 
+\Hypertarget{errors_8h_a95d66938b0cfadb27cc1368b5e04fdb3}\label{errors_8h_a95d66938b0cfadb27cc1368b5e04fdb3} 
+\#define {\bfseries INVALID\+\_\+\+OPERATION}~-\/5
+\item 
+\Hypertarget{errors_8h_a027e986afe325d6730fa18d38f187078}\label{errors_8h_a027e986afe325d6730fa18d38f187078} 
+\#define {\bfseries KERNEL\+\_\+\+ERROR}~-\/6
+\item 
+\Hypertarget{errors_8h_a775241e32b7ccb12e344ae23aa2db6b1}\label{errors_8h_a775241e32b7ccb12e344ae23aa2db6b1} 
+\#define {\bfseries FILE\+\_\+\+NOT\+\_\+\+FOUND}~-\/100
+\item 
+\Hypertarget{errors_8h_a9d16197d1a8b2d2bc784b29147950f9b}\label{errors_8h_a9d16197d1a8b2d2bc784b29147950f9b} 
+\#define {\bfseries FILE\+\_\+\+ALREADY\+\_\+\+EXISTS}~-\/101
+\item 
+\Hypertarget{errors_8h_a9c019c79309620567e24008bd4df8f2f}\label{errors_8h_a9c019c79309620567e24008bd4df8f2f} 
+\#define {\bfseries NO\+\_\+\+FREE\+\_\+\+FILE\+\_\+\+DESCRIPTORS}~-\/102
+\item 
+\Hypertarget{errors_8h_a24135e38649ebdae900143f533cffb0c}\label{errors_8h_a24135e38649ebdae900143f533cffb0c} 
+\#define {\bfseries FILE\+\_\+\+DESCRIPTOR\+\_\+\+NOT\+\_\+\+FOUND}~-\/103
+\item 
+\Hypertarget{errors_8h_a4826cdc95adfa0d05bfc6d3c273f2f4c}\label{errors_8h_a4826cdc95adfa0d05bfc6d3c273f2f4c} 
+\#define {\bfseries NO\+\_\+\+PERMISSION}~-\/104
+\item 
+\Hypertarget{errors_8h_aa467cda860bf545dae322e441015963d}\label{errors_8h_aa467cda860bf545dae322e441015963d} 
+\#define {\bfseries INVALID\+\_\+\+MODE}~-\/105
+\item 
+\Hypertarget{errors_8h_adefdb5f2931e36a78d76e9d90f4d562b}\label{errors_8h_adefdb5f2931e36a78d76e9d90f4d562b} 
+\#define {\bfseries NO\+\_\+\+FREE\+\_\+\+BLOCKS}~-\/107
+\item 
+\Hypertarget{errors_8h_a7a97ab4ce80bdb14c462fb26f3f38f5e}\label{errors_8h_a7a97ab4ce80bdb14c462fb26f3f38f5e} 
+\#define {\bfseries FILE\+\_\+\+NOT\+\_\+\+WRITABLE}~-\/108
+\item 
+\Hypertarget{errors_8h_a933ad3f3bf14b9cc2e6d69354a4572d0}\label{errors_8h_a933ad3f3bf14b9cc2e6d69354a4572d0} 
+\#define {\bfseries LOCAL\+\_\+\+FILE\+\_\+\+DESCRIPTOR\+\_\+\+NOT\+\_\+\+FOUND}~-\/109
+\item 
+\Hypertarget{errors_8h_a2c2ba7f8612dbda8692281d69b237221}\label{errors_8h_a2c2ba7f8612dbda8692281d69b237221} 
+\#define {\bfseries FILE\+\_\+\+IN\+\_\+\+USE}~-\/110
+\item 
+\Hypertarget{errors_8h_a0e1e04c95dff78cedf2c7c2fcd5edafc}\label{errors_8h_a0e1e04c95dff78cedf2c7c2fcd5edafc} 
+\#define {\bfseries FILE\+\_\+\+UNABLE\+\_\+\+TO\+\_\+\+OPEN}~-\/111
+\item 
+\Hypertarget{errors_8h_a68ad4f0366b81cda407ece28383442ea}\label{errors_8h_a68ad4f0366b81cda407ece28383442ea} 
+\#define {\bfseries INVALID\+\_\+\+STD\+\_\+\+FILE\+\_\+\+DESCRIPTOR}~-\/112
+\item 
+\Hypertarget{errors_8h_af463fca00032d7b62bb8cc187a80e1c8}\label{errors_8h_af463fca00032d7b62bb8cc187a80e1c8} 
+\#define {\bfseries DIRECTORY\+\_\+\+ENTRY\+\_\+\+NOT\+\_\+\+FOUND}~-\/200
+\item 
+\Hypertarget{errors_8h_a49d9cc2bcd5f7c98914356a68d66d413}\label{errors_8h_a49d9cc2bcd5f7c98914356a68d66d413} 
+\#define {\bfseries NO\+\_\+\+SPACE\+\_\+\+FOR\+\_\+\+NEW\+\_\+\+DIRECTORY}~-\/202
+\item 
+\Hypertarget{errors_8h_ad7c0b3d8ee75239176d170a0abbf2300}\label{errors_8h_ad7c0b3d8ee75239176d170a0abbf2300} 
+\#define {\bfseries INVALID\+\_\+\+BLOCK\+\_\+\+INDEX}~-\/300
+\item 
+\Hypertarget{errors_8h_a228f159421cbfa57f2d1693439fb17fc}\label{errors_8h_a228f159421cbfa57f2d1693439fb17fc} 
+\#define {\bfseries FILE\+\_\+\+DESCRIPTOR\+\_\+\+IN\+\_\+\+USE}~-\/403
+\item 
+\Hypertarget{errors_8h_a936769a62f070ca7463a6fbde838e7cb}\label{errors_8h_a936769a62f070ca7463a6fbde838e7cb} 
+\#define {\bfseries FILE\+\_\+\+DESCRIPTOR\+\_\+\+STD}~-\/404
+\item 
+\Hypertarget{errors_8h_a7f62d8d6f050391f0f3e6058867c4cfd}\label{errors_8h_a7f62d8d6f050391f0f3e6058867c4cfd} 
+\#define {\bfseries WRITE\+\_\+\+ERROR}~-\/501
+\item 
+\Hypertarget{errors_8h_a1f68034e762fb8d9116cdf213afe97df}\label{errors_8h_a1f68034e762fb8d9116cdf213afe97df} 
+\#define {\bfseries SEEK\+\_\+\+ERROR}~-\/502
+\item 
+\Hypertarget{errors_8h_a55eecb85490aa124f1b49dfec70ec350}\label{errors_8h_a55eecb85490aa124f1b49dfec70ec350} 
+\#define {\bfseries LOCAL\+\_\+\+FILE\+\_\+\+DESCRIPTOR\+\_\+\+TABLE\+\_\+\+NOT\+\_\+\+FOUND}~-\/601
+\item 
+\Hypertarget{errors_8h_a18d4e79dd72cd5eff357105836cc7f75}\label{errors_8h_a18d4e79dd72cd5eff357105836cc7f75} 
+\#define {\bfseries FILE\+\_\+\+NAME\+\_\+\+NOT\+\_\+\+FOUND}~-\/602
+\item 
+\Hypertarget{errors_8h_a734db08702efb6ef3cb0a22cad4691a2}\label{errors_8h_a734db08702efb6ef3cb0a22cad4691a2} 
+\#define {\bfseries INVALID\+\_\+\+READ\+\_\+\+SIZE}~-\/603
+\item 
+\Hypertarget{errors_8h_af2cc655747243c628957a79b200f804e}\label{errors_8h_af2cc655747243c628957a79b200f804e} 
+\#define {\bfseries BUFFER\+\_\+\+NOT\+\_\+\+FOUND}~-\/604
+\item 
+\Hypertarget{errors_8h_a40636ff8847316d91d2c2f15997525af}\label{errors_8h_a40636ff8847316d91d2c2f15997525af} 
+\#define {\bfseries INVALID\+\_\+\+WRITE\+\_\+\+SIZE}~-\/605
+\item 
+\Hypertarget{errors_8h_a56f8e75d6ce827dcee2b97f88852f991}\label{errors_8h_a56f8e75d6ce827dcee2b97f88852f991} 
+\#define {\bfseries INVALID\+\_\+\+OFFSET}~-\/606
+\item 
+\Hypertarget{errors_8h_ab9c2bd9ef827bf2daa2509908308482f}\label{errors_8h_ab9c2bd9ef827bf2daa2509908308482f} 
+\#define {\bfseries INVALID\+\_\+\+WHENCE}~-\/607
+\item 
+\Hypertarget{errors_8h_a7c5743325c08bc89cd840f46ea9dc4db}\label{errors_8h_a7c5743325c08bc89cd840f46ea9dc4db} 
+\#define {\bfseries INVALID\+\_\+\+SIGNAL}~-\/608
+\item 
+\Hypertarget{errors_8h_a6cde1331ef9cda83fb454f1010e4d203}\label{errors_8h_a6cde1331ef9cda83fb454f1010e4d203} 
+\#define {\bfseries NO\+\_\+\+PROCESS\+\_\+\+BLOCK\+\_\+\+FOUND}~-\/609
+\item 
+\Hypertarget{errors_8h_a8207c6fbed2fdb566233db3c526cb29c}\label{errors_8h_a8207c6fbed2fdb566233db3c526cb29c} 
+\#define {\bfseries FAILED\+\_\+\+TO\+\_\+\+ALLOCATE\+\_\+\+PROCESS}~-\/610
+\item 
+\Hypertarget{errors_8h_a07213ae40e1a6617a7d41db4af7566c2}\label{errors_8h_a07213ae40e1a6617a7d41db4af7566c2} 
+\#define {\bfseries FAILED\+\_\+\+TO\+\_\+\+CREATE\+\_\+\+THREAD}~-\/611
+\item 
+\Hypertarget{errors_8h_acb668321d9deef76943a649394514c93}\label{errors_8h_acb668321d9deef76943a649394514c93} 
+\#define {\bfseries NO\+\_\+\+RECENT\+\_\+\+PROCESS}~-\/612
+\item 
+\Hypertarget{errors_8h_ae26d9056e826fe23fa12f40fe82b4d7d}\label{errors_8h_ae26d9056e826fe23fa12f40fe82b4d7d} 
+\#define {\bfseries PROCESS\+\_\+\+NOT\+\_\+\+FOUND}~-\/613
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{errors_8h_a8cce4b083a42f399db36d3ce534db875}{get\+\_\+error\+\_\+description}} (int error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Returns a description of the error code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{errors_8h_aeb115638782cd836d53c436ab24ec5e7}{log\+\_\+error}} (int error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Logs an error message to stderr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Error codes and descriptions for the Penn\+FAT file system. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{errors_8h_a8cce4b083a42f399db36d3ce534db875}\label{errors_8h_a8cce4b083a42f399db36d3ce534db875} 
+\index{errors.h@{errors.h}!get\_error\_description@{get\_error\_description}}
+\index{get\_error\_description@{get\_error\_description}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{get\_error\_description()}{get\_error\_description()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} get\+\_\+error\+\_\+description (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Returns a description of the error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+code} & The error code to describe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A description of the error code. 
+\end{DoxyReturn}
+\Hypertarget{errors_8h_aeb115638782cd836d53c436ab24ec5e7}\label{errors_8h_aeb115638782cd836d53c436ab24ec5e7} 
+\index{errors.h@{errors.h}!log\_error@{log\_error}}
+\index{log\_error@{log\_error}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{log\_error()}{log\_error()}}
+{\footnotesize\ttfamily void log\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Logs an error message to stderr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+code} & The error code to log. \\
+\hline
+\end{DoxyParams}

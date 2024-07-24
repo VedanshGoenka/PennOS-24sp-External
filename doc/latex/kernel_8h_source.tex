@@ -1,0 +1,99 @@
+\doxysection{kernel.\+h}
+\hypertarget{kernel_8h_source}{}\label{kernel_8h_source}\index{src/kernel.h@{src/kernel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ KERNEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ KERNEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sys/time.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}errors.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}logging.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pcb_8h}{pcb.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}pennkernel/pcb\_deque.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}util/spthread.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MAX\_OPEN\_FDS\ 64}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DEFAULT\_PRIORITY\ 1}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MAX\_PROCESSES\ 100}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ QUANTUM\_MSEC\ 100}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PRIORITY\_HIGH\ 0}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ PRIORITY\_MEDIUM\ 1}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ PRIORITY\_LOW\ 2}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ NUM\_PRIORITY\_LEVELS\ 3}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ pid\_t\ k\_get\_pid();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ k\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ k\_number\_of\_pcbs();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00051\ pid\_t\ k\_proc\_create(\textcolor{keywordtype}{void}*\ (*func)(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ argv[],}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd0,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd1,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_foreground,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\_commands);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ pid\_t\ k\_waitpid(pid\_t\ pid,\ \textcolor{keywordtype}{int}*\ wstatus,\ \textcolor{keywordtype}{bool}\ nohang);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{int}\ k\_signal(pid\_t\ pid,\ \textcolor{keyword}{enum}\ signal\_type\ signal,\ \textcolor{keywordtype}{void}*\ args);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ k\_exit(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ k\_nice(pid\_t\ pid,\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ k\_sleep(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ticks);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ k\_bring\_to\_front(\textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \mbox{\hyperlink{struct_s_file_descriptor}{SFileDescriptor}}*\ k\_get\_fd\_table();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}**\ k\_get\_args();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ setup\_priority\_queues();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ scheduler\_tick();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \mbox{\hyperlink{structpcb}{pcb\_t}}*\ choose\_next\_process();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ cleanup\_pcb\_resources(\mbox{\hyperlink{structpcb}{pcb\_t}}*\ \mbox{\hyperlink{structpcb}{pcb}});}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \mbox{\hyperlink{structpcb}{pcb\_t}}*\ find\_pcb\_by\_pid(pid\_t\ pid);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00146\ \mbox{\hyperlink{structpcb}{pcb\_t}}**\ k\_get\_all\_process\_pcbs(\textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{int}\ k\_bg(\textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{int}\ k\_fg(\textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \textcolor{keywordtype}{int}\ k\_get\_f0();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{int}\ k\_get\_f1();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \textcolor{keywordtype}{int}\ k\_get\_num\_args();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ setup\_alt\_queues();}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{void}\ display\_pcb\_pids(\mbox{\hyperlink{structpcb__dq__st}{PCBDeque}}*\ deque);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ display\_all\_pcb\_pids();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{bool}\ block\_pcb(\mbox{\hyperlink{structpcb}{pcb\_t}}*\ \mbox{\hyperlink{structpcb}{pcb}});}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{bool}\ zombify\_by\_pcb(\mbox{\hyperlink{structpcb}{pcb\_t}}*\ \mbox{\hyperlink{structpcb}{pcb}});}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ unblock\_processes();}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{int}\ schedule\_process();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ KERNEL\_H}}
+
+\end{DoxyCode}

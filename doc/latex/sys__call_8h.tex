@@ -1,0 +1,301 @@
+\doxysection{src/sys\+\_\+call.h File Reference}
+\hypertarget{sys__call_8h}{}\label{sys__call_8h}\index{src/sys\_call.h@{src/sys\_call.h}}
+
+
+System call interface for process management.  
+
+
+{\ttfamily \#include $<$pcb.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sys__call_8h_a3024ccd4a9af5109d24e6c57565d74a1}\label{sys__call_8h_a3024ccd4a9af5109d24e6c57565d74a1} 
+\#define {\bfseries \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}~200809L
+\item 
+\Hypertarget{sys__call_8h_a78c99ffd76a7bb3c8c74db76207e9ab4}\label{sys__call_8h_a78c99ffd76a7bb3c8c74db76207e9ab4} 
+\#define {\bfseries \+\_\+\+XOPEN\+\_\+\+SOURCE}~700
+\item 
+\Hypertarget{sys__call_8h_aedf931caea3e70fda6999006f9922189}\label{sys__call_8h_aedf931caea3e70fda6999006f9922189} 
+\#define {\bfseries \+\_\+\+SYS\+\_\+\+CALL\+\_\+H}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pid\+\_\+t \mbox{\hyperlink{sys__call_8h_a835d1667a32fcaf1f369f6d1949883e9}{s\+\_\+get\+\_\+pid}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the process ID of the current process. \end{DoxyCompactList}\item 
+\Hypertarget{sys__call_8h_a3e0d339ec25da1069df1b4501ec26b0c}\label{sys__call_8h_a3e0d339ec25da1069df1b4501ec26b0c} 
+void {\bfseries s\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the system process management. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{sys__call_8h_a42a1b8a3c6f55a7bd7e17c70b9e2414e}{s\+\_\+spawn}} (void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}func)(void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, int fd0, int fd1, bool is\+\_\+foreground, int num\+\_\+commands)
+\begin{DoxyCompactList}\small\item\em Spawn a new process. \end{DoxyCompactList}\item 
+pid\+\_\+t \mbox{\hyperlink{sys__call_8h_a3c0c6c4ae69799354d707ff57ac925d3}{s\+\_\+waitpid}} (pid\+\_\+t pid, int \texorpdfstring{$\ast$}{*}wstatus, bool nohang)
+\begin{DoxyCompactList}\small\item\em Wait for a process to change state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sys__call_8h_abcc85a8526beec217250765426f0608b}{s\+\_\+kill}} (pid\+\_\+t pid, int signal, void \texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Send a signal to a process. \end{DoxyCompactList}\item 
+\Hypertarget{sys__call_8h_a53c8865d5bf1ca946e5b5405190f6690}\label{sys__call_8h_a53c8865d5bf1ca946e5b5405190f6690} 
+void {\bfseries s\+\_\+exit} (void)
+\begin{DoxyCompactList}\small\item\em Terminate the calling process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sys__call_8h_ac711d33fcf2573a590b224b6debab996}{s\+\_\+nice}} (pid\+\_\+t pid, int priority)
+\begin{DoxyCompactList}\small\item\em Change the priority of the current process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys__call_8h_aec37528a3c7935864924764d1911126c}{s\+\_\+sleep}} (unsigned int ticks)
+\begin{DoxyCompactList}\small\item\em Suspend execution for an interval of time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sys__call_8h_aaeb1bbb8ee1affdef7a3a4e29e406114}{s\+\_\+get\+\_\+all\+\_\+process\+\_\+pcbs}} (int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Retrieve a list of all process control blocks. \end{DoxyCompactList}\item 
+\Hypertarget{sys__call_8h_a981418f0048d915e7ca051723576cf65}\label{sys__call_8h_a981418f0048d915e7ca051723576cf65} 
+void {\bfseries s\+\_\+stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the system or process. \end{DoxyCompactList}\item 
+\Hypertarget{sys__call_8h_ace1731e62f775cd30d443019bc626498}\label{sys__call_8h_ace1731e62f775cd30d443019bc626498} 
+void {\bfseries s\+\_\+cont} ()
+\begin{DoxyCompactList}\small\item\em Continue a stopped process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys__call_8h_abaac3865799db492d2ad87aea656f2c7}{s\+\_\+fg}} (int pid)
+\begin{DoxyCompactList}\small\item\em Bring a process to the foreground. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys__call_8h_a3e800fc81773b3cfcd287e472d3139e0}{s\+\_\+bg}} (int pid)
+\begin{DoxyCompactList}\small\item\em Send a process to the background. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sys__call_8h_af48520dc63e92e0aa454d37307167afc}{s\+\_\+get\+\_\+fd\+\_\+table}} ()
+\begin{DoxyCompactList}\small\item\em Get the file descriptor table. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sys__call_8h_a3290e1061b1d901e3de43e169c44c9cd}{s\+\_\+get\+\_\+f0}} ()
+\begin{DoxyCompactList}\small\item\em Get the file descriptor for standard input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sys__call_8h_acc090c6b0218bc75a95094f28fffad51}{s\+\_\+get\+\_\+f1}} ()
+\begin{DoxyCompactList}\small\item\em Get the file descriptor for standard output. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sys__call_8h_aec93961fe0dc8de787192f64770e7cc1}{s\+\_\+get\+\_\+args}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the argument list of the current process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sys__call_8h_ad352b3c08626ca131d817f02eb8a3209}{s\+\_\+get\+\_\+num\+\_\+args}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of arguments passed to the current process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System call interface for process management. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sys__call_8h_a3e800fc81773b3cfcd287e472d3139e0}\label{sys__call_8h_a3e800fc81773b3cfcd287e472d3139e0} 
+\index{sys\_call.h@{sys\_call.h}!s\_bg@{s\_bg}}
+\index{s\_bg@{s\_bg}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_bg()}{s\_bg()}}
+{\footnotesize\ttfamily void s\+\_\+bg (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Send a process to the background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to send to the background. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sys__call_8h_abaac3865799db492d2ad87aea656f2c7}\label{sys__call_8h_abaac3865799db492d2ad87aea656f2c7} 
+\index{sys\_call.h@{sys\_call.h}!s\_fg@{s\_fg}}
+\index{s\_fg@{s\_fg}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_fg()}{s\_fg()}}
+{\footnotesize\ttfamily void s\+\_\+fg (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Bring a process to the foreground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to bring to the foreground. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sys__call_8h_aaeb1bbb8ee1affdef7a3a4e29e406114}\label{sys__call_8h_aaeb1bbb8ee1affdef7a3a4e29e406114} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_all\_process\_pcbs@{s\_get\_all\_process\_pcbs}}
+\index{s\_get\_all\_process\_pcbs@{s\_get\_all\_process\_pcbs}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_all\_process\_pcbs()}{s\_get\_all\_process\_pcbs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} s\+\_\+get\+\_\+all\+\_\+process\+\_\+pcbs (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Retrieve a list of all process control blocks. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to an array of PCB pointers. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_aec93961fe0dc8de787192f64770e7cc1}\label{sys__call_8h_aec93961fe0dc8de787192f64770e7cc1} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_args@{s\_get\_args}}
+\index{s\_get\_args@{s\_get\_args}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_args()}{s\_get\_args()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} s\+\_\+get\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the argument list of the current process. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the argument list. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_a3290e1061b1d901e3de43e169c44c9cd}\label{sys__call_8h_a3290e1061b1d901e3de43e169c44c9cd} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_f0@{s\_get\_f0}}
+\index{s\_get\_f0@{s\_get\_f0}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_f0()}{s\_get\_f0()}}
+{\footnotesize\ttfamily int s\+\_\+get\+\_\+f0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the file descriptor for standard input. 
+
+\begin{DoxyReturn}{Returns}
+File descriptor for standard input. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_acc090c6b0218bc75a95094f28fffad51}\label{sys__call_8h_acc090c6b0218bc75a95094f28fffad51} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_f1@{s\_get\_f1}}
+\index{s\_get\_f1@{s\_get\_f1}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_f1()}{s\_get\_f1()}}
+{\footnotesize\ttfamily int s\+\_\+get\+\_\+f1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the file descriptor for standard output. 
+
+\begin{DoxyReturn}{Returns}
+File descriptor for standard output. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_af48520dc63e92e0aa454d37307167afc}\label{sys__call_8h_af48520dc63e92e0aa454d37307167afc} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_fd\_table@{s\_get\_fd\_table}}
+\index{s\_get\_fd\_table@{s\_get\_fd\_table}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_fd\_table()}{s\_get\_fd\_table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*} s\+\_\+get\+\_\+fd\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the file descriptor table. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the start of the file descriptor table. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_ad352b3c08626ca131d817f02eb8a3209}\label{sys__call_8h_ad352b3c08626ca131d817f02eb8a3209} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_num\_args@{s\_get\_num\_args}}
+\index{s\_get\_num\_args@{s\_get\_num\_args}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_num\_args()}{s\_get\_num\_args()}}
+{\footnotesize\ttfamily int s\+\_\+get\+\_\+num\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the number of arguments passed to the current process. 
+
+\begin{DoxyReturn}{Returns}
+Number of arguments. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_a835d1667a32fcaf1f369f6d1949883e9}\label{sys__call_8h_a835d1667a32fcaf1f369f6d1949883e9} 
+\index{sys\_call.h@{sys\_call.h}!s\_get\_pid@{s\_get\_pid}}
+\index{s\_get\_pid@{s\_get\_pid}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_get\_pid()}{s\_get\_pid()}}
+{\footnotesize\ttfamily pid\+\_\+t s\+\_\+get\+\_\+pid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the process ID of the current process. 
+
+\begin{DoxyReturn}{Returns}
+The process ID (PID) of the calling process. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_abcc85a8526beec217250765426f0608b}\label{sys__call_8h_abcc85a8526beec217250765426f0608b} 
+\index{sys\_call.h@{sys\_call.h}!s\_kill@{s\_kill}}
+\index{s\_kill@{s\_kill}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_kill()}{s\_kill()}}
+{\footnotesize\ttfamily int s\+\_\+kill (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int}]{signal,  }\item[{void \texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+
+
+Send a signal to a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to which the signal should be sent. \\
+\hline
+{\em signal} & Signal number to send. \\
+\hline
+{\em args} & Additional arguments if needed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of operation (0 for success, -\/1 for failure). 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_ac711d33fcf2573a590b224b6debab996}\label{sys__call_8h_ac711d33fcf2573a590b224b6debab996} 
+\index{sys\_call.h@{sys\_call.h}!s\_nice@{s\_nice}}
+\index{s\_nice@{s\_nice}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_nice()}{s\_nice()}}
+{\footnotesize\ttfamily int s\+\_\+nice (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Change the priority of the current process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to change priority of. \\
+\hline
+{\em priority} & New priority value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of operation (0 for success, -\/1 for failure). 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_aec37528a3c7935864924764d1911126c}\label{sys__call_8h_aec37528a3c7935864924764d1911126c} 
+\index{sys\_call.h@{sys\_call.h}!s\_sleep@{s\_sleep}}
+\index{s\_sleep@{s\_sleep}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_sleep()}{s\_sleep()}}
+{\footnotesize\ttfamily void s\+\_\+sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{ticks }\end{DoxyParamCaption})}
+
+
+
+Suspend execution for an interval of time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticks} & The number of ticks to sleep. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sys__call_8h_a42a1b8a3c6f55a7bd7e17c70b9e2414e}\label{sys__call_8h_a42a1b8a3c6f55a7bd7e17c70b9e2414e} 
+\index{sys\_call.h@{sys\_call.h}!s\_spawn@{s\_spawn}}
+\index{s\_spawn@{s\_spawn}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_spawn()}{s\_spawn()}}
+{\footnotesize\ttfamily pid\+\_\+t s\+\_\+spawn (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*})}]{func,  }\item[{void \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int}]{fd0,  }\item[{int}]{fd1,  }\item[{bool}]{is\+\_\+foreground,  }\item[{int}]{num\+\_\+commands }\end{DoxyParamCaption})}
+
+
+
+Spawn a new process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The function to be executed by the new process. \\
+\hline
+{\em argv} & Arguments to pass to the function. \\
+\hline
+{\em fd0} & File descriptor for standard input. \\
+\hline
+{\em fd1} & File descriptor for standard output. \\
+\hline
+{\em is\+\_\+foreground} & Boolean indicating if the process is in the foreground. \\
+\hline
+{\em num\+\_\+commands} & Number of commands to execute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The process ID (PID) of the spawned process. 
+\end{DoxyReturn}
+\Hypertarget{sys__call_8h_a3c0c6c4ae69799354d707ff57ac925d3}\label{sys__call_8h_a3c0c6c4ae69799354d707ff57ac925d3} 
+\index{sys\_call.h@{sys\_call.h}!s\_waitpid@{s\_waitpid}}
+\index{s\_waitpid@{s\_waitpid}!sys\_call.h@{sys\_call.h}}
+\doxysubsubsection{\texorpdfstring{s\_waitpid()}{s\_waitpid()}}
+{\footnotesize\ttfamily pid\+\_\+t s\+\_\+waitpid (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{int \texorpdfstring{$\ast$}{*}}]{wstatus,  }\item[{bool}]{nohang }\end{DoxyParamCaption})}
+
+
+
+Wait for a process to change state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process ID to wait on. \\
+\hline
+{\em wstatus} & Pointer to store the exit status of the waited-\/for process. \\
+\hline
+{\em nohang} & Boolean to not hang if no status is available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The process ID of the terminated process. 
+\end{DoxyReturn}

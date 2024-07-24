@@ -1,0 +1,35 @@
+\doxysection{test\+\_\+routines.\+h}
+\hypertarget{test__routines_8h_source}{}\label{test__routines_8h_source}\index{src/test\_routines.h@{src/test\_routines.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PENNFAT\_TESTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PENNFAT\_TESTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}pennfat.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{k__fd__structs_8h}{pennfat/k\_fd\_structs.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}pennfat/k\_pennfat.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}pennfat/k\_routines.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}errors.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ uint16\_t*\ fs\_fat;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_k_file_descriptor}{KFileDescriptor}}\ g\_fdTable[MAX\_FD];}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ uint32\_t\ fs\_size;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test__routines_8c_a8aa37b4b9995a4cea1e9baf41a2e9a3b}{initialize\_file\_system}}(\textcolor{keywordtype}{int}\ fs\_number);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test__routines_8c_a78b66b72d1142caa3232fb561f56284e}{cleanup\_file\_system}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__routines_8c_a1cb3b25c862a989835f25b7a9b0f1bd5}{run\_demo}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__routines_8c_a884ea12650d2fa68011489f3b383fb01}{run\_test}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PENNFAT\_TESTS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,190 @@
+\doxysection{src/pennfat/k\+\_\+routines.c File Reference}
+\hypertarget{k__routines_8c}{}\label{k__routines_8c}\index{src/pennfat/k\_routines.c@{src/pennfat/k\_routines.c}}
+
+
+This file contains the implementation of the kernel routines.  
+
+
+{\ttfamily \#include "{}k\+\_\+routines.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{k__routines_8c_a78d0e89cb663f230b54c4c16eae91d49}{pf\+\_\+touch}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}files)
+\begin{DoxyCompactList}\small\item\em Creates files if they do not exist, or updates their timestamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{k__routines_8c_a86724d1a9bc9031aa5f51930cfe3fa4c}{pf\+\_\+mv}} (char \texorpdfstring{$\ast$}{*}source, char \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Renames SOURCE to DEST. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{k__routines_8c_a21af9428c012cbd177b9176afa3328bf}{pf\+\_\+rm}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Removes the specified files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{k__routines_8c_a858ad63897ab4b354f9aa468e2bd5709}{pf\+\_\+cat}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Concatenates files and outputs them to stdout or a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{k__routines_8c_ad0ce949b594417e6e05fd4e3e27ad61c}{pf\+\_\+cp}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Copies a file either within the Penn\+FAT filesystem or between the filesystem and the host OS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{k__routines_8c_a53460cb8e483f2e0e4028c69c5441aaf}{pf\+\_\+chmod}} (char \texorpdfstring{$\ast$}{*}permissions, char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Change permissions of a file. There\textquotesingle{}s no need to error if a permission being added already exists, or if a permission being removed is already not granted. \end{DoxyCompactList}\item 
+\Hypertarget{k__routines_8c_ab428497855433699f134300efc3a606a}\label{k__routines_8c_ab428497855433699f134300efc3a606a} 
+void {\bfseries pf\+\_\+ls} (void)
+\begin{DoxyCompactList}\small\item\em Lists all files in the current directory, similar to "{}ls -\/il"{} in bash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{k__routines_8c_a3b5a8ee252d9773230c8ae1527f1a5e2}{fs\+\_\+fat}}
+\begin{DoxyCompactList}\small\item\em FAT. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{k__routines_8c_ab8a04a1fd835f09bcc71b462b63b1eb6}{fs\+\_\+size}} = 0
+\begin{DoxyCompactList}\small\item\em Filesystem size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{k__routines_8c_adc1843b3ec57abceaf2f950cd7f9cf88}{fs\+\_\+mounted}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the filesystem is mounted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \mbox{\hyperlink{k__routines_8c_afb70d003bafb1ecebcbaa94d613e4e78}{g\+\_\+fd\+Table}} \mbox{[}MAX\+\_\+\+FD\mbox{]}
+\begin{DoxyCompactList}\small\item\em Structure representing a file descriptor in the kernel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of the kernel routines. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{k__routines_8c_a858ad63897ab4b354f9aa468e2bd5709}\label{k__routines_8c_a858ad63897ab4b354f9aa468e2bd5709} 
+\index{k\_routines.c@{k\_routines.c}!pf\_cat@{pf\_cat}}
+\index{pf\_cat@{pf\_cat}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_cat()}{pf\_cat()}}
+{\footnotesize\ttfamily void pf\+\_\+cat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+
+
+Concatenates files and outputs them to stdout or a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & Null-\/terminated array of file paths to concatenate. \\
+\hline
+{\em output\+\_\+file} & Optional path to the output file (NULL for stdout). \\
+\hline
+{\em append} & Whether to append to the output file (true) or overwrite it (false). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{k__routines_8c_a53460cb8e483f2e0e4028c69c5441aaf}\label{k__routines_8c_a53460cb8e483f2e0e4028c69c5441aaf} 
+\index{k\_routines.c@{k\_routines.c}!pf\_chmod@{pf\_chmod}}
+\index{pf\_chmod@{pf\_chmod}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_chmod()}{pf\_chmod()}}
+{\footnotesize\ttfamily void pf\+\_\+chmod (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{permissions,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Change permissions of a file. There\textquotesingle{}s no need to error if a permission being added already exists, or if a permission being removed is already not granted. 
+
+Print appropriate error message if\+:
+\begin{DoxyItemize}
+\item {\ttfamily file} is not a file that exists
+\item {\ttfamily perms} is invalid
+\end{DoxyItemize}
+
+Example Usage\+: chmod +x file (adds executable permission to file) Example Usage\+: chmod +rw file (adds read + write permissions to file) Example Usage\+: chmod -\/wx file (removes write + executable permissions from file) \Hypertarget{k__routines_8c_ad0ce949b594417e6e05fd4e3e27ad61c}\label{k__routines_8c_ad0ce949b594417e6e05fd4e3e27ad61c} 
+\index{k\_routines.c@{k\_routines.c}!pf\_cp@{pf\_cp}}
+\index{pf\_cp@{pf\_cp}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_cp()}{pf\_cp()}}
+{\footnotesize\ttfamily void pf\+\_\+cp (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+
+
+Copies a file either within the Penn\+FAT filesystem or between the filesystem and the host OS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Array of arguments\+: \mbox{[}source, destination, -\/h\mbox{]}. Penn\+FAT-\/to-\/\+Penn\+FAT or Penn\+FAT-\/to-\/host. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{k__routines_8c_a86724d1a9bc9031aa5f51930cfe3fa4c}\label{k__routines_8c_a86724d1a9bc9031aa5f51930cfe3fa4c} 
+\index{k\_routines.c@{k\_routines.c}!pf\_mv@{pf\_mv}}
+\index{pf\_mv@{pf\_mv}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_mv()}{pf\_mv()}}
+{\footnotesize\ttfamily void pf\+\_\+mv (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{source,  }\item[{char \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Renames SOURCE to DEST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Path of the source file. \\
+\hline
+{\em dest} & New path (name) for the source file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{k__routines_8c_a21af9428c012cbd177b9176afa3328bf}\label{k__routines_8c_a21af9428c012cbd177b9176afa3328bf} 
+\index{k\_routines.c@{k\_routines.c}!pf\_rm@{pf\_rm}}
+\index{pf\_rm@{pf\_rm}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_rm()}{pf\_rm()}}
+{\footnotesize\ttfamily void pf\+\_\+rm (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+
+
+Removes the specified files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Null-\/terminated array of args including file paths to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{k__routines_8c_a78d0e89cb663f230b54c4c16eae91d49}\label{k__routines_8c_a78d0e89cb663f230b54c4c16eae91d49} 
+\index{k\_routines.c@{k\_routines.c}!pf\_touch@{pf\_touch}}
+\index{pf\_touch@{pf\_touch}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{pf\_touch()}{pf\_touch()}}
+{\footnotesize\ttfamily void pf\+\_\+touch (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{files }\end{DoxyParamCaption})}
+
+
+
+Creates files if they do not exist, or updates their timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & Null-\/terminated array of file paths. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{k__routines_8c_a3b5a8ee252d9773230c8ae1527f1a5e2}\label{k__routines_8c_a3b5a8ee252d9773230c8ae1527f1a5e2} 
+\index{k\_routines.c@{k\_routines.c}!fs\_fat@{fs\_fat}}
+\index{fs\_fat@{fs\_fat}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{fs\_fat}{fs\_fat}}
+{\footnotesize\ttfamily uint16\+\_\+t\texorpdfstring{$\ast$}{*} fs\+\_\+fat}
+
+
+
+FAT. 
+
+External FAT.
+
+This variable represents the FAT used in the program. \Hypertarget{k__routines_8c_adc1843b3ec57abceaf2f950cd7f9cf88}\label{k__routines_8c_adc1843b3ec57abceaf2f950cd7f9cf88} 
+\index{k\_routines.c@{k\_routines.c}!fs\_mounted@{fs\_mounted}}
+\index{fs\_mounted@{fs\_mounted}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{fs\_mounted}{fs\_mounted}}
+{\footnotesize\ttfamily bool fs\+\_\+mounted = false}
+
+
+
+Flag indicating whether the filesystem is mounted. 
+
+External flag indicating whether the filesystem is mounted. \Hypertarget{k__routines_8c_ab8a04a1fd835f09bcc71b462b63b1eb6}\label{k__routines_8c_ab8a04a1fd835f09bcc71b462b63b1eb6} 
+\index{k\_routines.c@{k\_routines.c}!fs\_size@{fs\_size}}
+\index{fs\_size@{fs\_size}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{fs\_size}{fs\_size}}
+{\footnotesize\ttfamily uint32\+\_\+t fs\+\_\+size = 0}
+
+
+
+Filesystem size. 
+
+External filesystem size.
+
+This variable represents the size of the external filesystem. This includes both FAT + DATA. If the filesystem is not mounted, its value will be 0. \Hypertarget{k__routines_8c_afb70d003bafb1ecebcbaa94d613e4e78}\label{k__routines_8c_afb70d003bafb1ecebcbaa94d613e4e78} 
+\index{k\_routines.c@{k\_routines.c}!g\_fdTable@{g\_fdTable}}
+\index{g\_fdTable@{g\_fdTable}!k\_routines.c@{k\_routines.c}}
+\doxysubsubsection{\texorpdfstring{g\_fdTable}{g\_fdTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} g\+\_\+fd\+Table\mbox{[}MAX\+\_\+\+FD\mbox{]}}
+
+
+
+Structure representing a file descriptor in the kernel. 
+
+This structure holds information about a file descriptor in the kernel. It is used to track open files and manage file operations. 

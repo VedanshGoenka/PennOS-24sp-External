@@ -1,0 +1,54 @@
+\doxysection{src/pennos.c File Reference}
+\hypertarget{pennos_8c}{}\label{pennos_8c}\index{src/pennos.c@{src/pennos.c}}
+
+
+The main file for the Penn\+OS kernel.  
+
+
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+{\ttfamily \#include $<$logging.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys\+\_\+call.\+h$>$}\newline
+{\ttfamily \#include "{}../parser/parser.\+h"{}}\newline
+{\ttfamily \#include "{}./pennfat/u\+\_\+test\+\_\+suite.\+h"{}}\newline
+{\ttfamily \#include "{}./pennfat/u\+\_\+pennfat.\+h"{}}\newline
+{\ttfamily \#include "{}shell/shell\+\_\+func.\+h"{}}\newline
+{\ttfamily \#include "{}shell/stress.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pennos_8c_a813a5fd72f450fb958451e768d10b4d0}\label{pennos_8c_a813a5fd72f450fb958451e768d10b4d0} 
+void {\bfseries execute\+\_\+commands} (char \texorpdfstring{$\ast$}{*}command, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}commands, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args, int f0, int f1, bool is\+\_\+background, int num\+\_\+args)
+\item 
+\Hypertarget{pennos_8c_ad008951f8340d81e2e21df3b7f325526}\label{pennos_8c_ad008951f8340d81e2e21df3b7f325526} 
+void {\bfseries custom\+\_\+script} (char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_s_file_descriptor}{SFile\+Descriptor}} \texorpdfstring{$\ast$}{*}fd\+\_\+table, int f0, int f1, int is\+\_\+background)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pennos_8c_a77cf4079c58092f55198afdb8f4fdaa6}{shell\+\_\+process}} (void \texorpdfstring{$\ast$}{*}arg)
+\item 
+\Hypertarget{pennos_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{pennos_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pennos_8c_a10e2b75f4c4a8997bc7285eb82f84d76}\label{pennos_8c_a10e2b75f4c4a8997bc7285eb82f84d76} 
+bool {\bfseries multiple\+\_\+commands}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main file for the Penn\+OS kernel. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pennos_8c_a77cf4079c58092f55198afdb8f4fdaa6}\label{pennos_8c_a77cf4079c58092f55198afdb8f4fdaa6} 
+\index{pennos.c@{pennos.c}!shell\_process@{shell\_process}}
+\index{shell\_process@{shell\_process}!pennos.c@{pennos.c}}
+\doxysubsubsection{\texorpdfstring{shell\_process()}{shell\_process()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} shell\+\_\+process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})}
+
+Create the local fd table Assign f0 and f1 into the table through u\+\_\+open If append, then lseek to the end of f1 (if not stdout) char\texorpdfstring{$\ast$}{*} command name is \mbox{[}0\mbox{]} -\/ pointer Pass table as \mbox{[}1\mbox{]} to the function -\/ pointer args as \mbox{[}2\mbox{]} onwards -\/ string pointers

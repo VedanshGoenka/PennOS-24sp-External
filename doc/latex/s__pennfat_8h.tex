@@ -1,0 +1,240 @@
+\doxysection{src/pennfat/s\+\_\+pennfat.h File Reference}
+\hypertarget{s__pennfat_8h}{}\label{s__pennfat_8h}\index{src/pennfat/s\_pennfat.h@{src/pennfat/s\_pennfat.h}}
+
+
+Penn\+FAT system calls.  
+
+
+{\ttfamily \#include "{}k\+\_\+pennfat.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{s__pennfat_8h_a7c51d3389a647801b0fd33cf67548984}{get\+\_\+fd\+\_\+index\+\_\+from\+\_\+address}} (\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}fd)
+\begin{DoxyCompactList}\small\item\em Retrieves the index of a file descriptor from its address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_afec6e61720e05918efefeab347e950f3}{s\+\_\+open}} (const char \texorpdfstring{$\ast$}{*}fname, int mode)
+\begin{DoxyCompactList}\small\item\em Opens a file with the specified mode, using kernel-\/level functions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a87d6adb8e7b0eaccc8dd4b1f3ba14e9a}{s\+\_\+read}} (int fd, int n, char \texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em Reads n bytes from a file into a buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a2a41e90899b39cae94c9d02c3922ea81}{s\+\_\+write}} (int fd, const char \texorpdfstring{$\ast$}{*}str, int n)
+\begin{DoxyCompactList}\small\item\em Writes n bytes from a string to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_aba629deac31aa467ccb7763148dd4f92}{s\+\_\+append}} (int fd, const char \texorpdfstring{$\ast$}{*}str, int n)
+\begin{DoxyCompactList}\small\item\em Appends n bytes from a string to the end of the file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a1ee856dbd0706f79a440d1e98b42d32d}{s\+\_\+close}} (int fd)
+\begin{DoxyCompactList}\small\item\em Closes a file descriptor, cleaning up process-\/specific resources. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a395873f1de0b89a686d438580ba5dcf7}{s\+\_\+unlink}} (const char \texorpdfstring{$\ast$}{*}fname)
+\begin{DoxyCompactList}\small\item\em Removes a file from the filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a5d3410d3c150ad3ac75e6f061948a31f}{s\+\_\+lseek}} (int fd, int offset, int whence)
+\begin{DoxyCompactList}\small\item\em Repositions the file pointer of an open file descriptor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s__pennfat_8h_ae166ac7970869bda5550149e8771c3af}{s\+\_\+ls}} (const char \texorpdfstring{$\ast$}{*}filename, int fd)
+\begin{DoxyCompactList}\small\item\em Lists files in the current directory or a specified file\textquotesingle{}s details. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s__pennfat_8h_a9ec64e2714b83fdba459578a89d77c32}{s\+\_\+is\+\_\+executable}} (const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Checks if a file is executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Penn\+FAT system calls. 
+
+This file contains the declarations for the system calls that interact with the Penn\+FAT filesystem.
+
+\doxysubsection{Function Documentation}
+\Hypertarget{s__pennfat_8h_a7c51d3389a647801b0fd33cf67548984}\label{s__pennfat_8h_a7c51d3389a647801b0fd33cf67548984} 
+\index{s\_pennfat.h@{s\_pennfat.h}!get\_fd\_index\_from\_address@{get\_fd\_index\_from\_address}}
+\index{get\_fd\_index\_from\_address@{get\_fd\_index\_from\_address}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{get\_fd\_index\_from\_address()}{get\_fd\_index\_from\_address()}}
+{\footnotesize\ttfamily int get\+\_\+fd\+\_\+index\+\_\+from\+\_\+address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_k_file_descriptor}{KFile\+Descriptor}} \texorpdfstring{$\ast$}{*}}]{fd }\end{DoxyParamCaption})}
+
+
+
+Retrieves the index of a file descriptor from its address. 
+
+This function takes a pointer to a file descriptor and returns the index of the file descriptor in the global file descriptor table. The file descriptor table is represented by the array {\ttfamily g\+\_\+fd\+Table}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & A pointer to the file descriptor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the file descriptor in the file descriptor table, or an error code if the file descriptor is NULL. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_aba629deac31aa467ccb7763148dd4f92}\label{s__pennfat_8h_aba629deac31aa467ccb7763148dd4f92} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_append@{s\_append}}
+\index{s\_append@{s\_append}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_append()}{s\_append()}}
+{\footnotesize\ttfamily int s\+\_\+append (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Appends n bytes from a string to the end of the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to write to. \\
+\hline
+{\em str} & String containing the data to write. \\
+\hline
+{\em n} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of bytes written, or negative on error. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_a1ee856dbd0706f79a440d1e98b42d32d}\label{s__pennfat_8h_a1ee856dbd0706f79a440d1e98b42d32d} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_close@{s\_close}}
+\index{s\_close@{s\_close}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_close()}{s\_close()}}
+{\footnotesize\ttfamily int s\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Closes a file descriptor, cleaning up process-\/specific resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor to close. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 on success, negative on failure. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_a9ec64e2714b83fdba459578a89d77c32}\label{s__pennfat_8h_a9ec64e2714b83fdba459578a89d77c32} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_is\_executable@{s\_is\_executable}}
+\index{s\_is\_executable@{s\_is\_executable}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_is\_executable()}{s\_is\_executable()}}
+{\footnotesize\ttfamily int s\+\_\+is\+\_\+executable (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Checks if a file is executable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the file is executable, 0 if not. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_ae166ac7970869bda5550149e8771c3af}\label{s__pennfat_8h_ae166ac7970869bda5550149e8771c3af} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_ls@{s\_ls}}
+\index{s\_ls@{s\_ls}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_ls()}{s\_ls()}}
+{\footnotesize\ttfamily void s\+\_\+ls (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Lists files in the current directory or a specified file\textquotesingle{}s details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to list details for, or NULL to list all files. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s__pennfat_8h_a5d3410d3c150ad3ac75e6f061948a31f}\label{s__pennfat_8h_a5d3410d3c150ad3ac75e6f061948a31f} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_lseek@{s\_lseek}}
+\index{s\_lseek@{s\_lseek}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_lseek()}{s\_lseek()}}
+{\footnotesize\ttfamily int s\+\_\+lseek (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+
+
+Repositions the file pointer of an open file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor to reposition. \\
+\hline
+{\em offset} & Offset for the new position. \\
+\hline
+{\em whence} & Reference point for the offset (F\+\_\+\+SEEK\+\_\+\+SET, F\+\_\+\+SEEK\+\_\+\+CUR, F\+\_\+\+SEEK\+\_\+\+END). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int New position on success, negative on failure. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_afec6e61720e05918efefeab347e950f3}\label{s__pennfat_8h_afec6e61720e05918efefeab347e950f3} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_open@{s\_open}}
+\index{s\_open@{s\_open}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_open()}{s\_open()}}
+{\footnotesize\ttfamily int s\+\_\+open (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Opens a file with the specified mode, using kernel-\/level functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Name of the file to open. \\
+\hline
+{\em mode} & Mode in which to open the file (F\+\_\+\+WRITE, F\+\_\+\+READ, F\+\_\+\+APPEND). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int File descriptor on success, negative value on error. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_a87d6adb8e7b0eaccc8dd4b1f3ba14e9a}\label{s__pennfat_8h_a87d6adb8e7b0eaccc8dd4b1f3ba14e9a} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_read@{s\_read}}
+\index{s\_read@{s\_read}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_read()}{s\_read()}}
+{\footnotesize\ttfamily int s\+\_\+read (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{n,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+
+
+Reads n bytes from a file into a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to read from. \\
+\hline
+{\em n} & Number of bytes to read. \\
+\hline
+{\em buf} & Buffer to store read data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of bytes read, 0 if EOF, negative on error. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_a395873f1de0b89a686d438580ba5dcf7}\label{s__pennfat_8h_a395873f1de0b89a686d438580ba5dcf7} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_unlink@{s\_unlink}}
+\index{s\_unlink@{s\_unlink}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_unlink()}{s\_unlink()}}
+{\footnotesize\ttfamily int s\+\_\+unlink (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname }\end{DoxyParamCaption})}
+
+
+
+Removes a file from the filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Name of the file to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 on success, negative on failure. 
+\end{DoxyReturn}
+\Hypertarget{s__pennfat_8h_a2a41e90899b39cae94c9d02c3922ea81}\label{s__pennfat_8h_a2a41e90899b39cae94c9d02c3922ea81} 
+\index{s\_pennfat.h@{s\_pennfat.h}!s\_write@{s\_write}}
+\index{s\_write@{s\_write}!s\_pennfat.h@{s\_pennfat.h}}
+\doxysubsubsection{\texorpdfstring{s\_write()}{s\_write()}}
+{\footnotesize\ttfamily int s\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Writes n bytes from a string to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the file to write to. \\
+\hline
+{\em str} & String containing the data to write. \\
+\hline
+{\em n} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of bytes written, or negative on error. 
+\end{DoxyReturn}
