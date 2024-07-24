@@ -2,7 +2,7 @@
 
 ## Externalized Repository
 
-This repository has been modified to adhere to the academic integrity policy outlined in the CIS 3800 (Operating Systems) Syllabus. All `.h`, `.c`, and `Makefiles` have been removed from this repository. The live documentation for this project can be found at [PennOS](https://blank.com) and contains more detailed information about the implementation.
+This repository has been modified to adhere to the academic integrity policy outlined in the CIS 3800 (Operating Systems) Syllabus. All `.h`, `.c`, and `Makefiles` have been removed from this repository. The live documentation for this project can be found at [PennOS](https://vedanshgoenka.github.io/PennOS-24sp-External/) and contains more detailed information about the implementation.
 
 ### Academic Integrity Compliance
 
